@@ -11,3 +11,4 @@ lib64
 *.pyc
 *.pyo
 .DS_Store
+coursework/capstone/data/mc-2016.csv
