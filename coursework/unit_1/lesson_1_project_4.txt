@@ -1,0 +1,9 @@
+## For each question, describe how you would make it testable and translate it from a general question into something statistically rigorous.
+
+1. Focusing on advertisement traffic only, what product has the higher conversation rate from pageview to purchase?
+
+2. Has the onboarding funnel conversion rate remained constant over the past years? Has there been a change in ad spend in recent months?
+
+3. Visitors are interested in booking a hotel. Let's priritize showing results for hotels that have availability. Next, let's take into account what hotels are most popular (based on session information) and prioritize these in the results as well.
+
+4. Looking at the past three year of data, has our churn rate increased recently? Are we seeing a greater count of inactive users because we have more users or is our rate of innactivity growing?
