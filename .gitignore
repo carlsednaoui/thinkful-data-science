@@ -13,3 +13,6 @@ lib64
 .DS_Store
 **/data/*.csv
 **/data/*.db
+**/data/*.gz
+.ipynb_checkpoints/
+
