@@ -1,0 +1,355 @@
+<!doctype html>
+<html class="no-js">
+
+<!-- Mirrored from learnpythonthehardway.org/python3/ex45.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Apr 2017 18:10:50 GMT -->
+<head>
+  
+  
+  
+  <meta charset="utf-8">
+  <title>Learn Python the Hard Way - Read for Free</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link href="../../www.google-analytics.com/index.html" rel="dns-prefetch">
+  <link href="../../ajax.googleapis.com/index.html" rel="dns-prefetch">
+
+  <link href='../../fonts.googleapis.com/css33ad.css?family=Source+Code+Pro|Source+Sans+Pro:200,400,700,200italic,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href="../css/style.min.css" rel="stylesheet">
+  <!-- http://www.socicon.com -->
+  <link href="../css/icons.css" rel="stylesheet">
+
+
+</head>
+
+<body class="baseline-grid-off book-site" id="top">
+
+
+  
+  
+<header class="header" role="banner">
+  <nav class="navbar navbar-full nav-brand-family">
+    <div class="row middle-xs">
+      <ul class="brand-links show-md col-xs-3 col-sm-10 bare">
+        <li><a href="https://learncodethehardway.org/" class="waves-effect">Learn:</a></li>
+        
+        <li><a href="https://learncodethehardway.org/python/" class="waves-effect active">Python</a></li>
+        
+        <li><a href="https://learncodethehardway.org/ruby/" class="waves-effect">Ruby</a></li>
+        
+        <li><a href="https://learncodethehardway.org/more-python/" class="waves-effect">More Python</a></li>
+        
+        <li><a href="https://learncodethehardway.org/c/" class="waves-effect">C</a></li>
+        
+        <li><a href="https://learncodethehardway.org/sql/" class="waves-effect">SQL</a></li>
+        
+        <li><a href="https://learncodethehardway.org/javascript/" class="waves-effect">Javascript</a></li>
+        
+        <li><a href="https://learncodethehardway.org/unix/" class="waves-effect">Unix</a></li>
+        
+        <li><a href="https://learncodethehardway.org/regex/" class="waves-effect">RegEx</a></li>
+        
+        <li><a href="https://www.learndesignthehardway.com/" class="waves-effect">Design</a></li>
+        
+      </ul>
+      <ul class="brand-links hide-md col-xs-3 col-sm-10 bare">
+        <li><a href="https://learncodethehardway.org/" class="waves-effect">LCTHW</a></li>
+      </ul>
+      
+      <ul class="site-meta col-xs-9 col-sm-2 end-xs bare">
+        <li><a href="https://shop.learncodethehardway.org/access/reactivate/" class="waves-effect"><i class="icon icon-user"></i> Login</a></li>
+      </ul>
+      
+    </div>
+  </nav>
+  
+  <nav class="navbar navbar-full nav-main" role="navigation">
+    <div class="row between-xs center-xs middle-xs bare">
+      <div class="col-xs-4 start-xs bare">
+        <a href="#" class="no-underline nav-trigger waves-effect" id="toc"><div class="transformer hamburcloser">
+          <div class="bar bar-t"></div>
+          <div class="bar bar-m-a"></div>
+          <div class="bar bar-m-b"></div>
+          <div class="bar bar-b"></div>
+        </div><span class="nav-trigger_text show-sm-inline">Contents</span></a>
+      </div>
+      <div class="col-xs-4"><strong>&nbsp;</strong></div>
+      <div class="col-xs-4 end-xs bare">
+        <a href="https://helpthw.zendesk.com/hc/en-us" class="no-underline nav-trigger waves-effect" id="help"><div class="transformer questioncloser">
+          <div class="icon-question-mark"></div>
+        </div><span class="nav-trigger_text show-sm-inline">Help</span></a>
+      </div>
+    </div>
+  </nav>
+  
+</header>
+
+
+
+
+  <div class="wrapper">
+    <div class="masthead python-background" style="background-image: url('../images/pattern-python.svg')">
+      <img src="../images/logo-python.svg" alt="Learn Python The Hard Way" class="logo">
+    </div>
+
+    <aside class="sidebar sidebar-left" role="complementary">
+      <nav class="side-nav-container">
+        <ol class="table-of-contents">
+          <h3>Table of Contents</h3>
+            <li><a href="preface.html">Preface</a></li>
+            <li><a href="intro.html">The Hard Way Is Easier</a></li>
+            <li><a href="ex0.html">Ex0: The Setup</a></li>
+            <li><a href="ex1.html">Ex1: A Good First Program</a></li>
+            <li><a href="ex2.html">Ex2: Comments And Pound Characters</a></li>
+            <li><a href="ex3.html">Ex3: Numbers And Math</a></li>
+            <li><a href="ex4.html">Ex4: Variables And Names</a></li>
+            <li><a href="ex5.html">Ex5: More Variables And Printing</a></li>
+            <li><a href="ex6.html">Ex6: Strings And Text</a></li>
+            <li><a href="ex7.html">Ex7: More Printing</a></li>
+            <li><a href="ex8.html">Ex8: Printing, Printing</a></li>
+            <li><a href="ex9.html">Ex9: Printing, Printing, Printing</a></li>
+            <li><a href="ex10.html">Ex10: What Was That?</a></li>
+            <li><a href="ex11.html">Ex11: Asking Questions</a></li>
+            <li><a href="ex12.html">Ex12: Prompting People</a></li>
+            <li><a href="ex13.html">Ex13: Parameters, Unpacking, Variables</a></li>
+            <li><a href="ex14.html">Ex14: Prompting And Passing</a></li>
+            <li><a href="ex15.html">Ex15: Reading Files</a></li>
+            <li><a href="ex16.html">Ex16: Reading And Writing Files</a></li>
+            <li><a href="ex17.html">Ex17: More Files</a></li>
+            <li><a href="ex18.html">Ex18: Names, Variables, Code, Functions</a></li>
+            <li><a href="ex19.html">Ex19: Functions And Variables</a></li>
+            <li><a href="ex20.html">Ex20: Functions And Files</a></li>
+            <li><a href="ex21.html">Ex21: Functions Can Return Something</a></li>
+            <li><a href="ex22.html">Ex22: What Do You Know So Far?</a></li>
+            <li><a href="ex23.html">Ex23: Read Some Code</a></li>
+            <li><a href="ex24.html">Ex24: More Practice</a></li>
+            <li><a href="ex25.html">Ex25: Even More Practice</a></li>
+            <li><a href="ex26.html">Ex26: Congratulations, Take A Test!</a></li>
+            <li><a href="ex27.html">Ex27: Memorizing Logic</a></li>
+            <li><a href="ex28.html">Ex28: Boolean Practice</a></li>
+            <li><a href="ex29.html">Ex29: What If</a></li>
+            <li><a href="ex30.html">Ex30: Else And If</a></li>
+            <li><a href="ex31.html">Ex31: Making Decisions</a></li>
+            <li><a href="ex32.html">Ex32: Loops And Lists</a></li>
+            <li><a href="ex33.html">Ex33: While Loops</a></li>
+            <li><a href="ex34.html">Ex34: Accessing Elements Of Lists</a></li>
+            <li><a href="ex35.html">Ex35: Branches and Functions</a></li>
+            <li><a href="ex36.html">Ex36: Designing and Debugging</a></li>
+            <li><a href="ex37.html">Ex37: Symbol Review</a></li>
+            <li><a href="ex38.html">Ex38: Doing Things To Lists</a></li>
+            <li><a href="ex39.html">Ex39: Dictionaries, Oh Lovely Dictionaries</a></li>
+            <li><a href="ex40.html">Ex40: Modules, Classes, And Objects</a></li>
+            <li><a href="ex41.html">Ex41: Learning To Speak Object Oriented</a></li>
+            <li><a href="ex42.html">Ex42: Is-A, Has-A, Objects, and Classes</a></li>
+            <li><a href="ex43.html">Ex43: Gothons From Planet Percal #25</a></li>
+            <li><a href="ex44.html">Ex44: Inheritance Vs. Composition</a></li>
+            <li><a href="ex45.html">Ex45: You Make A Game</a></li>
+            <li><a href="ex46.html">Ex46: A Project Skeleton</a></li>
+            <li><a href="ex47.html">Ex47: Automated Testing</a></li>
+            <li><a href="ex48.html">Ex48: Advanced User Input</a></li>
+            <li><a href="ex49.html">Ex49: Making Sentences</a></li>
+            <li><a href="ex50.html">Ex50: Your First Website</a></li>
+            <li><a href="ex51.html">Ex51: Getting Input From A Browser</a></li>
+            <li><a href="ex52.html">Ex52: The Start Of Your Web Game</a></li>
+            <li><a href="advice.html">Advice From An Old Programmer</a></li>
+            <li><a href="next.html">Next Steps</a></li>
+            <li><a href="appendixa.html">Appendix A: Command Line Crash Course</a></li>
+        </ol>
+        <ul class="site-links">
+          <h3>Learn the Hard Way</h3>
+          <li><a href="#" class="waves-effect"><i class="icon-information"></i> About LPTHW</a></li>
+          <li><a href="#" class="waves-effect"><i class="icon-question-mark"></i> Help &amp; Support</a></li>
+          <li><a href="#" class="waves-effect"><i class="socicon-twitter"></i> Follow us on Twitter</a></li>
+        </ul>
+      </nav>
+      <div class="colophon text-center">
+        <div class="intro">
+          <p class="bare-bottom">
+            The type for this book is set in 18px / 1.5
+            <a href="https://www.google.com/fonts/specimen/Source+Serif+Pro">Adobe Serif</a>,
+            <a href="https://www.google.com/fonts/specimen/Source+Sans+Pro">Sans</a>, and
+            <a href="https://www.google.com/fonts/specimen/Source+Code+Pro">Code</a>.
+          </p>
+        </div>
+        <div class="printers-mark">
+          <div class="inscription">Docendo <i class="icon-repeat"></i> Discimus</div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="main python" role="main">
+      <div class="main-container row center-xs">
+    <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8">
+
+        <div class="content">
+
+            <!--- RST STARTS -->
+            <h1 class="title">Exercise 45: You Make a Game</h1>
+            <p>You need to start learning to feed yourself.  Hopefully as you have worked through this book, you have learned that all the information you need is on the internet. You just have to go search for it.  The only thing you have been missing are the right words and what to look for when you search.  Now you should have a sense of it, so it's about time you struggled through a big project and tried to get it working.</p>
+<p>Here are your requirements:</p>
+<ol class="arabic simple">
+<li>Make a different game from the one I made.</li>
+<li>Use more than one file, and use <tt class="docutils literal">import</tt> to use them.  Make sure you know what that is.</li>
+<li>Use <em>one class per room</em> and give the classes names that fit their purpose (like <tt class="docutils literal">GoldRoom</tt>, <tt class="docutils literal">KoiPondRoom</tt>).</li>
+<li>Your runner will need to know about these rooms, so make a class that runs them and knows about them.  There's plenty of ways to do this, but consider having each room return what room is next or setting a variable of what room is next.</li>
+</ol>
+<p>Other than that I leave it to you.  Spend a whole week on this and make it the best game you can.  Use classes, functions, dicts, lists, anything you can to make it nice.  The purpose of this lesson is to teach you how to structure classes that need other classes inside other files.</p>
+<p>Remember, I'm not telling you <em>exactly</em> how to do this because you have to do this yourself.  Go figure it out.  Programming is problem solving, and that means trying things, experimenting, failing, scrapping your work, and trying again.  When you get stuck, ask for help and show people your code.  If they are mean to you, ignore them, and focus on the people who are not mean and offer to help.  Keep working it and cleaning it until it's good, then show it some more.</p>
+<p>Good luck, and see you in a week with your game.</p>
+<div class="section" id="evaluating-your-game">
+<h1>Evaluating Your Game</h1>
+<p>In this exercise you will evaluate the game you just made.  Maybe you got partway through it and you got stuck.  Maybe you got it working but just barely.  Either way, we're going to go through a bunch of things you should know now and make sure you covered them in your game.  We're going to study properly formatting a class, common conventions in using classes, and a lot of &quot;textbook&quot; knowledge.</p>
+<p>Why would I have you try to do it yourself and then show you how to do it right?  From now on in the book I'm going to try to make you self-sufficient.  I've been holding your hand mostly this whole time, and I can't do that for much longer.  I'm now instead going to give you things to do, have you do them on your own, and then give you ways to improve what you did.</p>
+<p>You will struggle at first and probably be very frustrated, but stick with it and eventually you will build a mind for solving problems.  You will start to find creative solutions to problems rather than just copy solutions out of textbooks.</p>
+</div>
+<div class="section" id="function-style">
+<h1>Function Style</h1>
+<p>All the other rules I've taught you about how to make a nice function apply here, but add these things:</p>
+<ul class="simple">
+<li>For various reasons, programmers call functions that are part of classes &quot;methods&quot;.  It's mostly marketing, but just be warned that every time you say &quot;function&quot; they'll annoyingly correct you and say &quot;method.&quot;  If they get too annoying, just ask them to demonstrate the mathematical basis that determines how a &quot;method&quot; is different from a &quot;function&quot; and they'll shut up.</li>
+<li>When you work with classes much of your time is spent talking about making the class &quot;do things.&quot;  Instead of naming your functions after what the function does, instead name it as if it's a command you are giving to the class.  Same as <tt class="docutils literal">pop</tt> is saying &quot;Hey list, <tt class="docutils literal">pop</tt> this off.&quot;  It isn't called <tt class="docutils literal">remove_from_end_of_list</tt> because even though that's what it does, that's not a <em>command</em> to a list.</li>
+<li>Keep your functions small and simple.  For some reason when people start learning about classes they forget this.</li>
+</ul>
+</div>
+<div class="section" id="class-style">
+<h1>Class Style</h1>
+<ul class="simple">
+<li>Your class should use &quot;camel case&quot; like <tt class="docutils literal">SuperGoldFactory</tt> rather than <tt class="docutils literal">super_gold_factory</tt>.</li>
+<li>Try not to do too much in your <tt class="docutils literal">__init__</tt> functions. It makes them harder to use.</li>
+<li>Your other functions should use &quot;underscore format,&quot; so write <tt class="docutils literal">my_awesome_hair</tt> and not <tt class="docutils literal">myawesomehair</tt> or <tt class="docutils literal">MyAwesomeHair</tt>.</li>
+<li>Be consistent in how you organize your function arguments.  If your class has to deal with users, dogs, and cats, keep that order throughout unless it really doesn't make sense.  If you have one function that takes <tt class="docutils literal">(dog, cat, user)</tt> and the other takes <tt class="docutils literal">(user, cat, dog)</tt>, it'll be hard to use.</li>
+<li>Try not to use variables that come from the module or globals.  They should be fairly self-contained.</li>
+<li>A foolish consistency is the hobgoblin of little minds.  Consistency is good, but foolishly following some idiotic mantra because everyone else does is bad style.  Think for yourself.</li>
+<li>Always, <em>always</em> have <tt class="docutils literal">class Name(object)</tt> format or else you will be in big trouble.</li>
+</ul>
+</div>
+<div class="section" id="code-style">
+<h1>Code Style</h1>
+<ul class="simple">
+<li>Give your code vertical space so people can read it.  You will find some very bad programmers who are able to write reasonable code but who do not add <em>any</em> spaces.  This is bad style in any language because the human eye and brain use space and vertical alignment to scan and separate visual elements.  Not having space is the same as giving your code an awesome camouflage paint job.</li>
+<li>If you can't read it out loud, it's probably hard to read.  If you are having a problem making something easy to use, try reading it out loud.  Not only does this force you to slow down and really read it, but it also helps you find difficult passages and things to change for readability.</li>
+<li>Try to do what other people are doing in Python until you find your own style.</li>
+<li>Once you find your own style, do not be a jerk about it.  Working with other people's code is part of being a programmer, and other people have really bad taste.  Trust me, you will probably have really bad taste too and not even realize it.</li>
+<li>If you find someone who writes code in a style you like, try writing something that mimics that style.</li>
+</ul>
+</div>
+<div class="section" id="good-comments">
+<h1>Good Comments</h1>
+<ul class="simple">
+<li>Programmers will tell you that your code should be readable enough that you do not need comments.  They'll then tell you in their most official sounding voice, &quot;Ergo one should never write comments or documentation. QED.&quot; Those programmers are either consultants who get paid more if other people can't use their code, or incompetents who tend to never work with other people.  Ignore them and write comments.</li>
+<li>When you write comments, describe <em>why</em> you are doing what you are doing.  The code already says how, but why you did things the way you did is more important.</li>
+<li>When you write doc comments for your functions, make the comments documentation for someone who will have to use your code.  You do not have to go crazy, but a nice little sentence about what someone can do with that function helps a lot.</li>
+<li>While comments are good, too many are bad, and you have to maintain them.  Keep your comments relatively short and to the point, and if you change a function, review the comment to make sure it's still correct.</li>
+</ul>
+</div>
+<div class="section" id="evaluate-your-game">
+<h1>Evaluate Your Game</h1>
+<p>I want you to now pretend you are me.  Adopt a very stern look, print out your code, and take a red pen and mark every mistake you find, including anything from this exercise and from other guidelines you've read so far.  Once you are done marking your code up, I want you to fix everything you came up with.  Then repeat this a couple of times, looking for anything that could be better.  Use all the tricks I've given you to break your code down into the smallest, tiniest little analysis you can.</p>
+<p>The purpose of this exercise is to train your attention to detail on classes.  Once you are done with this bit of code, find someone else's code and do the same thing.  Go through a printed copy of some part of it and point out all the mistakes and style errors you find.  Then fix it and see if your fixes can be done without breaking that program.</p>
+<p>I want you to do nothing but evaluate and fix code for the week---your own code and other people's.  It'll be pretty hard work, but when you are done your brain will be wired tight like a boxer's hands.</p>
+</div>
+            <!-- RST ENDS -->
+        </div>
+    </div>
+
+      <div class="row center-xs" id="buy">
+    <div class="text-center col-xs-10 col-sm-5 col-md-4">
+      <h2 class="section-title__small">Pre-order 4th Edition, Get 3rd Edition!</h2>
+      <p>
+        When you pre-order LPTHW 4th Edition, you'll receive the 4th Edition (Python 3) as it's being created, as well as get a copy of the 3rd Edition (Python 2).
+        All files are DRM free and you can download them to your computer for offline viewing. <b>Digital Download Only!</b>
+      </p>
+
+      <p class="price-block">
+      <span class="currency"><span class="prefix">$</span>29.<span class="suffix">99</span></span>
+      </p>
+
+      <a href="https://shop.learncodethehardway.org/access/buy/2/" class="btn btn-primary btn-full">Buy Digital Download From Zed</a>
+      
+      <p class="text-left btn-subtext">
+        <small>Or, you can <a href="index.html">read Learn Python the Hard Way for free</a> right here, video lectures not included.</small>
+      </p>
+      
+    </div>
+    <div class="text-center col-xs-10 col-sm-5 col-md-4 col-sm-offset-1">
+      
+      <h2 class="section-title__small">Other Buying Options</h2>
+      <a href="http://bit.ly/amznlpthw" class="btn btn-secondary btn-full">Buy Kindle or Paper on Amazon</a>
+      <a href="http://bit.ly/informitlpthw" class="btn btn-secondary btn-full">Buy a hard copy from the Publisher</a>
+      <a href="http://bit.ly/bnlpthw" class="btn btn-secondary btn-full">Buy a hard copy from Barnes &amp; Noble</a>
+      
+    </div>
+  </div>
+
+  <div class="row center-xs" id="video_holder" style="display: none">
+      <div class="col-xs">
+          <div data-paydiv_product="2" id='paydiv'>
+            No content available for this exercise.  You can view all available downloads at <a href="https://shop.learncodethehardway.org/customers/">your customer account page</a>.
+       </div>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+    </main>
+
+  </div>
+
+  <div class="row dark bottom-nav">
+    <div class="col-xs text-left">
+      <a href="#" class="prev" id='prev_link'><i class="icon-arrow-67"></i> <i class="icon icon-arrow-left"></i> Previous <span class="hide-xs show-sm-inline">Lesson</span></a>
+    </div>
+    <div class="col-xs text-right"><a href="#" class="next" id='next_link'>Next <span class="hide-xs show-sm-inline">Lesson</span> <i class="icon icon-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+<footer class="footer">
+  <div class="row center-xs">
+
+  <div class="col-xs-11 col-sm-6 col-md-5 col-lg-5">
+    <ul class="nav nav-inline">
+      <li><h4><a href="../index.html">Home</a></h4></li>
+      <li><h4><a href="https://learncodethehardway.org/about/">About</a></h4></li>
+      <li><h4><a href="https://learncodethehardway.org/contact/">Contact</a></h4></li>
+    </ul>
+    <div class="copyright text-left">
+      <small class="text-muted">&copy; 2016 Zed A. Shaw</small>
+    </div>
+  </div>
+  <div class="col-xs-11 col-sm-4 col-md-4 col-lg-3">
+    <div class="social-media">
+      <div class="classy-container">
+        <a href="https://twitter.com/lzsthw" class="socicon-twitter"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</footer>
+<script src="../js/scripts.min.js"></script>
+
+<script src="javascripts/jquery.js"></script>
+<script src="index.js"></script>
+<script src="../../shop.learncodethehardway.org/static/jzed.js"></script>
+<script src="../../shop.learncodethehardway.org/static/js/videojs/video.js"></script>
+<link rel="stylesheet" href="../../shop.learncodethehardway.org/static/js/videojs/video-js.css">
+<script src="../../shop.learncodethehardway.org/static/api/v1/paydiv.js"></script>
+<script src="javascripts/app.js"></script>
+<script src="javascripts/littools.js"></script>
+<!-- Start of helpthw Zendesk Widget script -->
+<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("../../assets.zendesk.com/embeddable_framework/main.js","helpthw.zendesk.com");
+/*]]>*/</script>
+<!-- End of helpthw Zendesk Widget script -->
+
+</body>
+
+<!-- Mirrored from learnpythonthehardway.org/python3/ex45.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Apr 2017 18:10:50 GMT -->
+</html>

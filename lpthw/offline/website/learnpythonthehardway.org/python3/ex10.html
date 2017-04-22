@@ -1,0 +1,433 @@
+<!doctype html>
+<html class="no-js">
+
+<!-- Mirrored from learnpythonthehardway.org/python3/ex10.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Apr 2017 18:10:47 GMT -->
+<head>
+  
+  
+  
+  <meta charset="utf-8">
+  <title>Learn Python the Hard Way - Read for Free</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <link href="../../www.google-analytics.com/index.html" rel="dns-prefetch">
+  <link href="../../ajax.googleapis.com/index.html" rel="dns-prefetch">
+
+  <link href='../../fonts.googleapis.com/css33ad.css?family=Source+Code+Pro|Source+Sans+Pro:200,400,700,200italic,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href="../css/style.min.css" rel="stylesheet">
+  <!-- http://www.socicon.com -->
+  <link href="../css/icons.css" rel="stylesheet">
+
+
+</head>
+
+<body class="baseline-grid-off book-site" id="top">
+
+
+  
+  
+<header class="header" role="banner">
+  <nav class="navbar navbar-full nav-brand-family">
+    <div class="row middle-xs">
+      <ul class="brand-links show-md col-xs-3 col-sm-10 bare">
+        <li><a href="https://learncodethehardway.org/" class="waves-effect">Learn:</a></li>
+        
+        <li><a href="https://learncodethehardway.org/python/" class="waves-effect active">Python</a></li>
+        
+        <li><a href="https://learncodethehardway.org/ruby/" class="waves-effect">Ruby</a></li>
+        
+        <li><a href="https://learncodethehardway.org/more-python/" class="waves-effect">More Python</a></li>
+        
+        <li><a href="https://learncodethehardway.org/c/" class="waves-effect">C</a></li>
+        
+        <li><a href="https://learncodethehardway.org/sql/" class="waves-effect">SQL</a></li>
+        
+        <li><a href="https://learncodethehardway.org/javascript/" class="waves-effect">Javascript</a></li>
+        
+        <li><a href="https://learncodethehardway.org/unix/" class="waves-effect">Unix</a></li>
+        
+        <li><a href="https://learncodethehardway.org/regex/" class="waves-effect">RegEx</a></li>
+        
+        <li><a href="https://www.learndesignthehardway.com/" class="waves-effect">Design</a></li>
+        
+      </ul>
+      <ul class="brand-links hide-md col-xs-3 col-sm-10 bare">
+        <li><a href="https://learncodethehardway.org/" class="waves-effect">LCTHW</a></li>
+      </ul>
+      
+      <ul class="site-meta col-xs-9 col-sm-2 end-xs bare">
+        <li><a href="https://shop.learncodethehardway.org/access/reactivate/" class="waves-effect"><i class="icon icon-user"></i> Login</a></li>
+      </ul>
+      
+    </div>
+  </nav>
+  
+  <nav class="navbar navbar-full nav-main" role="navigation">
+    <div class="row between-xs center-xs middle-xs bare">
+      <div class="col-xs-4 start-xs bare">
+        <a href="#" class="no-underline nav-trigger waves-effect" id="toc"><div class="transformer hamburcloser">
+          <div class="bar bar-t"></div>
+          <div class="bar bar-m-a"></div>
+          <div class="bar bar-m-b"></div>
+          <div class="bar bar-b"></div>
+        </div><span class="nav-trigger_text show-sm-inline">Contents</span></a>
+      </div>
+      <div class="col-xs-4"><strong>&nbsp;</strong></div>
+      <div class="col-xs-4 end-xs bare">
+        <a href="https://helpthw.zendesk.com/hc/en-us" class="no-underline nav-trigger waves-effect" id="help"><div class="transformer questioncloser">
+          <div class="icon-question-mark"></div>
+        </div><span class="nav-trigger_text show-sm-inline">Help</span></a>
+      </div>
+    </div>
+  </nav>
+  
+</header>
+
+
+
+
+  <div class="wrapper">
+    <div class="masthead python-background" style="background-image: url('../images/pattern-python.svg')">
+      <img src="../images/logo-python.svg" alt="Learn Python The Hard Way" class="logo">
+    </div>
+
+    <aside class="sidebar sidebar-left" role="complementary">
+      <nav class="side-nav-container">
+        <ol class="table-of-contents">
+          <h3>Table of Contents</h3>
+            <li><a href="preface.html">Preface</a></li>
+            <li><a href="intro.html">The Hard Way Is Easier</a></li>
+            <li><a href="ex0.html">Ex0: The Setup</a></li>
+            <li><a href="ex1.html">Ex1: A Good First Program</a></li>
+            <li><a href="ex2.html">Ex2: Comments And Pound Characters</a></li>
+            <li><a href="ex3.html">Ex3: Numbers And Math</a></li>
+            <li><a href="ex4.html">Ex4: Variables And Names</a></li>
+            <li><a href="ex5.html">Ex5: More Variables And Printing</a></li>
+            <li><a href="ex6.html">Ex6: Strings And Text</a></li>
+            <li><a href="ex7.html">Ex7: More Printing</a></li>
+            <li><a href="ex8.html">Ex8: Printing, Printing</a></li>
+            <li><a href="ex9.html">Ex9: Printing, Printing, Printing</a></li>
+            <li><a href="ex10.html">Ex10: What Was That?</a></li>
+            <li><a href="ex11.html">Ex11: Asking Questions</a></li>
+            <li><a href="ex12.html">Ex12: Prompting People</a></li>
+            <li><a href="ex13.html">Ex13: Parameters, Unpacking, Variables</a></li>
+            <li><a href="ex14.html">Ex14: Prompting And Passing</a></li>
+            <li><a href="ex15.html">Ex15: Reading Files</a></li>
+            <li><a href="ex16.html">Ex16: Reading And Writing Files</a></li>
+            <li><a href="ex17.html">Ex17: More Files</a></li>
+            <li><a href="ex18.html">Ex18: Names, Variables, Code, Functions</a></li>
+            <li><a href="ex19.html">Ex19: Functions And Variables</a></li>
+            <li><a href="ex20.html">Ex20: Functions And Files</a></li>
+            <li><a href="ex21.html">Ex21: Functions Can Return Something</a></li>
+            <li><a href="ex22.html">Ex22: What Do You Know So Far?</a></li>
+            <li><a href="ex23.html">Ex23: Read Some Code</a></li>
+            <li><a href="ex24.html">Ex24: More Practice</a></li>
+            <li><a href="ex25.html">Ex25: Even More Practice</a></li>
+            <li><a href="ex26.html">Ex26: Congratulations, Take A Test!</a></li>
+            <li><a href="ex27.html">Ex27: Memorizing Logic</a></li>
+            <li><a href="ex28.html">Ex28: Boolean Practice</a></li>
+            <li><a href="ex29.html">Ex29: What If</a></li>
+            <li><a href="ex30.html">Ex30: Else And If</a></li>
+            <li><a href="ex31.html">Ex31: Making Decisions</a></li>
+            <li><a href="ex32.html">Ex32: Loops And Lists</a></li>
+            <li><a href="ex33.html">Ex33: While Loops</a></li>
+            <li><a href="ex34.html">Ex34: Accessing Elements Of Lists</a></li>
+            <li><a href="ex35.html">Ex35: Branches and Functions</a></li>
+            <li><a href="ex36.html">Ex36: Designing and Debugging</a></li>
+            <li><a href="ex37.html">Ex37: Symbol Review</a></li>
+            <li><a href="ex38.html">Ex38: Doing Things To Lists</a></li>
+            <li><a href="ex39.html">Ex39: Dictionaries, Oh Lovely Dictionaries</a></li>
+            <li><a href="ex40.html">Ex40: Modules, Classes, And Objects</a></li>
+            <li><a href="ex41.html">Ex41: Learning To Speak Object Oriented</a></li>
+            <li><a href="ex42.html">Ex42: Is-A, Has-A, Objects, and Classes</a></li>
+            <li><a href="ex43.html">Ex43: Gothons From Planet Percal #25</a></li>
+            <li><a href="ex44.html">Ex44: Inheritance Vs. Composition</a></li>
+            <li><a href="ex45.html">Ex45: You Make A Game</a></li>
+            <li><a href="ex46.html">Ex46: A Project Skeleton</a></li>
+            <li><a href="ex47.html">Ex47: Automated Testing</a></li>
+            <li><a href="ex48.html">Ex48: Advanced User Input</a></li>
+            <li><a href="ex49.html">Ex49: Making Sentences</a></li>
+            <li><a href="ex50.html">Ex50: Your First Website</a></li>
+            <li><a href="ex51.html">Ex51: Getting Input From A Browser</a></li>
+            <li><a href="ex52.html">Ex52: The Start Of Your Web Game</a></li>
+            <li><a href="advice.html">Advice From An Old Programmer</a></li>
+            <li><a href="next.html">Next Steps</a></li>
+            <li><a href="appendixa.html">Appendix A: Command Line Crash Course</a></li>
+        </ol>
+        <ul class="site-links">
+          <h3>Learn the Hard Way</h3>
+          <li><a href="#" class="waves-effect"><i class="icon-information"></i> About LPTHW</a></li>
+          <li><a href="#" class="waves-effect"><i class="icon-question-mark"></i> Help &amp; Support</a></li>
+          <li><a href="#" class="waves-effect"><i class="socicon-twitter"></i> Follow us on Twitter</a></li>
+        </ul>
+      </nav>
+      <div class="colophon text-center">
+        <div class="intro">
+          <p class="bare-bottom">
+            The type for this book is set in 18px / 1.5
+            <a href="https://www.google.com/fonts/specimen/Source+Serif+Pro">Adobe Serif</a>,
+            <a href="https://www.google.com/fonts/specimen/Source+Sans+Pro">Sans</a>, and
+            <a href="https://www.google.com/fonts/specimen/Source+Code+Pro">Code</a>.
+          </p>
+        </div>
+        <div class="printers-mark">
+          <div class="inscription">Docendo <i class="icon-repeat"></i> Discimus</div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="main python" role="main">
+      <div class="main-container row center-xs">
+    <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8">
+
+        <div class="content">
+
+            <!--- RST STARTS -->
+            <h1 class="title">Exercise 10: What Was That?</h1>
+            <p>In Exercise 9 I threw you some new stuff, just to keep you on your toes.  I showed you two ways to make a string that goes across multiple lines.  In the first way, I put the characters <tt class="docutils literal">\n</tt> (backslash <tt class="docutils literal">n</tt>) between the names of the months.  These two characters put a <tt class="docutils literal">new line character</tt> into the string at that point.</p>
+<p>This <tt class="docutils literal">\</tt> (backslash) character encodes difficult-to-type characters into a string.  There are various &quot;escape sequences&quot; available for different characters you might want to use. We'll try a few of these sequences so you can see what I mean.</p>
+<p>An important escape sequence is to escape a single-quote <tt class="docutils literal">'</tt> or double-quote <tt class="docutils literal">&quot;</tt>.  Imagine you have a string that uses double-quotes and you want to put a double-quote inside the string.  If you write <tt class="docutils literal">&quot;I &quot;understand&quot; joe.&quot;</tt> then Python will get confused because it will think the <tt class="docutils literal">&quot;</tt> around <tt class="docutils literal">&quot;understand&quot;</tt> actually <em>ends</em> the string.  You need a way to tell Python that the <tt class="docutils literal">&quot;</tt> inside the string isn't a <em>real</em> double-quote.</p>
+<p>To solve this problem you <em>escape</em> double-quotes and single-quotes so Python knows to include them in the string.  Here's an example:</p>
+<pre class="code python literal-block">
+<span class="literal string double">&quot;I am 6'2</span><span class="literal string escape">\&quot;</span><span class="literal string double"> tall.&quot;</span>  <span class="comment single"># escape double-quote inside string</span>
+<span class="literal string single">'I am 6</span><span class="literal string escape">\'</span><span class="literal string single">2&quot; tall.'</span>  <span class="comment single"># escape single-quote inside string</span>
+</pre>
+<p>The second way is by using triple-quotes, which is just <tt class="docutils literal">&quot;&quot;&quot;</tt> and works like a string, but you also can put as many lines of text as you want until you type <tt class="docutils literal">&quot;&quot;&quot;</tt> again.  We'll also play with these.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><a name="python--ex10.py-idio.html-1"></a><span class="n">tabby_cat</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">I&#39;m tabbed in.&quot;</span>
+<a name="python--ex10.py-idio.html-2"></a><span class="n">persian_cat</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m split</span><span class="se">\n</span><span class="s2">on a line.&quot;</span>
+<a name="python--ex10.py-idio.html-3"></a><span class="n">backslash_cat</span> <span class="o">=</span> <span class="s2">&quot;I&#39;m </span><span class="se">\\</span><span class="s2"> a </span><span class="se">\\</span><span class="s2"> cat.&quot;</span>
+<a name="python--ex10.py-idio.html-4"></a>
+<a name="python--ex10.py-idio.html-5"></a><span class="n">fat_cat</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a name="python--ex10.py-idio.html-6"></a><span class="s2">I&#39;ll do a list:</span>
+<a name="python--ex10.py-idio.html-7"></a><span class="se">\t</span><span class="s2">* Cat food</span>
+<a name="python--ex10.py-idio.html-8"></a><span class="se">\t</span><span class="s2">* Fishies</span>
+<a name="python--ex10.py-idio.html-9"></a><span class="se">\t</span><span class="s2">* Catnip</span><span class="se">\n\t</span><span class="s2">* Grass</span>
+<a name="python--ex10.py-idio.html-10"></a><span class="s2">&quot;&quot;&quot;</span>
+<a name="python--ex10.py-idio.html-11"></a>
+<a name="python--ex10.py-idio.html-12"></a><span class="k">print</span><span class="p">(</span><span class="n">tabby_cat</span><span class="p">)</span>
+<a name="python--ex10.py-idio.html-13"></a><span class="k">print</span><span class="p">(</span><span class="n">persian_cat</span><span class="p">)</span>
+<a name="python--ex10.py-idio.html-14"></a><span class="k">print</span><span class="p">(</span><span class="n">backslash_cat</span><span class="p">)</span>
+<a name="python--ex10.py-idio.html-15"></a><span class="k">print</span><span class="p">(</span><span class="n">fat_cat</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><div class="section" id="what-you-should-see">
+<h1>What You Should See</h1>
+<p>Look for the tab characters that you made.  In this exercise the spacing is important to get right.</p>
+<pre class="code bash literal-block">
+$ python ex10.py
+        I<span class="literal string single">'m tabbed in.
+I'</span>m split
+on a line.
+I<span class="literal string single">'m \ a \ cat.
+
+I'</span>ll <span class="keyword">do</span> a list:
+        * Cat food
+        * Fishies
+        * Catnip
+        * Grass
+</pre>
+</div>
+<div class="section" id="escape-sequences">
+<h1>Escape Sequences</h1>
+<p>This is all of the escape sequences Python supports.  You may not use many of these, but memorize their format and what they do anyway. Try them out in some strings to see if you can make them work.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Escape</th>
+<th class="head">What it does.</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><tt class="docutils literal">\\</tt></td>
+<td>Backslash (\)</td>
+</tr>
+<tr><td><tt class="docutils literal">\'</tt></td>
+<td>Single-quote (')</td>
+</tr>
+<tr><td><tt class="docutils literal">\&quot;</tt></td>
+<td>Double-quote (&quot;)</td>
+</tr>
+<tr><td><tt class="docutils literal">\a</tt></td>
+<td>ASCII bell (BEL)</td>
+</tr>
+<tr><td><tt class="docutils literal">\b</tt></td>
+<td>ASCII backspace (BS)</td>
+</tr>
+<tr><td><tt class="docutils literal">\f</tt></td>
+<td>ASCII formfeed (FF)</td>
+</tr>
+<tr><td><tt class="docutils literal">\n</tt></td>
+<td>ASCII linefeed (LF)</td>
+</tr>
+<tr><td><tt class="docutils literal">\N{name}</tt></td>
+<td>Character named name in the Unicode database (Unicode only)</td>
+</tr>
+<tr><td><tt class="docutils literal">\r</tt></td>
+<td>Carriage Return (CR)</td>
+</tr>
+<tr><td><tt class="docutils literal">\t</tt></td>
+<td>Horizontal Tab (TAB)</td>
+</tr>
+<tr><td><tt class="docutils literal">\uxxxx</tt></td>
+<td>Character with 16-bit hex value xxxx (u'' string only)</td>
+</tr>
+<tr><td><tt class="docutils literal">\Uxxxxxxxx</tt></td>
+<td>Character with 32-bit hex value xxxxxxxx (u'' string only)</td>
+</tr>
+<tr><td><tt class="docutils literal">\v</tt></td>
+<td>ASCII vertical tab (VT)</td>
+</tr>
+<tr><td><tt class="docutils literal">\ooo</tt></td>
+<td>Character with octal value ooo</td>
+</tr>
+<tr><td><tt class="docutils literal">\xhh</tt></td>
+<td>Character with hex value hh</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<ol class="arabic simple">
+<li>Memorize all the escape sequences by putting them on flash cards.</li>
+<li>Use <tt class="docutils literal">'''</tt> (triple-single-quote) instead.  Can you see why you might use that instead of <tt class="docutils literal">&quot;&quot;&quot;</tt>?</li>
+<li>Combine escape sequences and format strings to create a more complex format.</li>
+</ol>
+</div>
+<div class="section" id="common-student-questions">
+<h1>Common Student Questions</h1>
+<dl class="docutils">
+<dt>I still haven't completely figured out the last exercise. Should I continue?</dt>
+<dd>Yes, keep going. Instead of stopping, take notes listing things you don't understand for each exercise.  Periodically go through your notes and see if you can figure these things out after you've completed more exercises.  Sometimes, though, you may need to go back a few exercises and do them again.</dd>
+<dt>What makes <tt class="docutils literal">\\</tt> special compared to the other ones?</dt>
+<dd>It's simply the way you would write out one backslash (<tt class="docutils literal">\</tt>) character.  Think about why you would need this.</dd>
+<dt>When I write <tt class="docutils literal">//</tt> or <tt class="docutils literal">/n</tt> it doesn't work.</dt>
+<dd>That's because you are using a forward-slash <tt class="docutils literal">/</tt> and not a backslash <tt class="docutils literal">\</tt>.  They are different characters that do very different things.</dd>
+<dt>I don't get Study Drill 3. What do you mean by &quot;combine&quot; escape sequences and formats?</dt>
+<dd>One concept I need you to understand is that each of these exercises can be combined to solve problems.  Take what you know about format strings and write some new code that uses format strings <em>and</em> the escape sequences from this exercise.</dd>
+<dt>What's better, <tt class="docutils literal">'''</tt> or <tt class="docutils literal">&quot;&quot;&quot;</tt>?</dt>
+<dd>It's entirely based on style.  Go with the <tt class="docutils literal">'''</tt> (triple-single-quote) style for now, but be ready to use either depending on what feels best or what everyone else is doing.</dd>
+</dl>
+</div>
+            <!-- RST ENDS -->
+        </div>
+    </div>
+
+      <div class="row center-xs" id="buy">
+    <div class="text-center col-xs-10 col-sm-5 col-md-4">
+      <h2 class="section-title__small">Pre-order 4th Edition, Get 3rd Edition!</h2>
+      <p>
+        When you pre-order LPTHW 4th Edition, you'll receive the 4th Edition (Python 3) as it's being created, as well as get a copy of the 3rd Edition (Python 2).
+        All files are DRM free and you can download them to your computer for offline viewing. <b>Digital Download Only!</b>
+      </p>
+
+      <p class="price-block">
+      <span class="currency"><span class="prefix">$</span>29.<span class="suffix">99</span></span>
+      </p>
+
+      <a href="https://shop.learncodethehardway.org/access/buy/2/" class="btn btn-primary btn-full">Buy Digital Download From Zed</a>
+      
+      <p class="text-left btn-subtext">
+        <small>Or, you can <a href="index.html">read Learn Python the Hard Way for free</a> right here, video lectures not included.</small>
+      </p>
+      
+    </div>
+    <div class="text-center col-xs-10 col-sm-5 col-md-4 col-sm-offset-1">
+      
+      <h2 class="section-title__small">Other Buying Options</h2>
+      <a href="http://bit.ly/amznlpthw" class="btn btn-secondary btn-full">Buy Kindle or Paper on Amazon</a>
+      <a href="http://bit.ly/informitlpthw" class="btn btn-secondary btn-full">Buy a hard copy from the Publisher</a>
+      <a href="http://bit.ly/bnlpthw" class="btn btn-secondary btn-full">Buy a hard copy from Barnes &amp; Noble</a>
+      
+    </div>
+  </div>
+
+  <div class="row center-xs" id="video_holder" style="display: none">
+      <div class="col-xs">
+          <div data-paydiv_product="2" id='paydiv'>
+            No content available for this exercise.  You can view all available downloads at <a href="https://shop.learncodethehardway.org/customers/">your customer account page</a>.
+       </div>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+    </main>
+
+  </div>
+
+  <div class="row dark bottom-nav">
+    <div class="col-xs text-left">
+      <a href="#" class="prev" id='prev_link'><i class="icon-arrow-67"></i> <i class="icon icon-arrow-left"></i> Previous <span class="hide-xs show-sm-inline">Lesson</span></a>
+    </div>
+    <div class="col-xs text-right"><a href="#" class="next" id='next_link'>Next <span class="hide-xs show-sm-inline">Lesson</span> <i class="icon icon-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+<footer class="footer">
+  <div class="row center-xs">
+
+  <div class="col-xs-11 col-sm-6 col-md-5 col-lg-5">
+    <ul class="nav nav-inline">
+      <li><h4><a href="../index.html">Home</a></h4></li>
+      <li><h4><a href="https://learncodethehardway.org/about/">About</a></h4></li>
+      <li><h4><a href="https://learncodethehardway.org/contact/">Contact</a></h4></li>
+    </ul>
+    <div class="copyright text-left">
+      <small class="text-muted">&copy; 2016 Zed A. Shaw</small>
+    </div>
+  </div>
+  <div class="col-xs-11 col-sm-4 col-md-4 col-lg-3">
+    <div class="social-media">
+      <div class="classy-container">
+        <a href="https://twitter.com/lzsthw" class="socicon-twitter"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</footer>
+<script src="../js/scripts.min.js"></script>
+
+<script src="javascripts/jquery.js"></script>
+<script src="index.js"></script>
+<script src="../../shop.learncodethehardway.org/static/jzed.js"></script>
+<script src="../../shop.learncodethehardway.org/static/js/videojs/video.js"></script>
+<link rel="stylesheet" href="../../shop.learncodethehardway.org/static/js/videojs/video-js.css">
+<script src="../../shop.learncodethehardway.org/static/api/v1/paydiv.js"></script>
+<script src="javascripts/app.js"></script>
+<script src="javascripts/littools.js"></script>
+<!-- Start of helpthw Zendesk Widget script -->
+<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("../../assets.zendesk.com/embeddable_framework/main.js","helpthw.zendesk.com");
+/*]]>*/</script>
+<!-- End of helpthw Zendesk Widget script -->
+
+</body>
+
+<!-- Mirrored from learnpythonthehardway.org/python3/ex10.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Apr 2017 18:10:47 GMT -->
+</html>
