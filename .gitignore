@@ -11,8 +11,6 @@ lib64
 *.pyc
 *.pyo
 .DS_Store
-**/data/*.csv
-**/data/*.db
-**/data/*.gz
+**/data/**
 .ipynb_checkpoints/
 
