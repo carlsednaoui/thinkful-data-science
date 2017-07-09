@@ -1,0 +1,596 @@
+<!doctype html>
+<html class="no-js">
+
+<!-- Mirrored from learnpythonthehardway.org/python3/ex46.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 01:13:35 GMT -->
+<head>
+
+
+
+<meta charset="utf-8">
+<title>Learn Python the Hard Way</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href='../../fonts.googleapis.com/css33ad.css?family=Source+Code+Pro|Source+Sans+Pro:200,400,700,200italic,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href="../css/style.min.css" rel="stylesheet">
+<!-- http://www.socicon.com -->
+<link href="../css/icons.css" rel="stylesheet">
+
+
+</head>
+
+<body class="baseline-grid-off book-site" id="top">
+
+
+
+
+<header class="header" role="banner">
+    <nav class="navbar navbar-full nav-brand-family">
+        <div class="row middle-xs">
+            <ul class="brand-links show-md col-xs-3 col-sm-10 bare">
+                <li><a href="https://learncodethehardway.org/" class="waves-effect">Learn:</a></li>
+
+                <li><a href="https://learncodethehardway.org/python/" class="waves-effect active">Python</a></li>
+
+                <li><a href="https://learncodethehardway.org/ruby/" class="waves-effect">Ruby</a></li>
+
+                <li><a href="https://learncodethehardway.org/more-python/" class="waves-effect">More Python</a></li>
+
+                <li><a href="https://learncodethehardway.org/c/" class="waves-effect">C</a></li>
+
+                <li><a href="https://learncodethehardway.org/sql/" class="waves-effect">SQL</a></li>
+
+                <li><a href="https://learncodethehardway.org/javascript/" class="waves-effect">Javascript</a></li>
+
+                <li><a href="https://learncodethehardway.org/unix/" class="waves-effect">Unix</a></li>
+
+                <li><a href="https://learncodethehardway.org/regex/" class="waves-effect">RegEx</a></li>
+
+                <li><a href="https://www.learndesignthehardway.com/" class="waves-effect">Design</a></li>
+
+            </ul>
+            <ul class="brand-links hide-md col-xs-3 col-sm-10 bare">
+                <li><a href="https://learncodethehardway.org/" class="waves-effect">LCTHW</a></li>
+            </ul>
+
+            <ul class="site-meta col-xs-9 col-sm-2 end-xs bare">
+                <li><a href="https://shop.learncodethehardway.org/access/reactivate/" class="waves-effect"><i class="icon icon-user"></i> Login</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-full nav-main" role="navigation">
+        <div class="row between-xs center-xs middle-xs bare">
+            <div class="col-xs-4 start-xs bare">
+                <a href="#" class="no-underline nav-trigger waves-effect" id="toc"><div class="transformer hamburcloser">
+                        <div class="bar bar-t"></div>
+                        <div class="bar bar-m-a"></div>
+                        <div class="bar bar-m-b"></div>
+                        <div class="bar bar-b"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Contents</span></a>
+            </div>
+            <div class="col-xs-4"><strong>&nbsp;</strong></div>
+            <div class="col-xs-4 end-xs bare">
+                <a href="https://helpthw.zendesk.com/hc/en-us" class="no-underline nav-trigger waves-effect" id="help"><div class="transformer questioncloser">
+                        <div class="icon-question-mark"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Help</span></a>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+
+
+
+<div class="wrapper">
+    <div class="masthead python-background" style="background-image: url('../images/pattern-python.svg')">
+        <img src="../images/logo-python.svg" alt="Learn Python The Hard Way" class="logo">
+    </div>
+
+    <aside class="sidebar sidebar-left" role="complementary">
+        <nav class="side-nav-container">
+            <ol class="table-of-contents">
+                <h3>Table of Contents</h3>
+                <li><a href="preface.html">Preface</a></li>
+                <li><a href="intro.html">The Hard Way Is Easier</a></li>
+                <li><a href="ex0.html">Ex0: The Setup</a></li>
+                <li><a href="ex1.html">Ex1: A Good First Program</a></li>
+                <li><a href="ex2.html">Ex2: Comments And Pound Characters</a></li>
+                <li><a href="ex3.html">Ex3: Numbers And Math</a></li>
+                <li><a href="ex4.html">Ex4: Variables And Names</a></li>
+                <li><a href="ex5.html">Ex5: More Variables And Printing</a></li>
+                <li><a href="ex6.html">Ex6: Strings And Text</a></li>
+                <li><a href="ex7.html">Ex7: More Printing</a></li>
+                <li><a href="ex8.html">Ex8: Printing, Printing</a></li>
+                <li><a href="ex9.html">Ex9: Printing, Printing, Printing</a></li>
+                <li><a href="ex10.html">Ex10: What Was That?</a></li>
+                <li><a href="ex11.html">Ex11: Asking Questions</a></li>
+                <li><a href="ex12.html">Ex12: Prompting People</a></li>
+                <li><a href="ex13.html">Ex13: Parameters, Unpacking, Variables</a></li>
+                <li><a href="ex14.html">Ex14: Prompting And Passing</a></li>
+                <li><a href="ex15.html">Ex15: Reading Files</a></li>
+                <li><a href="ex16.html">Ex16: Reading And Writing Files</a></li>
+                <li><a href="ex17.html">Ex17: More Files</a></li>
+                <li><a href="ex18.html">Ex18: Names, Variables, Code, Functions</a></li>
+                <li><a href="ex19.html">Ex19: Functions And Variables</a></li>
+                <li><a href="ex20.html">Ex20: Functions And Files</a></li>
+                <li><a href="ex21.html">Ex21: Functions Can Return Something</a></li>
+                <li><a href="ex22.html">Ex22: What Do You Know So Far?</a></li>
+                <li><a href="ex23.html">Ex23: Read Some Code</a></li>
+                <li><a href="ex24.html">Ex24: More Practice</a></li>
+                <li><a href="ex25.html">Ex25: Even More Practice</a></li>
+                <li><a href="ex26.html">Ex26: Congratulations, Take A Test!</a></li>
+                <li><a href="ex27.html">Ex27: Memorizing Logic</a></li>
+                <li><a href="ex28.html">Ex28: Boolean Practice</a></li>
+                <li><a href="ex29.html">Ex29: What If</a></li>
+                <li><a href="ex30.html">Ex30: Else And If</a></li>
+                <li><a href="ex31.html">Ex31: Making Decisions</a></li>
+                <li><a href="ex32.html">Ex32: Loops And Lists</a></li>
+                <li><a href="ex33.html">Ex33: While Loops</a></li>
+                <li><a href="ex34.html">Ex34: Accessing Elements Of Lists</a></li>
+                <li><a href="ex35.html">Ex35: Branches and Functions</a></li>
+                <li><a href="ex36.html">Ex36: Designing and Debugging</a></li>
+                <li><a href="ex37.html">Ex37: Symbol Review</a></li>
+                <li><a href="ex38.html">Ex38: Doing Things To Lists</a></li>
+                <li><a href="ex39.html">Ex39: Dictionaries, Oh Lovely Dictionaries</a></li>
+                <li><a href="ex40.html">Ex40: Modules, Classes, And Objects</a></li>
+                <li><a href="ex41.html">Ex41: Learning To Speak Object Oriented</a></li>
+                <li><a href="ex42.html">Ex42: Is-A, Has-A, Objects, and Classes</a></li>
+                <li><a href="ex43.html">Ex43: Gothons From Planet Percal #25</a></li>
+                <li><a href="ex44.html">Ex44: Inheritance Vs. Composition</a></li>
+                <li><a href="ex45.html">Ex45: You Make A Game</a></li>
+                <li><a href="ex46.html">Ex46: A Project Skeleton</a></li>
+                <li><a href="ex47.html">Ex47: Automated Testing</a></li>
+                <li><a href="ex48.html">Ex48: Advanced User Input</a></li>
+                <li><a href="ex49.html">Ex49: Making Sentences</a></li>
+                <li><a href="ex50.html">Ex50: Your First Website</a></li>
+                <li><a href="ex51.html">Ex51: Getting Input From A Browser</a></li>
+                <li><a href="ex52.html">Ex52: The Start Of Your Web Game</a></li>
+                <li><a href="advice.html">Advice From An Old Programmer</a></li>
+                <li><a href="next.html">Next Steps</a></li>
+                <li><a href="appendixa.html">Appendix A: Command Line Crash Course</a></li>
+            </ol>
+            <ul class="site-links">
+                <h3>Learn the Hard Way</h3>
+                <li><a href="#" class="waves-effect"><i class="icon-information"></i> About LPTHW</a></li>
+                <li><a href="#" class="waves-effect"><i class="icon-question-mark"></i> Help &amp; Support</a></li>
+                <li><a href="#" class="waves-effect"><i class="socicon-twitter"></i> Follow us on Twitter</a></li>
+            </ul>
+        </nav>
+        <div class="colophon text-center">
+            <div class="intro">
+                <p class="bare-bottom">
+                The type for this book is set in 18px / 1.5
+                <a href="https://www.google.com/fonts/specimen/Source+Serif+Pro">Adobe Serif</a>,
+                <a href="https://www.google.com/fonts/specimen/Source+Sans+Pro">Sans</a>, and
+                <a href="https://www.google.com/fonts/specimen/Source+Code+Pro">Code</a>.
+                </p>
+            </div>
+            <div class="printers-mark">
+                <div class="inscription">Docendo <i class="icon-repeat"></i> Discimus</div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="main python" role="main">
+    <div class="main-container row center-xs">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8">
+
+            <div class="content">
+
+                <!--- RST STARTS -->
+                <h1 class="title">Exercise 46: A Project Skeleton</h1>
+                <p>This will be where you start learning how to set up a good project &quot;skeleton&quot; directory.  This skeleton directory will have all the basics you need to get a new project up and running.  It will have your project layout, automated tests, modules, and install scripts.  When you go to make a new project, just copy this directory to a new name and edit the files to get started.</p>
+<div class="section" id="macos-linux-setup">
+<h1>macOS/Linux Setup</h1>
+<p>Before you can begin this exercise you need to install some software for Python by using a tool called <tt class="docutils literal">pip3.6</tt> (or just <tt class="docutils literal">pip</tt>) to install new modules.  The <tt class="docutils literal">pip3.6</tt> command should be included with your <tt class="docutils literal">python3.6</tt> installation.  You'll want to verify this using this command:</p>
+<pre class="literal-block">
+$ pip3.6 list
+pip (9.0.1)
+setuptools (28.8.0)
+$
+</pre>
+<p>You can ignore any deprecation warning if you see it.  You may also see other tools installed, but the base should be <tt class="docutils literal">pip</tt> and <tt class="docutils literal">setuptools</tt>.  Once you've verified this you can then install <tt class="docutils literal">virtualenv</tt>:</p>
+<pre class="literal-block">
+$ sudo pip3.6 install virtualenv
+Password:
+Collecting virtualenv
+  Downloading virtualenv-15.1.0-py2.py3-none-any.whl (1.8MB)
+    100% ||||||||||||||||||||||||||||||||| 1.8MB 1.1MB/s
+Installing collected packages: virtualenv
+Successfully installed virtualenv-15.1.0
+$
+</pre>
+<p>This is for Linux or macOS systems.  If you're on Linux/macOS, you'll want to run the following command to make sure you use the correct virtualenv:</p>
+<pre class="literal-block">
+$ whereis virtualenv
+/Library/Frameworks/Python.framework/Versions/3.6/bin/virtualenv
+</pre>
+<p>You should see something like the above on macOS, but Linux will be variable.  On Linux you might have an actual <tt class="docutils literal">virtualenv3.6</tt> command, or you may be better off installing a package for it from your package management system.</p>
+<p>Once you've installed <tt class="docutils literal">virtualenv</tt> you can use it to create a &quot;fake&quot; Python installation, which makes it easier to manage versions of your packages for different projects.  First, run this command, and I'll explain what it's doing:</p>
+<pre class="literal-block">
+$ mkdir ~/.venvs
+$ virtualenv --system-site-packages ~/.venvs/lpthw
+$ . ~/.venvs/lpthw/bin/activate
+(lpthw) $
+</pre>
+<p>Here's what's going on line-by-line:</p>
+<ol class="arabic simple">
+<li>You create a directory called <tt class="docutils literal">.venvs</tt> in your HOME <tt class="docutils literal">~/</tt> to store all your virtual environments.</li>
+<li>You run <tt class="docutils literal">virtualenv</tt> and tell it to include the system site packages (<tt class="docutils literal"><span class="pre">--system-site-packages</span></tt>), then instruct it to build the virtualenv in <tt class="docutils literal"><span class="pre">~/.venvs/lpthw</span></tt>.</li>
+<li>You then &quot;source&quot; the <tt class="docutils literal">lpthw</tt> virtual environment by using the <tt class="docutils literal">.</tt> operator in <tt class="docutils literal">bash</tt>, followed by the <tt class="docutils literal"><span class="pre">~/.venvs/lpthw/bin/activate</span></tt> script.</li>
+<li>Finally, your prompt changes to include <tt class="docutils literal">(lpthw)</tt>, so you know that you're using that virtual environment.</li>
+</ol>
+<p>Now you can see where things are installed:</p>
+<pre class="literal-block">
+(lpthw) $ which python
+/Users/zedshaw/.venvs/lpthw/bin/python
+(lpthw) $ python
+Python 3.6.0rc2 (v3.6.0rc2:800a67f7806d, Dec 16 2016, 14:12:21)
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; quit()
+(lpthw) $
+</pre>
+<p>You can see that the <tt class="docutils literal">python</tt> that gets run is installed in the <tt class="docutils literal"><span class="pre">/Users/zedshaw/.venvs/lpthw/bin/python</span></tt> directory instead of the original location.  This also solves the problem of having to type <tt class="docutils literal">python3.6</tt> since it installs both:</p>
+<pre class="literal-block">
+$ which python3.6
+/Users/zedshaw/.venvs/lpthw/bin/python3.6
+(lpthw) $
+</pre>
+<p>You'll find the same thing for <tt class="docutils literal">virtualenv</tt> and <tt class="docutils literal">pip</tt> commands.  The final step in this setup is to install <tt class="docutils literal">nose</tt>, a testing framework we'll use in this exercise:</p>
+<pre class="literal-block">
+$ pip install nose
+Collecting nose
+  Downloading nose-1.3.7-py3-none-any.whl (154kB)
+    100% |¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦| 163kB 3.2MB/s
+Installing collected packages: nose
+Successfully installed nose-1.3.7
+(lpthw) $
+</pre>
+</div>
+<div class="section" id="windows-10-setup">
+<h1>Windows 10 Setup</h1>
+<p>The Windows 10 install is a little simpler than on Linux or macOS, but only if you have <em>one</em> version of Python installed.  If you have both Python 3.6 and Python 2.7 installed then you are on your own as it is much too difficult to manage multiple installations.  If you have followed the book so far and have only Python 3.6, then here's what you do.  First, change to your home directory and confirm you're running the right version of <tt class="docutils literal">python</tt>:</p>
+<pre class="literal-block">
+&gt; cd ~
+&gt; python
+Python 3.6.0 (v3.6.0:41df79263a11, Dec 23 2016, 08:06:12)
+    [MSC v.1900 64 bit (AMD64)] on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; quit()
+</pre>
+<p>Then you'll want to run <tt class="docutils literal">pip</tt> to confirm you have a basic install:</p>
+<pre class="literal-block">
+&gt; pip list
+pip (9.0.1)
+setuptools (28.8.0)
+</pre>
+<p>You can safely ignore any deprecation warning, and it's alright if you have other packages installed.  Next, you'll install <tt class="docutils literal">virtualenv</tt> for setting up simple virtual environments for the rest of the book:</p>
+<pre class="literal-block">
+&gt; pip install virtualenv
+Collecting virtualenv
+  Using cached virtualenv-15.1.0-py2.py3-none-any.whl
+Installing collected packages: virtualenv
+Successfully installed virtualenv-15.1.0
+</pre>
+<p>Once you have <tt class="docutils literal">virtualenv</tt> installed you'll need to make a <tt class="docutils literal">.venvs</tt> directory and fill it with a virtual environment:</p>
+<pre class="literal-block">
+&gt; mkdir .venvs
+&gt; virtualenv --system-site-packages .venvs/lpthw
+Using base prefix
+    'c:\\users\\zedsh\\appdata\\local\\programs\\python\\python36'
+New python executable in
+    C:\Users\zedshaw\.venvs\lpthw\Scripts\python.exe
+Installing setuptools, pip, wheel...done.
+</pre>
+<p>Those two commands create a <tt class="docutils literal">.venvs</tt> folder for storing different virtual environments and then create your first one named <tt class="docutils literal">lpthw</tt>.  A virtual environment (virtualenv) is a &quot;fake&quot; place to install software so that you can have different versions of different packages for each project you're working on.  Once you have the virtualenv set up you need to activate it:</p>
+<pre class="literal-block">
+&gt; .\.venvs\lpthw\Scripts\activate
+</pre>
+<p>That will run the <tt class="docutils literal">activate</tt> script for PowerShell, which configures the <tt class="docutils literal">lpthw</tt> virtualenv for your current shell.  Every time you want to use your software for the book you'll run this command.  You'll notice in our next command that there is now a <tt class="docutils literal">(lpthw)</tt> added to the PowerShell prompt showing you which virtualenv you're using.  Finally, you just need to install <tt class="docutils literal">nose</tt> for running tests later:</p>
+<pre class="literal-block">
+(lpthw) &gt; pip install nose
+Collecting nose
+  Downloading nose-1.3.7-py3-none-any.whl (154kB)
+    100% |¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦| 163kB 1.2MB/s
+Installing collected packages: nose
+Successfully installed nose-1.3.7
+(lpthw) &gt;
+</pre>
+<p>You'll see that this installs <tt class="docutils literal">nose</tt>, except <tt class="docutils literal">pip</tt> will install it into your <tt class="docutils literal">.venvs\lpthw</tt> virtual environment instead of the main system packages directory.  This lets you install conflicting versions of Python packages for each project you work on without infecting your main system configuration.</p>
+</div>
+<div class="section" id="creating-the-skeleton-project-directory">
+<h1>Creating the Skeleton Project Directory</h1>
+<p>First, create the structure of your skeleton directory with these commands:</p>
+<pre class="code console literal-block">
+<span class="generic prompt">$</span> mkdir projects
+<span class="generic prompt">$</span> <span class="name builtin">cd</span> projects/
+<span class="generic prompt">$</span> mkdir skeleton
+<span class="generic prompt">$</span> <span class="name builtin">cd</span> skeleton
+<span class="generic prompt">$</span> mkdir bin NAME tests docs
+</pre>
+<p>I use a directory named <tt class="docutils literal">projects</tt> to store all the various things I'm working on.  Inside that directory I have my <tt class="docutils literal">skeleton</tt> directory that I put the basis of my projects into.  The directory <tt class="docutils literal">NAME</tt> will be renamed to whatever you are calling your project's main module when you use the skeleton.</p>
+<p>Next, we need to set up some initial files. Here's how you do that on Linux/macOS:</p>
+<pre class="code console literal-block">
+<span class="generic prompt">$</span> touch NAME/__init__.py
+<span class="generic prompt">$</span> touch tests/__init__.py
+</pre>
+<p>Here's the same thing on Windows PowerShell:</p>
+<pre class="code console literal-block">
+<span class="generic prompt">$</span> new-item -type file NAME/__init__.py
+<span class="generic prompt">$</span> new-item -type file tests/__init__.py
+</pre>
+<p>That creates an empty Python module directory we can put our code in.  Then we need to create a <tt class="docutils literal">setup.py</tt> file we can use to install our project later if we want:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><a name="python--skeleton--setup.py-idio.html-1"></a><span class="k">try</span><span class="p">:</span>
+<a name="python--skeleton--setup.py-idio.html-2"></a>    <span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+<a name="python--skeleton--setup.py-idio.html-3"></a><span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+<a name="python--skeleton--setup.py-idio.html-4"></a>    <span class="kn">from</span> <span class="nn">distutils.core</span> <span class="kn">import</span> <span class="n">setup</span>
+<a name="python--skeleton--setup.py-idio.html-5"></a>
+<a name="python--skeleton--setup.py-idio.html-6"></a><span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+<a name="python--skeleton--setup.py-idio.html-7"></a>    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s1">&#39;My Project&#39;</span><span class="p">,</span>
+<a name="python--skeleton--setup.py-idio.html-8"></a>    <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="s1">&#39;My Name&#39;</span><span class="p">,</span>
+<a name="python--skeleton--setup.py-idio.html-9"></a>    <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;URL to get it at.&#39;</span><span class="p">,</span>
+<a name="python--skeleton--setup.py-idio.html-10"></a>    <span class="s1">&#39;download_url&#39;</span><span class="p">:</span> <span class="s1">&#39;Where to download it.&#39;</span><span class="p">,</span>
+<a name="python--skeleton--setup.py-idio.html-11"></a>    <span class="s1">&#39;author_email&#39;</span><span class="p">:</span> <span class="s1">&#39;My email.&#39;</span><span class="p">,</span>
+<a name="python--skeleton--setup.py-idio.html-12"></a>    <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;0.1&#39;</span><span class="p">,</span>
+<a name="python--skeleton--setup.py-idio.html-13"></a>    <span class="s1">&#39;install_requires&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;nose&#39;</span><span class="p">],</span>
+<a name="python--skeleton--setup.py-idio.html-14"></a>    <span class="s1">&#39;packages&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;NAME&#39;</span><span class="p">],</span>
+<a name="python--skeleton--setup.py-idio.html-15"></a>    <span class="s1">&#39;scripts&#39;</span><span class="p">:</span> <span class="p">[],</span>
+<a name="python--skeleton--setup.py-idio.html-16"></a>    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;projectname&#39;</span>
+<a name="python--skeleton--setup.py-idio.html-17"></a><span class="p">}</span>
+<a name="python--skeleton--setup.py-idio.html-18"></a>
+<a name="python--skeleton--setup.py-idio.html-19"></a><span class="n">setup</span><span class="p">(</span><span class="o">**</span><span class="n">config</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><p>Edit this file so that it has your contact information and is ready to go for when you copy it.</p>
+<p>Finally, you will want a simple skeleton file for tests named <tt class="docutils literal">tests/NAME_tests.py</tt>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><a name="python--skeleton--tests--NAME_tests.py-idio.html-1"></a><span class="kn">from</span> <span class="nn">nose.tools</span> <span class="kn">import</span> <span class="o">*</span>
+<a name="python--skeleton--tests--NAME_tests.py-idio.html-2"></a><span class="kn">import</span> <span class="nn">NAME</span>
+<a name="python--skeleton--tests--NAME_tests.py-idio.html-3"></a>
+<a name="python--skeleton--tests--NAME_tests.py-idio.html-4"></a><span class="k">def</span> <span class="nf">setup</span><span class="p">():</span>
+<a name="python--skeleton--tests--NAME_tests.py-idio.html-5"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;SETUP!&quot;</span><span class="p">)</span>
+<a name="python--skeleton--tests--NAME_tests.py-idio.html-6"></a>
+<a name="python--skeleton--tests--NAME_tests.py-idio.html-7"></a><span class="k">def</span> <span class="nf">teardown</span><span class="p">():</span>
+<a name="python--skeleton--tests--NAME_tests.py-idio.html-8"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;TEAR DOWN!&quot;</span><span class="p">)</span>
+<a name="python--skeleton--tests--NAME_tests.py-idio.html-9"></a>
+<a name="python--skeleton--tests--NAME_tests.py-idio.html-10"></a><span class="k">def</span> <span class="nf">test_basic</span><span class="p">():</span>
+<a name="python--skeleton--tests--NAME_tests.py-idio.html-11"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;I RAN!&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><div class="section" id="final-directory-structure">
+<h2>Final Directory Structure</h2>
+<p>When you are done setting all of this up, your directory should look like mine here:</p>
+<pre class="code console literal-block">
+<span class="generic output">skeleton/
+     NAME/
+         __init__.py
+     bin/
+     docs/
+     setup.py
+     tests/
+         NAME_tests.py
+         __init__.py</span>
+</pre>
+<p>And from now on, you should run your commands from this directory.  If you can't, do <tt class="docutils literal">ls <span class="pre">-R</span></tt> and if you don't see this same structure, then you are in the wrong place.  For example, people commonly go into the <tt class="docutils literal">tests/</tt> directory to try to run files there, which won't work.  To run your application's tests, you would need to be <em>above</em> <tt class="docutils literal">tests/</tt> and this location I have above.  So, if you try this:</p>
+<pre class="code console literal-block">
+<span class="generic prompt">$</span> <span class="name builtin">cd</span> tests/   <span class="comment single"># WRONG! WRONG! WRONG!
+</span><span class="generic prompt">$</span><span class="comment single"></span> nosetests
+<span class="generic output">
+---------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK</span>
+</pre>
+<p>Then that is <em>wrong</em>!  You have to be above tests, so assuming you made this mistake, you would fix it by doing this:</p>
+<pre class="code console literal-block">
+<span class="generic prompt">$</span> <span class="name builtin">cd</span> ..   <span class="comment single"># get out of tests/
+</span><span class="generic prompt">$</span><span class="comment single"></span> ls      <span class="comment single"># CORRECT! you are now in the right spot
+</span><span class="generic output">NAME                bin             docs            setup.py        tests
+</span><span class="generic prompt">$</span> nosetests
+<span class="generic output">.
+----------------------------------------------------------
+Ran 1 test in 0.004s
+
+OK</span>
+</pre>
+<p>Remember this because people make this mistake quite frequently.</p>
+<div class="warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">At the time of publication I learned that the <tt class="docutils literal">nose</tt> project has been abandoned and might not work well.  If you have strange syntax errors when you run <tt class="docutils literal">nosetests</tt> then look at the error output.  If it references &quot;python2.7&quot; in the output, then chances are <tt class="docutils literal">nosetests</tt> is trying to run the 2.7 version of Python on your computer.  The solution is to run nose using <tt class="docutils literal">python3.6 <span class="pre">-m</span> &quot;nose&quot;</tt> on Linux or OSX.  On Windows you may not have this problem, but using <tt class="docutils literal">python <span class="pre">-m</span> &quot;nose&quot;</tt> will solve it if you do.</p>
+</div>
+</div>
+</div>
+<div class="section" id="testing-your-setup">
+<h1>Testing Your Setup</h1>
+<p>After you get all that installed you should be able to do this:</p>
+<pre class="code console literal-block">
+<span class="generic prompt">$</span> nosetests
+<span class="generic output">.
+----------------------------------------------------------
+Ran 1 test in 0.007s
+
+OK</span>
+</pre>
+<p>I'll explain what this <tt class="docutils literal">nosetests</tt> thing is doing in the next exercise, but for now if you do not see that, you probably got something wrong.  Make sure you put <tt class="docutils literal">__init__.py</tt> files in your <tt class="docutils literal">NAME</tt> and <tt class="docutils literal">tests</tt> directories, and make sure you got <tt class="docutils literal">tests/NAME_tests.py</tt> right.</p>
+</div>
+<div class="section" id="using-the-skeleton">
+<h1>Using the Skeleton</h1>
+<p>You are now done with most of your yak shaving.  Whenever you want to start a new project, just do this:</p>
+<ol class="arabic simple">
+<li>Make a copy of your skeleton directory.  Name it after your new project.</li>
+<li>Rename (move) the <tt class="docutils literal">NAME</tt> directory to be the name of your project or whatever you want to call your root module.</li>
+<li>Edit your <tt class="docutils literal">setup.py</tt> to have all the information for your project.</li>
+<li>Rename <tt class="docutils literal">tests/NAME_tests.py</tt> to also have your module name.</li>
+<li>Double check it's all working by using <tt class="docutils literal">nosetests</tt> again.</li>
+<li>Start coding.</li>
+</ol>
+</div>
+<div class="section" id="required-quiz">
+<h1>Required Quiz</h1>
+<p>This exercise doesn't have Study Drills but a quiz you should complete:</p>
+<ol class="arabic simple">
+<li>Read about how to use all of the things you installed.</li>
+<li>Read about the <tt class="docutils literal">setup.py</tt> file and all it has to offer.  Warning: it is not a very well-written piece of software, so it will be very strange to use.</li>
+<li>Make a project and start putting code into the module, then get the module working.</li>
+<li>Put a script in the <tt class="docutils literal">bin</tt> directory that you can run.  Read about how you can make a Python script that's runnable for your system.</li>
+<li>Mention the <tt class="docutils literal">bin</tt> script you created in your <tt class="docutils literal">setup.py</tt> so that it gets installed.</li>
+<li>Use your <tt class="docutils literal">setup.py</tt> to install your own module and make sure it works, then use
+<tt class="docutils literal">pip</tt> to uninstall it.</li>
+</ol>
+</div>
+<div class="section" id="common-student-questions">
+<h1>Common Student Questions</h1>
+<dl class="docutils">
+<dt>Do these instructions work on Windows?</dt>
+<dd>They should, but depending on the version of Windows you may need to struggle with the setup a bit to get it working.  Just keep researching and trying it until you get it, or see if you can ask a more experienced Python+Windows friend to help out.</dd>
+<dt>What do I put in the config dictionary in my <tt class="docutils literal">setup.py</tt>?</dt>
+<dd>Make sure you read the documentation for distutils at <a class="reference external" href="http://docs.python.org/distutils/setupscript.html">http://docs.python.org/distutils/setupscript.html</a>.</dd>
+<dt>I can't seem to load the <tt class="docutils literal">NAME</tt> module and just get an ImportError.</dt>
+<dd>Make sure you made the <tt class="docutils literal">NAME/__init__.py</tt> file.  If you're on Windows, make sure you didn't accidentally name it <tt class="docutils literal">NAME/__init__.py.txt</tt>, which happens by default with some editors.</dd>
+<dt>Why do we need a <tt class="docutils literal">bin/</tt> folder at all?</dt>
+<dd>This is just a standard place to put scripts that are run on the command line, not a place to put modules.</dd>
+<dt>My <tt class="docutils literal">nosetests</tt> run only shows one test being run. Is that right?</dt>
+<dd>Yes, that's what my output shows too.</dd>
+</dl>
+</div>
+                <!-- RST ENDS -->
+            </div>
+        </div>
+
+        <div class="row center-xs" id="buy">
+            <div class="text-center col-xs-10 col-sm-5 col-md-4">
+                <h2 class="section-title__small">Buy The Python 3 Edition!</h2>
+                <p>
+                When you buy  Learn Python 3 The Hard Way, you'll receive the Python 3 Edition PDF, special access to a paid HTML version, and <b>12 hours</b> of 1080p video, one video for each exercise.
+                All files are DRM free and you can download them to your computer for offline viewing. <b>Digital Download Only!  You do not get a physical book.</b>
+                </p>
+
+                <p class="price-block">
+                <span class="currency"><span class="prefix">$</span>29.<span class="suffix">99</span></span>
+                </p>
+
+                <a href="https://shop.learncodethehardway.org/access/buy/9/" class="btn btn-primary btn-full">Buy Digital Download From Zed</a>
+
+                <p class="text-left btn-subtext">
+                <small>Or, you can <a href="index.html">read Learn Python the Hard Way for free</a> right here, video lectures not included.</small>
+                </p>
+
+            </div>
+            <div class="text-center col-xs-10 col-sm-5 col-md-4 col-sm-offset-1">
+
+                <h2 class="section-title__small">Other Buying Options</h2>
+                  <a href="http://amzn.to/2sSzwCY" class="btn btn-secondary btn-full">Buy on Amazon</a>
+                  <a href="http://bit.ly/informitlpy3thw" class="btn btn-secondary btn-full">Paper + Digital from InformIT</a>
+                  <a href="http://bit.ly/bnlpy3thw" class="btn btn-secondary btn-full">Buy from Barnes &amp; Noble</a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row center-xs" id="video_holder" style="display: none">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8">
+            <div data-paydiv_product="9" id='paydiv'>
+                No content available for this exercise.  You can view all available downloads at <a href="https://shop.learncodethehardway.org/customers/">your customer account page</a>.
+            </div>
+        </div>
+    </div>
+
+    </main>
+
+</div>
+
+<div class="row dark bottom-nav">
+    <div class="col-xs text-left">
+        <a href="#" class="prev" id='prev_link'><i class="icon-arrow-67"></i> <i class="icon icon-arrow-left"></i> Previous <span class="hide-xs show-sm-inline">Lesson</span></a>
+    </div>
+    <div class="col-xs text-right"><a href="#" class="next" id='next_link'>Next <span class="hide-xs show-sm-inline">Lesson</span> <i class="icon icon-arrow-right"></i></a>
+    </div>
+</div>
+  </div>
+
+<footer class="footer">
+<div class="row center-xs">
+
+    <div class="col-xs-11 col-sm-6 col-md-5 col-lg-5">
+        <ul class="nav nav-inline">
+            <li><h4><a href="../index.html">Home</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/about/">About</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/contact/">Contact</a></h4></li>
+        </ul>
+        <div class="copyright text-left">
+            <small class="text-muted">&copy; Zed A. Shaw. All rights reserved.</small>
+        </div>
+    </div>
+    <div class="col-xs-11 col-sm-4 col-md-4 col-lg-3">
+        <div class="social-media">
+            <div class="classy-container">
+                <a href="https://twitter.com/lzsthw" class="socicon-twitter"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</footer>
+<script src="../js/scripts.min.js"></script>
+
+<script src="javascripts/jquery.js"></script>
+<script src="index.js"></script>
+<script src="../../shop.learncodethehardway.org/static/jzed.js"></script>
+<script src="../../shop.learncodethehardway.org/static/js/videojs/video.js"></script>
+<link rel="stylesheet" href="../../shop.learncodethehardway.org/static/js/videojs/video-js.css">
+<script src="../../shop.learncodethehardway.org/static/api/v1/paydiv.js"></script>
+<script src="javascripts/app.js"></script>
+<script src="javascripts/littools.js"></script>
+<!-- Start of helpthw Zendesk Widget script -->
+<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("../../assets.zendesk.com/embeddable_framework/main.js","helpthw.zendesk.com");
+/*]]>*/</script>
+<!-- End of helpthw Zendesk Widget script -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-24168052-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+</body>
+
+<!-- Mirrored from learnpythonthehardway.org/python3/ex46.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 01:13:35 GMT -->
+</html>

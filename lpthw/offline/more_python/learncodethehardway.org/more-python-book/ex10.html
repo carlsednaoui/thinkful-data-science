@@ -1,0 +1,347 @@
+<!doctype html>
+<html class="no-js">
+
+<!-- Mirrored from learncodethehardway.org/more-python-book/ex10.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 15:17:43 GMT -->
+<head>
+
+
+
+<meta charset="utf-8">
+<title>Learn MORE Python the Hard Way</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="../../www.google-analytics.com/index.html" rel="dns-prefetch">
+<link href="../../ajax.googleapis.com/index.html" rel="dns-prefetch">
+
+<link href='../../fonts.googleapis.com/css33ad.css?family=Source+Code+Pro|Source+Sans+Pro:200,400,700,200italic,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href="../css/style.min.css" rel="stylesheet">
+<!-- http://www.socicon.com -->
+<link href="../css/icons.css" rel="stylesheet">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<title>Exercise 10: sort</title>
+
+</head>
+
+<body class="baseline-grid-off book-site" id="top">
+
+
+
+
+<header class="header" role="banner">
+    <nav class="navbar navbar-full nav-brand-family">
+        <div class="row middle-xs">
+            <ul class="brand-links show-md col-xs-3 col-sm-10 bare">
+                <li><a href="http://learncodethehardway.org/" class="waves-effect">Learn:</a></li>
+
+                <li><a href="http://learncodethehardway.org/python/" class="waves-effect">Python</a></li>
+
+                <li><a href="http://learncodethehardway.org/ruby/" class="waves-effect">Ruby</a></li>
+
+                <li><a href="http://learncodethehardway.org/more-python/" class="waves-effect active">More Python</a></li>
+
+                <li><a href="http://learncodethehardway.org/c/" class="waves-effect">C</a></li>
+
+                <li><a href="http://learncodethehardway.org/sql/" class="waves-effect">SQL</a></li>
+
+                <li><a href="http://learncodethehardway.org/javascript/" class="waves-effect">Javascript</a></li>
+
+                <li><a href="http://learncodethehardway.org/unix/" class="waves-effect">Unix</a></li>
+
+                <li><a href="http://learncodethehardway.org/regex/" class="waves-effect">RegEx</a></li>
+
+                <li><a href="http://www.learndesignthehardway.com/" class="waves-effect">Design</a></li>
+
+            </ul>
+            <ul class="brand-links hide-md col-xs-3 col-sm-10 bare">
+                <li><a href="http://learncodethehardway.org/" class="waves-effect">LCTHW</a></li>
+            </ul>
+
+            <ul class="site-meta col-xs-9 col-sm-2 end-xs bare">
+                <li><a href="https://shop.learncodethehardway.org/access/reactivate/" class="waves-effect"><i class="icon icon-user"></i> Account</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-full nav-main" role="navigation">
+        <div class="row between-xs center-xs middle-xs bare">
+            <div class="col-xs-4 start-xs bare">
+                <a href="#" class="no-underline nav-trigger waves-effect" id="toc"><div class="transformer hamburcloser">
+                        <div class="bar bar-t"></div>
+                        <div class="bar bar-m-a"></div>
+                        <div class="bar bar-m-b"></div>
+                        <div class="bar bar-b"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Contents</span></a>
+            </div>
+            <div class="col-xs-4"><strong>&nbsp;</strong></div>
+            <div class="col-xs-4 end-xs bare">
+                <a href="https://helpthw.zendesk.com/hc/en-us" class="no-underline nav-trigger waves-effect" id="help"><div class="transformer questioncloser">
+                        <div class="icon-question-mark"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Help</span></a>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+
+
+
+<div class="wrapper">
+    <div class="masthead more-python-background" style="background-image: url('../images/pattern-more-python.svg')">
+        <img src="../images/logo-more-python.svg" alt="Learn MORE Python The Hard Way" class="logo">
+    </div>
+
+    <aside class="sidebar sidebar-left" role="complementary">
+        <nav class="side-nav-container">
+            <ol class="table-of-contents">
+                <h3>Table of Contents</h3>
+                <li><a class="reference external" href="part0.html">I: Initial Knowledge</a></li>
+                <li><a class="reference external" href="ex0.html">0 The Setup</a></li>
+                <li><a class="reference external" href="ex1.html">1 On Process</a></li>
+                <li><a class="reference external" href="ex2.html">2 On Creativity</a></li>
+                <li><a class="reference external" href="ex3.html">3 On Quality</a></li>
+                <li><a class="reference external" href="part1.html">II: Quick Hacks</a></li>
+                <li><a class="reference external" href="ex4.html">4 Dealing With Command Line Arguments</a></li>
+                <li><a class="reference external" href="ex5.html">5 cat</a></li>
+                <li><a class="reference external" href="ex6.html">6 find</a></li>
+                <li><a class="reference external" href="ex7.html">7 grep</a></li>
+                <li><a class="reference external" href="ex8.html">8 cut</a></li>
+                <li><a class="reference external" href="ex9.html">9 sed</a></li>
+                <li><a class="reference external" href="ex10.html">10 sort</a></li>
+                <li><a class="reference external" href="ex11.html">11 uniq</a></li>
+                <li><a class="reference external" href="ex12.html">12 Review</a></li>
+                <li><a class="reference external" href="part2.html">III: Data Structures</a></li>
+                <li><a class="reference external" href="ex13.html">13 Single Linked Lists</a></li>
+                <li><a class="reference external" href="ex14.html">14 Double Linked Lists</a></li>
+                <li><a class="reference external" href="ex15.html">15 Stacks and Queues</a></li>
+                <li><a class="reference external" href="ex16.html">16 Bubble, Quick, Merge Sort</a></li>
+                <li><a class="reference external" href="ex17.html">17 Dictionary</a></li>
+                <li><a class="reference external" href="ex18.html">18 Measuring Performance</a></li>
+                <li><a class="reference external" href="ex19.html">19 Improving Performance</a></li>
+                <li><a class="reference external" href="ex21.html">21 Binary Search Trees</a></li>
+                <li><a class="reference external" href="ex22.html">22 Binary Search</a></li>
+                <li><a class="reference external" href="en23.html">23 Ternary Search</a></li>
+                <li><a class="reference external" href="ex24.html">24 Suffix Arrays</a></li>
+                <li><a class="reference external" href="part3.html">IV: Intermediate Projects</a></li>
+                <li><a class="reference external" href="ex25.html">25 xargs</a></li>
+                <li><a class="reference external" href="ex26.html">26 hexdump</a></li>
+                <li><a class="reference external" href="ex27.html">27 tr</a></li>
+                <li><a class="reference external" href="ex28.html">28 sh</a></li>
+                <li><a class="reference external" href="ex29.html">29 diff and patch</a></li>
+                <li><a class="reference external" href="part4.html">V: Parsing Text</a></li>
+                <li><a class="reference external" href="ex30.html">30 Finite State Machines</a></li>
+                <li><a class="reference external" href="ex31.html">31 Regular Expressions</a></li>
+                <li><a class="reference external" href="ex32.html">32 Scanners</a></li>
+                <li><a class="reference external" href="ex33.html">33 Parsers</a></li>
+                <li><a class="reference external" href="ex34.html">34 Analyzers</a></li>
+                <li><a class="reference external" href="ex35.html">35 Interpreters</a></li>
+                <li><a class="reference external" href="ex36.html">36 Simple Calculator </a></li>
+                <li><a class="reference external" href="ex37.html">37 Little BASIC</a></li>
+                <li><a class="reference external" href="part5.html">VI: SQL Databases</a></li>
+                <li><a class="reference external" href="ex38.html">38 Introduction to SQL</a></li>
+                <li><a class="reference external" href="ex39.html">39 Creating with SQL</a></li>
+                <li><a class="reference external" href="ex40.html">40 Reading with SQL</a></li>
+                <li><a class="reference external" href="ex41.html">41 Updating with SQL</a></li>
+                <li><a class="reference external" href="ex42.html">42 Deleting with SQL</a></li>
+                <li><a class="reference external" href="ex43.html">43 SQL Administration</a></li>
+                <li><a class="reference external" href="ex44.html">44 Using Python Database API</a></li>
+                <li><a class="reference external" href="ex45.html">45 Creating an ORM</a></li>
+                <li><a class="reference external" href="part6.html">VII: Final Projects</a></li>
+                <li><a class="reference external" href="ex46.html">46 blog</a></li>
+                <li><a class="reference external" href="ex47.html">47 bc</a></li>
+                <li><a class="reference external" href="ex48.html">48 ed</a></li>
+                <li><a class="reference external" href="ex49.html">49 sed</a></li>
+                <li><a class="reference external" href="ex50.html">50 vi</a></li>
+                <li><a class="reference external" href="ex51.html">51 lessweb</a></li>
+                <li><a class="reference external" href="ex52.html">52 moreweb</a></li>
+            </ol>
+            <ul class="site-links">
+                <h3>Learn the Hard Way</h3>
+                <li><a href="#" class="waves-effect"><i class="icon-information"></i> About LPTHW</a></li>
+                <li><a href="#" class="waves-effect"><i class="icon-question-mark"></i> Help &amp; Support</a></li>
+                <li><a href="#" class="waves-effect"><i class="socicon-twitter"></i> Follow us on Twitter</a></li>
+            </ul>
+        </nav>
+        <div class="colophon text-center">
+            <div class="intro">
+                <p class="bare-bottom">
+                The type for this book is set in 18px / 1.5
+                <a href="https://www.google.com/fonts/specimen/Source+Serif+Pro">Adobe Serif</a>,
+                <a href="https://www.google.com/fonts/specimen/Source+Sans+Pro">Sans</a>, and
+                <a href="https://www.google.com/fonts/specimen/Source+Code+Pro">Code</a>.
+                </p>
+            </div>
+            <div class="printers-mark">
+                <div class="inscription">Docendo <i class="icon-repeat"></i> Discimus</div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="main more python" role="main">
+    <div class="main-container row center-xs">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8">
+
+            <div class="content">
+                <div class="warning">
+                    <p class="first admonition-title">Warning</p>
+                    <p class="last">This book is new.  If you'd like to go through it, then join the <a class="reference external" href="https://gitter.im/lcthw/more-python-help">Gitter Chat</a> to get help while you attempt it.  I'm also looking for feedback on the difficulty of the projects.  If you don't like chat, then email <a class="reference external" href="mailto:help&#64;learncodethehardway.org">help&#64;learncodethehardway.org</a> to talk privately.</p>
+                </div>
+                <!--- RST STARTS -->
+                <h1 class="title">Exercise 10: sort</h1>
+                <p>You are slowly building up what I call a Personal Process Practice (3P), which isn't a new idea at all.  The purpose of your 3P is to gain objective insight into how you do things without killing your creativity and productivity.  By simply tracking little metrics and making run charts to guide improvements you can drastically change how well you work.  The risk though is that this will prevent you from hacking quickly or getting things done or that your 3P will become more work than your real work.</p>
+<p>I did this for about four years of my programming career and it worked great to teach me about myself and how I work.  It also cut through many of the lies that process advocates push.  I had a simple way to actually test if some pundit's views on programming improved my personal productivity.  I would say the only mistake I made was taking it much too seriously and killing my creativity for those four years.</p>
+<p>This is why you're building an idea of your starting process and work environment in small quick hacks.  You don't have time to collect complicated metrics and worry about exactly how you do things when there's only 45 minutes to get something done.  Later we'll focus on practices that require concentration, and you'll spend more time and gather slightly better metrics.  As you work try not to let the metrics kill your creativity, flow, or well-being.  If you hate collecting something, then don't do it.  Find a way to automate it, or come up with another metric.</p>
+<p>For this exercise you are making a run chart of your percentage of features completed.  This means before you work you'll have to enumerate all the features you can find in the standard man pages for the <tt class="docutils literal">sort</tt> command, then mark how many you completed.  Remember to sort them so that you can get enough done such that the tool actually works in some way.  Getting a 90% score on a tool that doesn't actually sort text means you actually completed 0%.</p>
+<p>When you are done you should make the run chart of your feature percentage completed for each project so we can analyze it in the next exercise.</p>
+<div class="section" id="exercise-challenge">
+<h1>Exercise Challenge</h1>
+<p>In this exercise you are implementing the <tt class="docutils literal">sort</tt> command, which is a very simple command.  It takes lines of text and simply sorts them in order.  It does have quite a few options that are interesting, so you should read the <tt class="docutils literal">man sort</tt> page to find out what it can do.  Most of the time people just use <tt class="docutils literal">sort</tt> to sort lists of names in order:</p>
+<pre class="literal-block">
+ls | sort
+</pre>
+<p>You can also reverse the sort:</p>
+<pre class="literal-block">
+ls | sort -r
+</pre>
+<p>And you can control how it sorts, such as ignoring case:</p>
+<pre class="literal-block">
+ls | sort -f
+</pre>
+<p>Or, you can even do sorting numerically instead:</p>
+<pre class="literal-block">
+ls | sort -g
+</pre>
+<p>This might not really do much to the <tt class="docutils literal">ls</tt> output unless it's all numbers.</p>
+<p>Your job is to implement as many of these features as you can and keep track of each feature you complete.  This should all be in your lab notes so you can analyze it later.</p>
+</div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<ol class="arabic simple">
+<li>Are you at a point now where you've run out of things to improve?  Try searching around and looking for other people's process suggestions.</li>
+<li>We are programmers, people of code.  Have you tried to find code that makes you more efficient?  My friends Audrey and Danny have a project called <a class="reference external" href="https://cookiecutter.readthedocs.io/en/latest/">cookie-cutter</a> you should check out.</li>
+<li>You should now research how to calculate the <tt class="docutils literal">mean</tt> of a set of numbers.  You'll be using this to calculate your run chart middle line using Python.</li>
+</ol>
+</div>
+<div class="section" id="further-study">
+<h1>Further Study</h1>
+<p>If you really want a correct run chart you'll also need to calculate the <tt class="docutils literal">standard deviation</tt> of your numbers.  It's not necessary right now but if you want to be technically accurate then this is helpful.</p>
+</div>
+                <!-- RST ENDS -->
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row center-xs" id="buy">
+        <div class="text-center col-xs-10 col-sm-5 col-md-4">
+            <h2 class="section-title__small">Pre-order Learn More Python The Hard Way</h2>
+            <p>
+            When you pre-order Learn <b>More</b> Python The Hard Way, you'll receive the Python 3 Edition as it's being created.
+            All files are DRM free and you can download them to your computer for offline viewing. <b>Digital Download Only!  You do not get a physical book.</b>
+            </p>
+
+            <p class="price-block">
+            <span class="currency"><span class="prefix">$</span>29.<span class="suffix">99</span></span>
+            </p>
+
+            <a href="https://shop.learncodethehardway.org/access/buy/10/" class="btn btn-primary btn-full">Pre-Order From Zed</a>
+
+            <p class="text-left btn-subtext">
+            <small>Or, you can <a href="index.html">read Learn More Python the Hard Way for free</a> right here, video lectures not included.</small>
+            </p>
+
+        </div>
+        <div class="text-center col-xs-10 col-sm-5 col-md-4 col-sm-offset-1">
+
+            <h2 class="section-title__small">Other Buying Options</h2>
+            <p>Other buying options coming soon.</p>
+            <!--
+ <a href="http://bit.ly/amznlpthw" class="btn btn-secondary btn-full">Buy Kindle or Paper on Amazon</a>
+ <a href="http://bit.ly/informitlpthw" class="btn btn-secondary btn-full">Buy a hard copy from the Publisher</a>
+ <a href="http://bit.ly/bnlpthw" class="btn btn-secondary btn-full">Buy a hard copy from Barnes &amp; Noble</a>
+ -->
+        </div>
+    </div>
+
+
+    <div class="row center-xs">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8" id="video_holder">
+            <div data-paydiv_product="10" id='paydiv'>
+                No content available for this exercise.  You can view all available downloads at <a href="https://shop.learncodethehardway.org/customers/">your customer account page</a>.
+            </div>
+        </div>
+    </div>
+    </main>
+
+</div>
+
+<div class="row dark bottom-nav">
+    <div class="col-xs text-left">
+        <a href="#" class="prev" id='prev_link'><i class="icon-arrow-67"></i> <i class="icon icon-arrow-left"></i> Previous <span class="hide-xs show-sm-inline">Lesson</span></a>
+    </div>
+    <div class="col-xs text-right"><a href="#" class="next" id='next_link'>Next <span class="hide-xs show-sm-inline">Lesson</span> <i class="icon icon-arrow-right"></i></a>
+    </div>
+</div>
+    </div>
+
+    <footer class="footer">
+<div class="row center-xs">
+
+    <div class="col-xs-11 col-sm-6 col-md-5 col-lg-5">
+        <ul class="nav nav-inline">
+            <li><h4><a href="https://learncodethehardway.org/">Home</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/about/">About</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/contact/">Contact</a></h4></li>
+        </ul>
+        <div class="copyright text-left">
+            <small class="text-muted">&copy; 2016 Zed A. Shaw. All Rights Reserved.</small>
+        </div>
+    </div>
+    <div class="col-xs-11 col-sm-4 col-md-4 col-lg-3">
+        <div class="social-media">
+            <div class="classy-container">
+                <a href="https://twitter.com/lzsthw" class="socicon-twitter"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </footer>
+    <script src="../js/scripts.min.js"></script>
+
+    <script src="javascripts/jquery.js"></script>
+    <script src="index.js"></script>
+    <script src="../../shop.learncodethehardway.org/static/jzed.js"></script>
+    <script src="../../shop.learncodethehardway.org/static/js/videojs/video.js"></script>
+    <link rel="stylesheet" href="../../shop.learncodethehardway.org/static/js/videojs/video-js.css">
+    <script src="../../shop.learncodethehardway.org/static/api/v1/paydiv.js"></script>
+    <script src="javascripts/app.js"></script>
+    <script src="javascripts/littools.js"></script>
+    <!-- Start of helpthw Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("../../assets.zendesk.com/embeddable_framework/main.js","helpthw.zendesk.com");
+/*]]>*/</script>
+    <!-- End of helpthw Zendesk Widget script -->
+
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-24168052-5', 'auto');
+ga('send', 'pageview');
+
+    </script>
+
+    </body>
+    
+<!-- Mirrored from learncodethehardway.org/more-python-book/ex10.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 15:17:43 GMT -->
+</html>

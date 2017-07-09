@@ -1,0 +1,362 @@
+<!doctype html>
+<html class="no-js">
+
+<!-- Mirrored from learncodethehardway.org/more-python-book/ex26.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 15:17:43 GMT -->
+<head>
+
+
+
+<meta charset="utf-8">
+<title>Learn MORE Python the Hard Way</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="../../www.google-analytics.com/index.html" rel="dns-prefetch">
+<link href="../../ajax.googleapis.com/index.html" rel="dns-prefetch">
+
+<link href='../../fonts.googleapis.com/css33ad.css?family=Source+Code+Pro|Source+Sans+Pro:200,400,700,200italic,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href="../css/style.min.css" rel="stylesheet">
+<!-- http://www.socicon.com -->
+<link href="../css/icons.css" rel="stylesheet">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<title>Exercise 26: hexdump</title>
+
+</head>
+
+<body class="baseline-grid-off book-site" id="top">
+
+
+
+
+<header class="header" role="banner">
+    <nav class="navbar navbar-full nav-brand-family">
+        <div class="row middle-xs">
+            <ul class="brand-links show-md col-xs-3 col-sm-10 bare">
+                <li><a href="http://learncodethehardway.org/" class="waves-effect">Learn:</a></li>
+
+                <li><a href="http://learncodethehardway.org/python/" class="waves-effect">Python</a></li>
+
+                <li><a href="http://learncodethehardway.org/ruby/" class="waves-effect">Ruby</a></li>
+
+                <li><a href="http://learncodethehardway.org/more-python/" class="waves-effect active">More Python</a></li>
+
+                <li><a href="http://learncodethehardway.org/c/" class="waves-effect">C</a></li>
+
+                <li><a href="http://learncodethehardway.org/sql/" class="waves-effect">SQL</a></li>
+
+                <li><a href="http://learncodethehardway.org/javascript/" class="waves-effect">Javascript</a></li>
+
+                <li><a href="http://learncodethehardway.org/unix/" class="waves-effect">Unix</a></li>
+
+                <li><a href="http://learncodethehardway.org/regex/" class="waves-effect">RegEx</a></li>
+
+                <li><a href="http://www.learndesignthehardway.com/" class="waves-effect">Design</a></li>
+
+            </ul>
+            <ul class="brand-links hide-md col-xs-3 col-sm-10 bare">
+                <li><a href="http://learncodethehardway.org/" class="waves-effect">LCTHW</a></li>
+            </ul>
+
+            <ul class="site-meta col-xs-9 col-sm-2 end-xs bare">
+                <li><a href="https://shop.learncodethehardway.org/access/reactivate/" class="waves-effect"><i class="icon icon-user"></i> Account</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-full nav-main" role="navigation">
+        <div class="row between-xs center-xs middle-xs bare">
+            <div class="col-xs-4 start-xs bare">
+                <a href="#" class="no-underline nav-trigger waves-effect" id="toc"><div class="transformer hamburcloser">
+                        <div class="bar bar-t"></div>
+                        <div class="bar bar-m-a"></div>
+                        <div class="bar bar-m-b"></div>
+                        <div class="bar bar-b"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Contents</span></a>
+            </div>
+            <div class="col-xs-4"><strong>&nbsp;</strong></div>
+            <div class="col-xs-4 end-xs bare">
+                <a href="https://helpthw.zendesk.com/hc/en-us" class="no-underline nav-trigger waves-effect" id="help"><div class="transformer questioncloser">
+                        <div class="icon-question-mark"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Help</span></a>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+
+
+
+<div class="wrapper">
+    <div class="masthead more-python-background" style="background-image: url('../images/pattern-more-python.svg')">
+        <img src="../images/logo-more-python.svg" alt="Learn MORE Python The Hard Way" class="logo">
+    </div>
+
+    <aside class="sidebar sidebar-left" role="complementary">
+        <nav class="side-nav-container">
+            <ol class="table-of-contents">
+                <h3>Table of Contents</h3>
+                <li><a class="reference external" href="part0.html">I: Initial Knowledge</a></li>
+                <li><a class="reference external" href="ex0.html">0 The Setup</a></li>
+                <li><a class="reference external" href="ex1.html">1 On Process</a></li>
+                <li><a class="reference external" href="ex2.html">2 On Creativity</a></li>
+                <li><a class="reference external" href="ex3.html">3 On Quality</a></li>
+                <li><a class="reference external" href="part1.html">II: Quick Hacks</a></li>
+                <li><a class="reference external" href="ex4.html">4 Dealing With Command Line Arguments</a></li>
+                <li><a class="reference external" href="ex5.html">5 cat</a></li>
+                <li><a class="reference external" href="ex6.html">6 find</a></li>
+                <li><a class="reference external" href="ex7.html">7 grep</a></li>
+                <li><a class="reference external" href="ex8.html">8 cut</a></li>
+                <li><a class="reference external" href="ex9.html">9 sed</a></li>
+                <li><a class="reference external" href="ex10.html">10 sort</a></li>
+                <li><a class="reference external" href="ex11.html">11 uniq</a></li>
+                <li><a class="reference external" href="ex12.html">12 Review</a></li>
+                <li><a class="reference external" href="part2.html">III: Data Structures</a></li>
+                <li><a class="reference external" href="ex13.html">13 Single Linked Lists</a></li>
+                <li><a class="reference external" href="ex14.html">14 Double Linked Lists</a></li>
+                <li><a class="reference external" href="ex15.html">15 Stacks and Queues</a></li>
+                <li><a class="reference external" href="ex16.html">16 Bubble, Quick, Merge Sort</a></li>
+                <li><a class="reference external" href="ex17.html">17 Dictionary</a></li>
+                <li><a class="reference external" href="ex18.html">18 Measuring Performance</a></li>
+                <li><a class="reference external" href="ex19.html">19 Improving Performance</a></li>
+                <li><a class="reference external" href="ex21.html">21 Binary Search Trees</a></li>
+                <li><a class="reference external" href="ex22.html">22 Binary Search</a></li>
+                <li><a class="reference external" href="en23.html">23 Ternary Search</a></li>
+                <li><a class="reference external" href="ex24.html">24 Suffix Arrays</a></li>
+                <li><a class="reference external" href="part3.html">IV: Intermediate Projects</a></li>
+                <li><a class="reference external" href="ex25.html">25 xargs</a></li>
+                <li><a class="reference external" href="ex26.html">26 hexdump</a></li>
+                <li><a class="reference external" href="ex27.html">27 tr</a></li>
+                <li><a class="reference external" href="ex28.html">28 sh</a></li>
+                <li><a class="reference external" href="ex29.html">29 diff and patch</a></li>
+                <li><a class="reference external" href="part4.html">V: Parsing Text</a></li>
+                <li><a class="reference external" href="ex30.html">30 Finite State Machines</a></li>
+                <li><a class="reference external" href="ex31.html">31 Regular Expressions</a></li>
+                <li><a class="reference external" href="ex32.html">32 Scanners</a></li>
+                <li><a class="reference external" href="ex33.html">33 Parsers</a></li>
+                <li><a class="reference external" href="ex34.html">34 Analyzers</a></li>
+                <li><a class="reference external" href="ex35.html">35 Interpreters</a></li>
+                <li><a class="reference external" href="ex36.html">36 Simple Calculator </a></li>
+                <li><a class="reference external" href="ex37.html">37 Little BASIC</a></li>
+                <li><a class="reference external" href="part5.html">VI: SQL Databases</a></li>
+                <li><a class="reference external" href="ex38.html">38 Introduction to SQL</a></li>
+                <li><a class="reference external" href="ex39.html">39 Creating with SQL</a></li>
+                <li><a class="reference external" href="ex40.html">40 Reading with SQL</a></li>
+                <li><a class="reference external" href="ex41.html">41 Updating with SQL</a></li>
+                <li><a class="reference external" href="ex42.html">42 Deleting with SQL</a></li>
+                <li><a class="reference external" href="ex43.html">43 SQL Administration</a></li>
+                <li><a class="reference external" href="ex44.html">44 Using Python Database API</a></li>
+                <li><a class="reference external" href="ex45.html">45 Creating an ORM</a></li>
+                <li><a class="reference external" href="part6.html">VII: Final Projects</a></li>
+                <li><a class="reference external" href="ex46.html">46 blog</a></li>
+                <li><a class="reference external" href="ex47.html">47 bc</a></li>
+                <li><a class="reference external" href="ex48.html">48 ed</a></li>
+                <li><a class="reference external" href="ex49.html">49 sed</a></li>
+                <li><a class="reference external" href="ex50.html">50 vi</a></li>
+                <li><a class="reference external" href="ex51.html">51 lessweb</a></li>
+                <li><a class="reference external" href="ex52.html">52 moreweb</a></li>
+            </ol>
+            <ul class="site-links">
+                <h3>Learn the Hard Way</h3>
+                <li><a href="#" class="waves-effect"><i class="icon-information"></i> About LPTHW</a></li>
+                <li><a href="#" class="waves-effect"><i class="icon-question-mark"></i> Help &amp; Support</a></li>
+                <li><a href="#" class="waves-effect"><i class="socicon-twitter"></i> Follow us on Twitter</a></li>
+            </ul>
+        </nav>
+        <div class="colophon text-center">
+            <div class="intro">
+                <p class="bare-bottom">
+                The type for this book is set in 18px / 1.5
+                <a href="https://www.google.com/fonts/specimen/Source+Serif+Pro">Adobe Serif</a>,
+                <a href="https://www.google.com/fonts/specimen/Source+Sans+Pro">Sans</a>, and
+                <a href="https://www.google.com/fonts/specimen/Source+Code+Pro">Code</a>.
+                </p>
+            </div>
+            <div class="printers-mark">
+                <div class="inscription">Docendo <i class="icon-repeat"></i> Discimus</div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="main more python" role="main">
+    <div class="main-container row center-xs">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8">
+
+            <div class="content">
+                <div class="warning">
+                    <p class="first admonition-title">Warning</p>
+                    <p class="last">This book is new.  If you'd like to go through it, then join the <a class="reference external" href="https://gitter.im/lcthw/more-python-help">Gitter Chat</a> to get help while you attempt it.  I'm also looking for feedback on the difficulty of the projects.  If you don't like chat, then email <a class="reference external" href="mailto:help&#64;learncodethehardway.org">help&#64;learncodethehardway.org</a> to talk privately.</p>
+                </div>
+                <!--- RST STARTS -->
+                <h1 class="title">Exercise 26: hexdump</h1>
+                <p>You've done a warmup with <tt class="docutils literal">xargs</tt> and are now working in the cycle of code then audit.  You are now going to try to complete the next challenge with a &quot;Test First&quot; approach.  This is where you write a test that describes your expected behavior, and then you implement the behavior until the test passes.  You are going to be copying the <tt class="docutils literal">hexdump</tt> utility and attempting to match your version's output to the real version's.  This is where Test First development really helps since it automates the process of mimicing another piece of software.</p>
+<p>This technique is very useful when you need to write a replacement for a terrible piece of software.  A common job in software is to work on a project that aims to replace an older system with a more modern implementation.  An example is replacing an old COBOL banking system with a fresh, new, hot Django system.  The motivation is typically to make it easier to maintain and extend by using something easier to work with than the old system.  If you can write a set of automated tests that validate the behavior of the old system and then point that test suite at the new system, then you have a way to confirm that your replacement works...mostly.  Trust me, these replacement jobs are nearly impossible and don't succeed too often, but an automated test helps.</p>
+<p>In this exercise you'll add to your process the following:</p>
+<ol class="arabic simple">
+<li>Write a test case that runs the original <tt class="docutils literal">hexdump</tt> in a scenario you need to implement.  Let's say the <tt class="docutils literal"><span class="pre">-C</span></tt> option.  You'll either need to use <tt class="docutils literal">subprocess</tt> to launch it or simply run it ahead of time and save the results to a file that you load.</li>
+<li>Write the code that makes this test work by having the test run <em>your</em> version of <tt class="docutils literal">hexdump</tt> and then compare the results.  If they aren't equal, then you didn't do it right.</li>
+<li>Then audit both the test code and your code.</li>
+</ol>
+<p>I chose <tt class="docutils literal">hexdump</tt> because the difficulty is in replicating its strange output format for viewing binary data.  There's nothing too complicated about how it works. It's just matching the output that you need to get right.  This helps you practice test first testing.</p>
+<div class="note">
+<p class="first admonition-title">Note</p>
+<p class="last">When I say &quot;write a test first&quot; I do <em>not</em> mean a whole massive test.py file with all the functions and huge amounts of imaginary code.  I mean what I've taught in the past. Write a little test case--maybe just 1/10th of one test function--then write the code to make that work, and then bounce back and forth between the two.  The more you know about the code the more of the test <em>case</em> you can write, but don't write reams of test code with nothing to run against it.  Work incrementally instead.</p>
+</div>
+<div class="section" id="exercise-challenge">
+<h1>Exercise Challenge</h1>
+<p>The <tt class="docutils literal">hexdump</tt> command is useful when you want to see the contents of a file that is not viewable text.  It displays the bytes in a file in various useful formats, including hex, octal, and with an ASCII output trailing on the side.  The difficulty in implementing your own <tt class="docutils literal">hexdump</tt> isn't reading the data or even converting it to different formats.  You can do that easily using the <tt class="docutils literal">hex</tt>, <tt class="docutils literal">oct</tt>, <tt class="docutils literal">int</tt>, and <tt class="docutils literal">ord</tt> functions in Python.  The original format string operators are also useful as there's options for doing fixed precision octal and hex formatting.</p>
+<p>The real difficulty is in formatting the output correctly for each of the different options so that it streams right and fits on the screen.  Here's the first few lines of the <tt class="docutils literal">hexdump <span class="pre">-C</span></tt> output for a Python <tt class="docutils literal">.pyc</tt> file:</p>
+<pre class="literal-block">
+00000000  03 f3 0d 0a f0 b5 69 57  63 00 00 00 00 00 00 00  |......iWc.......|
+00000010  00 03 00 00 00 40 00 00  00 73 3a 00 00 00 64 00  |.....&#64;...s:...d.|
+00000020  00 64 01 00 6c 00 00 6d  01 00 5a 01 00 01 64 00  |.d..l..m..Z...d.|
+00000030  00 64 02 00 6c 02 00 6d  03 00 5a 03 00 01 64 03  |.d..l..m..Z...d.|
+00000040  00 65 01 00 66 01 00 64  04 00 84 00 00 83 00 00  |.e..f..d........|
+</pre>
+<p>The man page for this &quot;canonical&quot; formatting states that it is:</p>
+<ol class="arabic simple">
+<li>Display input offset in hexadecimal.  So 10 is not really 10 in decimal, it's in hex.  Do you know hex?</li>
+<li>Sixteen space-separated, two column, hexadecimal bytes.  That's each byte converted to hex. How many columns represent one byte?</li>
+<li>Then the same sixteen bytes in <tt class="docutils literal">%_p</tt> format, which looks like a Python format specifier but it's particular to hexdump.  You'll need to read the man page more to find out what it means.</li>
+</ol>
+<p>Then <tt class="docutils literal">hexdump</tt> can also receive input from the <tt class="docutils literal">stdin</tt> input, which means you can pipe things into it:</p>
+<pre class="literal-block">
+echo &quot;Hello There&quot; | hexdump -C
+</pre>
+<p>which produces this on my macOS system:</p>
+<pre class="literal-block">
+00000000  48 65 6c 6c 6f 20 54 68  65 72 65 0a              |Hello There.|
+0000000c
+</pre>
+<p>Notice that last line with the <tt class="docutils literal">c</tt> character?  Need to find out what that is I guess.</p>
+<p>It's this formatting and output that's going to be difficult, and your game is to replicate it as best as you can, which is why the beginning of this exercise dictated that you work in a test first manner.  It will be much easier to create tests that feed data to your <tt class="docutils literal">hexdump</tt> and compare it with the real <tt class="docutils literal">hexdump</tt> until it starts working.</p>
+</div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<ol class="arabic simple">
+<li>Research the <tt class="docutils literal">od</tt> command, and see if your <tt class="docutils literal">hexdump</tt> code can be reused for an implementation of <tt class="docutils literal">od</tt>.  If it can, then make a library that both of them use.</li>
+</ol>
+</div>
+<div class="section" id="further-study">
+<h1>Further Study</h1>
+<p>There are people who advocate only doing test first development, but I believe that no technique works all the time. I prefer to write tests first when I'm testing the <em>interaction</em> of the software from the user's perspective.  I will write tests that describe the user interacting with the software and then go make the software make it happen.  This is what you did here since you were testing how the user sees output from your command line <tt class="docutils literal">hexdump</tt> calls.</p>
+<p>For other types of coding tasks, dictating whether to write a test first or the code first is ridiculous and just kills your ability to solve a problem.  Automated tests are simply tools, and you are an intelligent person who has the authority to try to use tools however you think they will work best in each situation.  Anyone telling you different is probably an abusive person who actually isn't that great at writing software.</p>
+</div>
+                <!-- RST ENDS -->
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row center-xs" id="buy">
+        <div class="text-center col-xs-10 col-sm-5 col-md-4">
+            <h2 class="section-title__small">Pre-order Learn More Python The Hard Way</h2>
+            <p>
+            When you pre-order Learn <b>More</b> Python The Hard Way, you'll receive the Python 3 Edition as it's being created.
+            All files are DRM free and you can download them to your computer for offline viewing. <b>Digital Download Only!  You do not get a physical book.</b>
+            </p>
+
+            <p class="price-block">
+            <span class="currency"><span class="prefix">$</span>29.<span class="suffix">99</span></span>
+            </p>
+
+            <a href="https://shop.learncodethehardway.org/access/buy/10/" class="btn btn-primary btn-full">Pre-Order From Zed</a>
+
+            <p class="text-left btn-subtext">
+            <small>Or, you can <a href="index.html">read Learn More Python the Hard Way for free</a> right here, video lectures not included.</small>
+            </p>
+
+        </div>
+        <div class="text-center col-xs-10 col-sm-5 col-md-4 col-sm-offset-1">
+
+            <h2 class="section-title__small">Other Buying Options</h2>
+            <p>Other buying options coming soon.</p>
+            <!--
+ <a href="http://bit.ly/amznlpthw" class="btn btn-secondary btn-full">Buy Kindle or Paper on Amazon</a>
+ <a href="http://bit.ly/informitlpthw" class="btn btn-secondary btn-full">Buy a hard copy from the Publisher</a>
+ <a href="http://bit.ly/bnlpthw" class="btn btn-secondary btn-full">Buy a hard copy from Barnes &amp; Noble</a>
+ -->
+        </div>
+    </div>
+
+
+    <div class="row center-xs">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8" id="video_holder">
+            <div data-paydiv_product="10" id='paydiv'>
+                No content available for this exercise.  You can view all available downloads at <a href="https://shop.learncodethehardway.org/customers/">your customer account page</a>.
+            </div>
+        </div>
+    </div>
+    </main>
+
+</div>
+
+<div class="row dark bottom-nav">
+    <div class="col-xs text-left">
+        <a href="#" class="prev" id='prev_link'><i class="icon-arrow-67"></i> <i class="icon icon-arrow-left"></i> Previous <span class="hide-xs show-sm-inline">Lesson</span></a>
+    </div>
+    <div class="col-xs text-right"><a href="#" class="next" id='next_link'>Next <span class="hide-xs show-sm-inline">Lesson</span> <i class="icon icon-arrow-right"></i></a>
+    </div>
+</div>
+    </div>
+
+    <footer class="footer">
+<div class="row center-xs">
+
+    <div class="col-xs-11 col-sm-6 col-md-5 col-lg-5">
+        <ul class="nav nav-inline">
+            <li><h4><a href="https://learncodethehardway.org/">Home</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/about/">About</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/contact/">Contact</a></h4></li>
+        </ul>
+        <div class="copyright text-left">
+            <small class="text-muted">&copy; 2016 Zed A. Shaw. All Rights Reserved.</small>
+        </div>
+    </div>
+    <div class="col-xs-11 col-sm-4 col-md-4 col-lg-3">
+        <div class="social-media">
+            <div class="classy-container">
+                <a href="https://twitter.com/lzsthw" class="socicon-twitter"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </footer>
+    <script src="../js/scripts.min.js"></script>
+
+    <script src="javascripts/jquery.js"></script>
+    <script src="index.js"></script>
+    <script src="../../shop.learncodethehardway.org/static/jzed.js"></script>
+    <script src="../../shop.learncodethehardway.org/static/js/videojs/video.js"></script>
+    <link rel="stylesheet" href="../../shop.learncodethehardway.org/static/js/videojs/video-js.css">
+    <script src="../../shop.learncodethehardway.org/static/api/v1/paydiv.js"></script>
+    <script src="javascripts/app.js"></script>
+    <script src="javascripts/littools.js"></script>
+    <!-- Start of helpthw Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("../../assets.zendesk.com/embeddable_framework/main.js","helpthw.zendesk.com");
+/*]]>*/</script>
+    <!-- End of helpthw Zendesk Widget script -->
+
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-24168052-5', 'auto');
+ga('send', 'pageview');
+
+    </script>
+
+    </body>
+    
+<!-- Mirrored from learncodethehardway.org/more-python-book/ex26.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 15:17:43 GMT -->
+</html>

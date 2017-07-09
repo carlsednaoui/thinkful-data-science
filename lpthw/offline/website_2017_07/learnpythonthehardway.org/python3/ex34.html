@@ -1,0 +1,336 @@
+<!doctype html>
+<html class="no-js">
+
+<!-- Mirrored from learnpythonthehardway.org/python3/ex34.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 01:13:35 GMT -->
+<head>
+
+
+
+<meta charset="utf-8">
+<title>Learn Python the Hard Way</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href='../../fonts.googleapis.com/css33ad.css?family=Source+Code+Pro|Source+Sans+Pro:200,400,700,200italic,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href="../css/style.min.css" rel="stylesheet">
+<!-- http://www.socicon.com -->
+<link href="../css/icons.css" rel="stylesheet">
+
+
+</head>
+
+<body class="baseline-grid-off book-site" id="top">
+
+
+
+
+<header class="header" role="banner">
+    <nav class="navbar navbar-full nav-brand-family">
+        <div class="row middle-xs">
+            <ul class="brand-links show-md col-xs-3 col-sm-10 bare">
+                <li><a href="https://learncodethehardway.org/" class="waves-effect">Learn:</a></li>
+
+                <li><a href="https://learncodethehardway.org/python/" class="waves-effect active">Python</a></li>
+
+                <li><a href="https://learncodethehardway.org/ruby/" class="waves-effect">Ruby</a></li>
+
+                <li><a href="https://learncodethehardway.org/more-python/" class="waves-effect">More Python</a></li>
+
+                <li><a href="https://learncodethehardway.org/c/" class="waves-effect">C</a></li>
+
+                <li><a href="https://learncodethehardway.org/sql/" class="waves-effect">SQL</a></li>
+
+                <li><a href="https://learncodethehardway.org/javascript/" class="waves-effect">Javascript</a></li>
+
+                <li><a href="https://learncodethehardway.org/unix/" class="waves-effect">Unix</a></li>
+
+                <li><a href="https://learncodethehardway.org/regex/" class="waves-effect">RegEx</a></li>
+
+                <li><a href="https://www.learndesignthehardway.com/" class="waves-effect">Design</a></li>
+
+            </ul>
+            <ul class="brand-links hide-md col-xs-3 col-sm-10 bare">
+                <li><a href="https://learncodethehardway.org/" class="waves-effect">LCTHW</a></li>
+            </ul>
+
+            <ul class="site-meta col-xs-9 col-sm-2 end-xs bare">
+                <li><a href="https://shop.learncodethehardway.org/access/reactivate/" class="waves-effect"><i class="icon icon-user"></i> Login</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-full nav-main" role="navigation">
+        <div class="row between-xs center-xs middle-xs bare">
+            <div class="col-xs-4 start-xs bare">
+                <a href="#" class="no-underline nav-trigger waves-effect" id="toc"><div class="transformer hamburcloser">
+                        <div class="bar bar-t"></div>
+                        <div class="bar bar-m-a"></div>
+                        <div class="bar bar-m-b"></div>
+                        <div class="bar bar-b"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Contents</span></a>
+            </div>
+            <div class="col-xs-4"><strong>&nbsp;</strong></div>
+            <div class="col-xs-4 end-xs bare">
+                <a href="https://helpthw.zendesk.com/hc/en-us" class="no-underline nav-trigger waves-effect" id="help"><div class="transformer questioncloser">
+                        <div class="icon-question-mark"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Help</span></a>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+
+
+
+<div class="wrapper">
+    <div class="masthead python-background" style="background-image: url('../images/pattern-python.svg')">
+        <img src="../images/logo-python.svg" alt="Learn Python The Hard Way" class="logo">
+    </div>
+
+    <aside class="sidebar sidebar-left" role="complementary">
+        <nav class="side-nav-container">
+            <ol class="table-of-contents">
+                <h3>Table of Contents</h3>
+                <li><a href="preface.html">Preface</a></li>
+                <li><a href="intro.html">The Hard Way Is Easier</a></li>
+                <li><a href="ex0.html">Ex0: The Setup</a></li>
+                <li><a href="ex1.html">Ex1: A Good First Program</a></li>
+                <li><a href="ex2.html">Ex2: Comments And Pound Characters</a></li>
+                <li><a href="ex3.html">Ex3: Numbers And Math</a></li>
+                <li><a href="ex4.html">Ex4: Variables And Names</a></li>
+                <li><a href="ex5.html">Ex5: More Variables And Printing</a></li>
+                <li><a href="ex6.html">Ex6: Strings And Text</a></li>
+                <li><a href="ex7.html">Ex7: More Printing</a></li>
+                <li><a href="ex8.html">Ex8: Printing, Printing</a></li>
+                <li><a href="ex9.html">Ex9: Printing, Printing, Printing</a></li>
+                <li><a href="ex10.html">Ex10: What Was That?</a></li>
+                <li><a href="ex11.html">Ex11: Asking Questions</a></li>
+                <li><a href="ex12.html">Ex12: Prompting People</a></li>
+                <li><a href="ex13.html">Ex13: Parameters, Unpacking, Variables</a></li>
+                <li><a href="ex14.html">Ex14: Prompting And Passing</a></li>
+                <li><a href="ex15.html">Ex15: Reading Files</a></li>
+                <li><a href="ex16.html">Ex16: Reading And Writing Files</a></li>
+                <li><a href="ex17.html">Ex17: More Files</a></li>
+                <li><a href="ex18.html">Ex18: Names, Variables, Code, Functions</a></li>
+                <li><a href="ex19.html">Ex19: Functions And Variables</a></li>
+                <li><a href="ex20.html">Ex20: Functions And Files</a></li>
+                <li><a href="ex21.html">Ex21: Functions Can Return Something</a></li>
+                <li><a href="ex22.html">Ex22: What Do You Know So Far?</a></li>
+                <li><a href="ex23.html">Ex23: Read Some Code</a></li>
+                <li><a href="ex24.html">Ex24: More Practice</a></li>
+                <li><a href="ex25.html">Ex25: Even More Practice</a></li>
+                <li><a href="ex26.html">Ex26: Congratulations, Take A Test!</a></li>
+                <li><a href="ex27.html">Ex27: Memorizing Logic</a></li>
+                <li><a href="ex28.html">Ex28: Boolean Practice</a></li>
+                <li><a href="ex29.html">Ex29: What If</a></li>
+                <li><a href="ex30.html">Ex30: Else And If</a></li>
+                <li><a href="ex31.html">Ex31: Making Decisions</a></li>
+                <li><a href="ex32.html">Ex32: Loops And Lists</a></li>
+                <li><a href="ex33.html">Ex33: While Loops</a></li>
+                <li><a href="ex34.html">Ex34: Accessing Elements Of Lists</a></li>
+                <li><a href="ex35.html">Ex35: Branches and Functions</a></li>
+                <li><a href="ex36.html">Ex36: Designing and Debugging</a></li>
+                <li><a href="ex37.html">Ex37: Symbol Review</a></li>
+                <li><a href="ex38.html">Ex38: Doing Things To Lists</a></li>
+                <li><a href="ex39.html">Ex39: Dictionaries, Oh Lovely Dictionaries</a></li>
+                <li><a href="ex40.html">Ex40: Modules, Classes, And Objects</a></li>
+                <li><a href="ex41.html">Ex41: Learning To Speak Object Oriented</a></li>
+                <li><a href="ex42.html">Ex42: Is-A, Has-A, Objects, and Classes</a></li>
+                <li><a href="ex43.html">Ex43: Gothons From Planet Percal #25</a></li>
+                <li><a href="ex44.html">Ex44: Inheritance Vs. Composition</a></li>
+                <li><a href="ex45.html">Ex45: You Make A Game</a></li>
+                <li><a href="ex46.html">Ex46: A Project Skeleton</a></li>
+                <li><a href="ex47.html">Ex47: Automated Testing</a></li>
+                <li><a href="ex48.html">Ex48: Advanced User Input</a></li>
+                <li><a href="ex49.html">Ex49: Making Sentences</a></li>
+                <li><a href="ex50.html">Ex50: Your First Website</a></li>
+                <li><a href="ex51.html">Ex51: Getting Input From A Browser</a></li>
+                <li><a href="ex52.html">Ex52: The Start Of Your Web Game</a></li>
+                <li><a href="advice.html">Advice From An Old Programmer</a></li>
+                <li><a href="next.html">Next Steps</a></li>
+                <li><a href="appendixa.html">Appendix A: Command Line Crash Course</a></li>
+            </ol>
+            <ul class="site-links">
+                <h3>Learn the Hard Way</h3>
+                <li><a href="#" class="waves-effect"><i class="icon-information"></i> About LPTHW</a></li>
+                <li><a href="#" class="waves-effect"><i class="icon-question-mark"></i> Help &amp; Support</a></li>
+                <li><a href="#" class="waves-effect"><i class="socicon-twitter"></i> Follow us on Twitter</a></li>
+            </ul>
+        </nav>
+        <div class="colophon text-center">
+            <div class="intro">
+                <p class="bare-bottom">
+                The type for this book is set in 18px / 1.5
+                <a href="https://www.google.com/fonts/specimen/Source+Serif+Pro">Adobe Serif</a>,
+                <a href="https://www.google.com/fonts/specimen/Source+Sans+Pro">Sans</a>, and
+                <a href="https://www.google.com/fonts/specimen/Source+Code+Pro">Code</a>.
+                </p>
+            </div>
+            <div class="printers-mark">
+                <div class="inscription">Docendo <i class="icon-repeat"></i> Discimus</div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="main python" role="main">
+    <div class="main-container row center-xs">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8">
+
+            <div class="content">
+
+                <!--- RST STARTS -->
+                <h1 class="title">Exercise 34: Accessing Elements of Lists</h1>
+                <p>Lists are pretty useful, but unless you can get at the things in them they aren't all that good.  You can already go through the elements of a list in order, but what if you want say, the fifth element?  You need to know how to access the elements of a list.  Here's how you would access the <em>first</em> element of a list:</p>
+<pre class="code python literal-block">
+<span class="name">animals</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="literal string single">'bear'</span><span class="punctuation">,</span> <span class="literal string single">'tiger'</span><span class="punctuation">,</span> <span class="literal string single">'penguin'</span><span class="punctuation">,</span> <span class="literal string single">'zebra'</span><span class="punctuation">]</span>
+<span class="name">bear</span> <span class="operator">=</span> <span class="name">animals</span><span class="punctuation">[</span><span class="literal number integer">0</span><span class="punctuation">]</span>
+</pre>
+<p>You take a list of animals, and then you get the first (1st) one using <tt class="docutils literal">0</tt>?!  How does that work?  Because of the way math works, Python starts its lists at 0 rather than 1.  It seems weird, but there are many advantages to this, even though it is mostly arbitrary.</p>
+<p>The best way to explain why is by showing you the difference between how you use numbers and how programmers use numbers.</p>
+<p>Imagine you are watching the four animals in our list (<tt class="docutils literal">['bear', 'tiger', 'penguin', 'zebra']</tt>) run in a race.  They cross the finish line in the <em>order</em> we have them in this list.  The race was really exciting because the animals didn't eat each other and somehow managed to run a race.  Your friend shows up late and wants to know who won.  Does your friend say, &quot;Hey, who came in <em>zeroth</em>?&quot;  No, he says, &quot;Hey, who came in <em>first</em>?&quot;</p>
+<p>This is because the <em>order</em> of the animals is important.  You can't have the second animal without the first (1st) animal, and you can't have the third without the second.  It's also impossible to have a &quot;zeroth&quot; animal since zero means nothing.  How can you have a nothing win a race?  It just doesn't make sense.  We call these kinds of numbers &quot;ordinal&quot; numbers, because they indicate an ordering of things.</p>
+<p>Programmers, however, can't think this way because they can pick any element out of a list at any point.  To programmers, the list of animals is more like a deck of cards.  If they want the tiger, they grab it.  If they want the zebra, they can take it too.  This need to pull elements out of lists at random means that they need a way to indicate elements consistently by an address, or an &quot;index,&quot; and the best way to do that is to start the indices at 0.  Trust me on this: the math is <em>way</em> easier for these kinds of accesses.  This kind of number is a &quot;cardinal&quot; number and means you can pick at random, so there needs to be a 0 element.</p>
+<p>How does this help you work with lists?  Simple, every time you say to yourself, &quot;I want the third animal,&quot; you translate this &quot;ordinal&quot; number to a &quot;cardinal&quot; number by subtracting 1.  The &quot;third&quot; animal is at index 2 and is the penguin.  You have to do this because you have spent your whole life using ordinal numbers, and now you have to think in cardinal.  Just subtract 1 and you will be good.</p>
+<p>Remember:  ordinal == ordered, 1st; cardinal == cards at random, 0.</p>
+<p>Let's practice this.  Take this list of animals, and follow the exercises where I tell you to write down what animal you get for that ordinal or cardinal number.  Remember, if I say &quot;first,&quot; &quot;second,&quot; then I'm using ordinal, so subtract 1.  If I give you cardinal (like &quot;The animal at 1&quot;), then use it directly.</p>
+<pre class="code python literal-block">
+<span class="name">animals</span> <span class="operator">=</span> <span class="punctuation">[</span><span class="literal string single">'bear'</span><span class="punctuation">,</span> <span class="literal string single">'python3.6'</span><span class="punctuation">,</span> <span class="literal string single">'peacock'</span><span class="punctuation">,</span> <span class="literal string single">'kangaroo'</span><span class="punctuation">,</span> <span class="literal string single">'whale'</span><span class="punctuation">,</span> <span class="literal string single">'platypus'</span><span class="punctuation">]</span>
+</pre>
+<ol class="arabic simple">
+<li>The animal at 1.</li>
+<li>The third (3rd) animal.</li>
+<li>The first (1st) animal.</li>
+<li>The animal at 3.</li>
+<li>The fifth (5th) animal.</li>
+<li>The animal at 2.</li>
+<li>The sixth (6th) animal.</li>
+<li>The animal at 4.</li>
+</ol>
+<p>For each of these, write out a full sentence of the form:  &quot;The first (1st) animal is at 0 and is a bear.&quot; Then say it backwards: &quot;The animal at 0 is the 1st animal and is a bear.&quot;</p>
+<p>Use your Python to check your answers.</p>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<ol class="arabic simple">
+<li>With what you know of the difference between these types of numbers, can you explain why the year 2010 in &quot;January 1, 2010,&quot; really is 2010 and not 2009?  (Hint: you can't pick years at random.)</li>
+<li>Write some more lists and work out similar indexes until you can translate them.</li>
+<li>Use Python to check your answers.</li>
+</ol>
+<div class="warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Programmers will tell you to read this guy named &quot;Dijkstra&quot; on this subject.  I recommend you avoid his writings on this unless you enjoy being yelled at by someone who stopped programming at the same time programming started.</p>
+</div>
+</div>
+                <!-- RST ENDS -->
+            </div>
+        </div>
+
+        <div class="row center-xs" id="buy">
+            <div class="text-center col-xs-10 col-sm-5 col-md-4">
+                <h2 class="section-title__small">Buy The Python 3 Edition!</h2>
+                <p>
+                When you buy  Learn Python 3 The Hard Way, you'll receive the Python 3 Edition PDF, special access to a paid HTML version, and <b>12 hours</b> of 1080p video, one video for each exercise.
+                All files are DRM free and you can download them to your computer for offline viewing. <b>Digital Download Only!  You do not get a physical book.</b>
+                </p>
+
+                <p class="price-block">
+                <span class="currency"><span class="prefix">$</span>29.<span class="suffix">99</span></span>
+                </p>
+
+                <a href="https://shop.learncodethehardway.org/access/buy/9/" class="btn btn-primary btn-full">Buy Digital Download From Zed</a>
+
+                <p class="text-left btn-subtext">
+                <small>Or, you can <a href="index.html">read Learn Python the Hard Way for free</a> right here, video lectures not included.</small>
+                </p>
+
+            </div>
+            <div class="text-center col-xs-10 col-sm-5 col-md-4 col-sm-offset-1">
+
+                <h2 class="section-title__small">Other Buying Options</h2>
+                  <a href="http://amzn.to/2sSzwCY" class="btn btn-secondary btn-full">Buy on Amazon</a>
+                  <a href="http://bit.ly/informitlpy3thw" class="btn btn-secondary btn-full">Paper + Digital from InformIT</a>
+                  <a href="http://bit.ly/bnlpy3thw" class="btn btn-secondary btn-full">Buy from Barnes &amp; Noble</a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row center-xs" id="video_holder" style="display: none">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8">
+            <div data-paydiv_product="9" id='paydiv'>
+                No content available for this exercise.  You can view all available downloads at <a href="https://shop.learncodethehardway.org/customers/">your customer account page</a>.
+            </div>
+        </div>
+    </div>
+
+    </main>
+
+</div>
+
+<div class="row dark bottom-nav">
+    <div class="col-xs text-left">
+        <a href="#" class="prev" id='prev_link'><i class="icon-arrow-67"></i> <i class="icon icon-arrow-left"></i> Previous <span class="hide-xs show-sm-inline">Lesson</span></a>
+    </div>
+    <div class="col-xs text-right"><a href="#" class="next" id='next_link'>Next <span class="hide-xs show-sm-inline">Lesson</span> <i class="icon icon-arrow-right"></i></a>
+    </div>
+</div>
+  </div>
+
+<footer class="footer">
+<div class="row center-xs">
+
+    <div class="col-xs-11 col-sm-6 col-md-5 col-lg-5">
+        <ul class="nav nav-inline">
+            <li><h4><a href="../index.html">Home</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/about/">About</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/contact/">Contact</a></h4></li>
+        </ul>
+        <div class="copyright text-left">
+            <small class="text-muted">&copy; Zed A. Shaw. All rights reserved.</small>
+        </div>
+    </div>
+    <div class="col-xs-11 col-sm-4 col-md-4 col-lg-3">
+        <div class="social-media">
+            <div class="classy-container">
+                <a href="https://twitter.com/lzsthw" class="socicon-twitter"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</footer>
+<script src="../js/scripts.min.js"></script>
+
+<script src="javascripts/jquery.js"></script>
+<script src="index.js"></script>
+<script src="../../shop.learncodethehardway.org/static/jzed.js"></script>
+<script src="../../shop.learncodethehardway.org/static/js/videojs/video.js"></script>
+<link rel="stylesheet" href="../../shop.learncodethehardway.org/static/js/videojs/video-js.css">
+<script src="../../shop.learncodethehardway.org/static/api/v1/paydiv.js"></script>
+<script src="javascripts/app.js"></script>
+<script src="javascripts/littools.js"></script>
+<!-- Start of helpthw Zendesk Widget script -->
+<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("../../assets.zendesk.com/embeddable_framework/main.js","helpthw.zendesk.com");
+/*]]>*/</script>
+<!-- End of helpthw Zendesk Widget script -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-24168052-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+</body>
+
+<!-- Mirrored from learnpythonthehardway.org/python3/ex34.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 01:13:35 GMT -->
+</html>

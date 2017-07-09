@@ -1,0 +1,8 @@
+https://learncodethehardway.org/more-python-book/ -O ./more_python https://learncodethehardway.org/more-python-book/ -v -s0 -r2 -n
+File generated automatically on Sat, 08 Jul 2017 11:16:22, do NOT edit
+
+To update a mirror, just launch httrack without any parameters
+The existing cache will be used (and modified)
+To have other options, retype all parameters and launch HTTrack
+To continue an interrupted mirror, just launch httrack without any parameters
+

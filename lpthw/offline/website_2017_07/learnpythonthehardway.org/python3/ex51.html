@@ -1,0 +1,592 @@
+<!doctype html>
+<html class="no-js">
+
+<!-- Mirrored from learnpythonthehardway.org/python3/ex51.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 01:13:35 GMT -->
+<head>
+
+
+
+<meta charset="utf-8">
+<title>Learn Python the Hard Way</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href='../../fonts.googleapis.com/css33ad.css?family=Source+Code+Pro|Source+Sans+Pro:200,400,700,200italic,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href="../css/style.min.css" rel="stylesheet">
+<!-- http://www.socicon.com -->
+<link href="../css/icons.css" rel="stylesheet">
+
+
+</head>
+
+<body class="baseline-grid-off book-site" id="top">
+
+
+
+
+<header class="header" role="banner">
+    <nav class="navbar navbar-full nav-brand-family">
+        <div class="row middle-xs">
+            <ul class="brand-links show-md col-xs-3 col-sm-10 bare">
+                <li><a href="https://learncodethehardway.org/" class="waves-effect">Learn:</a></li>
+
+                <li><a href="https://learncodethehardway.org/python/" class="waves-effect active">Python</a></li>
+
+                <li><a href="https://learncodethehardway.org/ruby/" class="waves-effect">Ruby</a></li>
+
+                <li><a href="https://learncodethehardway.org/more-python/" class="waves-effect">More Python</a></li>
+
+                <li><a href="https://learncodethehardway.org/c/" class="waves-effect">C</a></li>
+
+                <li><a href="https://learncodethehardway.org/sql/" class="waves-effect">SQL</a></li>
+
+                <li><a href="https://learncodethehardway.org/javascript/" class="waves-effect">Javascript</a></li>
+
+                <li><a href="https://learncodethehardway.org/unix/" class="waves-effect">Unix</a></li>
+
+                <li><a href="https://learncodethehardway.org/regex/" class="waves-effect">RegEx</a></li>
+
+                <li><a href="https://www.learndesignthehardway.com/" class="waves-effect">Design</a></li>
+
+            </ul>
+            <ul class="brand-links hide-md col-xs-3 col-sm-10 bare">
+                <li><a href="https://learncodethehardway.org/" class="waves-effect">LCTHW</a></li>
+            </ul>
+
+            <ul class="site-meta col-xs-9 col-sm-2 end-xs bare">
+                <li><a href="https://shop.learncodethehardway.org/access/reactivate/" class="waves-effect"><i class="icon icon-user"></i> Login</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-full nav-main" role="navigation">
+        <div class="row between-xs center-xs middle-xs bare">
+            <div class="col-xs-4 start-xs bare">
+                <a href="#" class="no-underline nav-trigger waves-effect" id="toc"><div class="transformer hamburcloser">
+                        <div class="bar bar-t"></div>
+                        <div class="bar bar-m-a"></div>
+                        <div class="bar bar-m-b"></div>
+                        <div class="bar bar-b"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Contents</span></a>
+            </div>
+            <div class="col-xs-4"><strong>&nbsp;</strong></div>
+            <div class="col-xs-4 end-xs bare">
+                <a href="https://helpthw.zendesk.com/hc/en-us" class="no-underline nav-trigger waves-effect" id="help"><div class="transformer questioncloser">
+                        <div class="icon-question-mark"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Help</span></a>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+
+
+
+<div class="wrapper">
+    <div class="masthead python-background" style="background-image: url('../images/pattern-python.svg')">
+        <img src="../images/logo-python.svg" alt="Learn Python The Hard Way" class="logo">
+    </div>
+
+    <aside class="sidebar sidebar-left" role="complementary">
+        <nav class="side-nav-container">
+            <ol class="table-of-contents">
+                <h3>Table of Contents</h3>
+                <li><a href="preface.html">Preface</a></li>
+                <li><a href="intro.html">The Hard Way Is Easier</a></li>
+                <li><a href="ex0.html">Ex0: The Setup</a></li>
+                <li><a href="ex1.html">Ex1: A Good First Program</a></li>
+                <li><a href="ex2.html">Ex2: Comments And Pound Characters</a></li>
+                <li><a href="ex3.html">Ex3: Numbers And Math</a></li>
+                <li><a href="ex4.html">Ex4: Variables And Names</a></li>
+                <li><a href="ex5.html">Ex5: More Variables And Printing</a></li>
+                <li><a href="ex6.html">Ex6: Strings And Text</a></li>
+                <li><a href="ex7.html">Ex7: More Printing</a></li>
+                <li><a href="ex8.html">Ex8: Printing, Printing</a></li>
+                <li><a href="ex9.html">Ex9: Printing, Printing, Printing</a></li>
+                <li><a href="ex10.html">Ex10: What Was That?</a></li>
+                <li><a href="ex11.html">Ex11: Asking Questions</a></li>
+                <li><a href="ex12.html">Ex12: Prompting People</a></li>
+                <li><a href="ex13.html">Ex13: Parameters, Unpacking, Variables</a></li>
+                <li><a href="ex14.html">Ex14: Prompting And Passing</a></li>
+                <li><a href="ex15.html">Ex15: Reading Files</a></li>
+                <li><a href="ex16.html">Ex16: Reading And Writing Files</a></li>
+                <li><a href="ex17.html">Ex17: More Files</a></li>
+                <li><a href="ex18.html">Ex18: Names, Variables, Code, Functions</a></li>
+                <li><a href="ex19.html">Ex19: Functions And Variables</a></li>
+                <li><a href="ex20.html">Ex20: Functions And Files</a></li>
+                <li><a href="ex21.html">Ex21: Functions Can Return Something</a></li>
+                <li><a href="ex22.html">Ex22: What Do You Know So Far?</a></li>
+                <li><a href="ex23.html">Ex23: Read Some Code</a></li>
+                <li><a href="ex24.html">Ex24: More Practice</a></li>
+                <li><a href="ex25.html">Ex25: Even More Practice</a></li>
+                <li><a href="ex26.html">Ex26: Congratulations, Take A Test!</a></li>
+                <li><a href="ex27.html">Ex27: Memorizing Logic</a></li>
+                <li><a href="ex28.html">Ex28: Boolean Practice</a></li>
+                <li><a href="ex29.html">Ex29: What If</a></li>
+                <li><a href="ex30.html">Ex30: Else And If</a></li>
+                <li><a href="ex31.html">Ex31: Making Decisions</a></li>
+                <li><a href="ex32.html">Ex32: Loops And Lists</a></li>
+                <li><a href="ex33.html">Ex33: While Loops</a></li>
+                <li><a href="ex34.html">Ex34: Accessing Elements Of Lists</a></li>
+                <li><a href="ex35.html">Ex35: Branches and Functions</a></li>
+                <li><a href="ex36.html">Ex36: Designing and Debugging</a></li>
+                <li><a href="ex37.html">Ex37: Symbol Review</a></li>
+                <li><a href="ex38.html">Ex38: Doing Things To Lists</a></li>
+                <li><a href="ex39.html">Ex39: Dictionaries, Oh Lovely Dictionaries</a></li>
+                <li><a href="ex40.html">Ex40: Modules, Classes, And Objects</a></li>
+                <li><a href="ex41.html">Ex41: Learning To Speak Object Oriented</a></li>
+                <li><a href="ex42.html">Ex42: Is-A, Has-A, Objects, and Classes</a></li>
+                <li><a href="ex43.html">Ex43: Gothons From Planet Percal #25</a></li>
+                <li><a href="ex44.html">Ex44: Inheritance Vs. Composition</a></li>
+                <li><a href="ex45.html">Ex45: You Make A Game</a></li>
+                <li><a href="ex46.html">Ex46: A Project Skeleton</a></li>
+                <li><a href="ex47.html">Ex47: Automated Testing</a></li>
+                <li><a href="ex48.html">Ex48: Advanced User Input</a></li>
+                <li><a href="ex49.html">Ex49: Making Sentences</a></li>
+                <li><a href="ex50.html">Ex50: Your First Website</a></li>
+                <li><a href="ex51.html">Ex51: Getting Input From A Browser</a></li>
+                <li><a href="ex52.html">Ex52: The Start Of Your Web Game</a></li>
+                <li><a href="advice.html">Advice From An Old Programmer</a></li>
+                <li><a href="next.html">Next Steps</a></li>
+                <li><a href="appendixa.html">Appendix A: Command Line Crash Course</a></li>
+            </ol>
+            <ul class="site-links">
+                <h3>Learn the Hard Way</h3>
+                <li><a href="#" class="waves-effect"><i class="icon-information"></i> About LPTHW</a></li>
+                <li><a href="#" class="waves-effect"><i class="icon-question-mark"></i> Help &amp; Support</a></li>
+                <li><a href="#" class="waves-effect"><i class="socicon-twitter"></i> Follow us on Twitter</a></li>
+            </ul>
+        </nav>
+        <div class="colophon text-center">
+            <div class="intro">
+                <p class="bare-bottom">
+                The type for this book is set in 18px / 1.5
+                <a href="https://www.google.com/fonts/specimen/Source+Serif+Pro">Adobe Serif</a>,
+                <a href="https://www.google.com/fonts/specimen/Source+Sans+Pro">Sans</a>, and
+                <a href="https://www.google.com/fonts/specimen/Source+Code+Pro">Code</a>.
+                </p>
+            </div>
+            <div class="printers-mark">
+                <div class="inscription">Docendo <i class="icon-repeat"></i> Discimus</div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="main python" role="main">
+    <div class="main-container row center-xs">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8">
+
+            <div class="content">
+
+                <!--- RST STARTS -->
+                <h1 class="title">Exercise 51: Getting Input from a Browser</h1>
+                <p>While it's exciting to see the browser display &quot;Hello World,&quot; it's even more exciting to let the user submit text to your application from a form.  In this exercise we'll improve our starter web application by using forms and storing information about users into their &quot;sessions.&quot;</p>
+<div class="section" id="how-the-web-works">
+<h1>How the Web Works</h1>
+<p>Time for some boring stuff.  You need to understand a bit more about how the web works before you can make a form.  This description isn't complete, but it's accurate and will help you figure out what might be going wrong with your application.  Also, creating forms will be easier if you know what they do.</p>
+<p>I'll start with a simple diagram that shows you the different parts of a web request and how the information flows:</p>
+<div class="figure align-center">
+<img alt="_static/python/http_flow_graphic.png" src="_static/python/http_flow_graphic.png" />
+</div>
+<p>I've labeled the lines with letters so I can walk you through a regular request process:</p>
+<ol class="arabic simple">
+<li>You type in the url <a class="reference external" href="http://test.com//">http://test.com//</a> into your browser, and it sends the request on <tt class="docutils literal">line (A)</tt> to your computer's network interface.</li>
+<li>Your request goes out over the internet on <tt class="docutils literal">line (B)</tt> and then to the remote computer on <tt class="docutils literal">line (C)</tt> where my server accepts the request.</li>
+<li>Once my computer accepts it, my web application gets it on <tt class="docutils literal">line (D)</tt>, and my Python code runs the <tt class="docutils literal">index.GET</tt> handler.</li>
+<li>The response comes out of my Python server when I <tt class="docutils literal">return</tt> it, and it goes back to your browser over <tt class="docutils literal">line (D)</tt> again.</li>
+<li>The server running this site takes the response off <tt class="docutils literal">line (D)</tt>, then sends it back over the internet on <tt class="docutils literal">line (C)</tt>.</li>
+<li>The response from the server then comes off the internet on <tt class="docutils literal">line (B)</tt>, and your computer's network interface hands it to your browser on <tt class="docutils literal">line (A)</tt>.</li>
+<li>Finally, your browser then displays the response.</li>
+</ol>
+<p>In this description there are a few terms you should know so that you have a common vocabulary to work with when talking about your web application:</p>
+<dl class="docutils">
+<dt>Browser</dt>
+<dd>The software that you're probably using every day.  Most people don't know what a browser really does. They just call browsers &quot;the internet.&quot;  Its job is to take addresses (like <a class="reference external" href="http://test.com/">http://test.com/</a>) you type into the URL bar, then use that information to make requests to the server at that address.</dd>
+<dt>Address</dt>
+<dd>This is normally a URL (Uniform Resource Locator) like <a class="reference external" href="http://test.com//">http://test.com//</a> and indicates where a browser should go.  The first part, <tt class="docutils literal">http</tt>, indicates the protocol you want to use, in this case &quot;Hyper-Text Transport Protocol.&quot;  You can also try <a class="reference external" href="ftp://ibiblio.org/">ftp://ibiblio.org/</a> to see how &quot;File Transport Protocol&quot; works.  The <a class="reference external" href="http://test.com/">http://test.com/</a> part is the &quot;hostname,&quot; a human readable address you can remember and which maps to a number called an IP address, similar to a telephone number for a computer on the internet.  Finally, URLs can have a trailing <tt class="docutils literal">path</tt> like the <tt class="docutils literal">/book/</tt> part of <a class="reference external" href="http://test.com//book/">http://test.com//book/</a>, which indicates a file or some resource <em>on</em> the server to retrieve with a request.  There are many other parts, but those are the main ones.</dd>
+<dt>Connection</dt>
+<dd>Once a browser knows what protocol you want to use (http), what server you want to talk to (<a class="reference external" href="http://test.com/">http://test.com/</a>), and what resource on that server to get, it must make a connection.  The browser simply asks your operating system (OS) to open a &quot;port&quot; to the computer, usually port 80. When it works, the OS hands back to your program something that works like a file, but is actually sending and receiving bytes over the network wires between your computer and the other computer at <a class="reference external" href="http://test.com/">http://test.com/</a>.  This is also the same thing that happens with <a class="reference external" href="http://localhost:8080/">http://localhost:8080/</a>, but in this case you're telling the browser to connect to your own computer (localhost) and use port 8080 rather than the default of 80.  You could also do <a class="reference external" href="http://test.com/">http://test.com:80/</a> and get the same result, except you're explicitly saying to use port 80 instead of letting it be that by default.</dd>
+<dt>Request</dt>
+<dd>Your browser is connected using the address you gave. Now it needs to ask for the resource it wants (or you want) on the remote server.  If you gave <tt class="docutils literal">/book/</tt> at the end of the URL, then you want the file (resource) at <tt class="docutils literal">/book/</tt>, and most servers will use the real file <tt class="docutils literal">/book/index.html</tt> but pretend it doesn't exist.  What the browser does to get this resource is send a <em>request</em> to the server.  I won't get into exactly how it does this, but just understand that it has to send something to query the server for the request.  The interesting thing is that these &quot;resources&quot; don't have to be files. For instance, when the browser in your application asks for something, the server is returning something your Python code generated.</dd>
+<dt>Server</dt>
+<dd>The server is the computer at the end of a browser's connection that knows how to answer your browser's requests for files/resources.  Most web servers just send files, and that's actually the majority of traffic.  But you're actually building a server in Python that knows how to take requests for resources and then return strings that you craft using Python.  When you do this crafting, <em>you</em> are pretending to be a file to the browser, but really it's just code.  As you can see from Exercise 50, it also doesn't take much code to create a response.</dd>
+<dt>Response</dt>
+<dd>This is the HTML (CSS, JavaScript, or images) your server wants to send back to the browser as the answer to the browser's request.  In the case of files, it just reads them off the disk and sends them to the browser, but it wraps the contents of the disk in a special &quot;header&quot; so the browser knows what it's getting.  In the case of your application, you're still sending the same thing, including the header, but you generate that data on the fly with your Python code.</dd>
+</dl>
+<p>That is the fastest crash course in how a web browser accesses information on servers on the internet.  It should work well enough for you to understand this exercise, but if not, read about it as much as you can until you get it.  A really good way to do that is to take the diagram and break different parts of the web application you did in Exercise 50.  If you can break your web application in predictable ways using the diagram, you'll start to understand how it works.</p>
+</div>
+<div class="section" id="how-forms-work">
+<h1>How Forms Work</h1>
+<p>The best way to play with forms is to write some code that accepts form data, and then see what you can do.  Take your <tt class="docutils literal">app.py</tt> file and make it look like this:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><a name="python--ex51--gothonweb--form_test.py-idio.html-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-2"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">render_template</span>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-3"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-4"></a>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-6"></a>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-7"></a><span class="nd">@app.route</span><span class="p">(</span><span class="s2">&quot;/hello&quot;</span><span class="p">)</span>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-8"></a><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-9"></a>    <span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;Nobody&#39;</span><span class="p">)</span>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-10"></a>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-11"></a>    <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-12"></a>        <span class="n">greeting</span> <span class="o">=</span> <span class="n">f</span><span class="s2">&quot;Hello, {name}&quot;</span>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-13"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-14"></a>        <span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-15"></a>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-16"></a>    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;index.html&quot;</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="n">greeting</span><span class="p">)</span>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-17"></a>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-18"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a name="python--ex51--gothonweb--form_test.py-idio.html-19"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table><p>Restart it (hit CTRL-C and then run it again) to make sure it loads again, then with your browser go to <tt class="docutils literal"><span class="pre">http://localhost:5000/hello</span></tt>, which should display, &quot;I just wanted to say Hello, Nobody.&quot;  Next, change the URL in your browser to <tt class="docutils literal"><span class="pre">http://localhost:5000/hello?name=Frank</span></tt>, and you'll see it say, &quot;Hello, Frank.&quot;  Finally, change the <tt class="docutils literal">name=Frank</tt> part to be your name.  Now it's saying hello to you.</p>
+<p>Let's break down the changes I made to your script.</p>
+<ol class="arabic simple">
+<li>Instead of just a string for <tt class="docutils literal">greeting</tt>, I'm now using <tt class="docutils literal">request.args</tt> to get data from the browser.  This is a simple <tt class="docutils literal">dict</tt> that contains the form values as key=value pairs.</li>
+<li>I then construct the <tt class="docutils literal">greeting</tt> from the new <tt class="docutils literal">name</tt>, which should be very familiar to you by now.</li>
+<li>Everything else about the file is the same as before.</li>
+</ol>
+<p>You're also not restricted to just one parameter on the URL.  Change this example to give two variables like this: <tt class="docutils literal"><span class="pre">http://localhost:5000/hello?name=Frank&amp;greet=Hola</span></tt>.  Then change the code to get <tt class="docutils literal">name</tt> and <tt class="docutils literal">greet</tt> like this:</p>
+<pre class="code python literal-block">
+<span class="name">greet</span> <span class="operator">=</span> <span class="name">request</span><span class="operator">.</span><span class="name">args</span><span class="operator">.</span><span class="name">get</span><span class="punctuation">(</span><span class="literal string single">'greet'</span><span class="punctuation">,</span> <span class="literal string single">'Hello'</span><span class="punctuation">)</span>
+<span class="name">greeting</span> <span class="operator">=</span> <span class="name">f</span><span class="literal string double">&quot;{greet}, {name}&quot;</span>
+</pre>
+<p>You should also try <em>not</em> giving the <tt class="docutils literal">greet</tt> and <tt class="docutils literal">name</tt> parameters on the URL.  You'll simply send your browser to <tt class="docutils literal"><span class="pre">http://localhost:5000/hello</span></tt> to see that the <tt class="docutils literal">index</tt> now defaults to &quot;Nobody&quot; for <tt class="docutils literal">name</tt> and &quot;Hello&quot; for <tt class="docutils literal">greet</tt>.</p>
+</div>
+<div class="section" id="creating-html-forms">
+<h1>Creating HTML Forms</h1>
+<p>Passing the parameters on the URL works, but it's kind of ugly and not easy to use for regular people.  What you really want is a &quot;POST form,&quot; which is a special HTML file that has a <tt class="docutils literal">&lt;form&gt;</tt> tag in it.  This form will collect information from the user, then send it to your web application just like you did above.</p>
+<p>Let's make a quick one so you can see how it works.  Here's the new HTML file you need to create, in <tt class="docutils literal">templates/hello_form.html</tt>:</p>
+<div class="highlight"><pre><span></span><a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-2"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-3"></a>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Sample Web Form<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-4"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-5"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-6"></a>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-7"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Fill Out This Form<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-8"></a>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-9"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/hello&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-10"></a>    A Greeting: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;greet&quot;</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-11"></a>    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-12"></a>    Your Name: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-13"></a>    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-14"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-15"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-16"></a>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-17"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form.html-pyg.html-18"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div><p>You should then change <tt class="docutils literal">app.py</tt> to look like this:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><a name="python--ex51--gothonweb--app.py-idio.html-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<a name="python--ex51--gothonweb--app.py-idio.html-2"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">render_template</span>
+<a name="python--ex51--gothonweb--app.py-idio.html-3"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span>
+<a name="python--ex51--gothonweb--app.py-idio.html-4"></a>
+<a name="python--ex51--gothonweb--app.py-idio.html-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<a name="python--ex51--gothonweb--app.py-idio.html-6"></a>
+<a name="python--ex51--gothonweb--app.py-idio.html-7"></a><span class="nd">@app.route</span><span class="p">(</span><span class="s2">&quot;/hello&quot;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+<a name="python--ex51--gothonweb--app.py-idio.html-8"></a><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+<a name="python--ex51--gothonweb--app.py-idio.html-9"></a>    <span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Hello World&quot;</span>
+<a name="python--ex51--gothonweb--app.py-idio.html-10"></a>
+<a name="python--ex51--gothonweb--app.py-idio.html-11"></a>    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">:</span>
+<a name="python--ex51--gothonweb--app.py-idio.html-12"></a>        <span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+<a name="python--ex51--gothonweb--app.py-idio.html-13"></a>        <span class="n">greet</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;greet&#39;</span><span class="p">]</span>
+<a name="python--ex51--gothonweb--app.py-idio.html-14"></a>        <span class="n">greeting</span> <span class="o">=</span> <span class="n">f</span><span class="s2">&quot;{greet}, {name}&quot;</span>
+<a name="python--ex51--gothonweb--app.py-idio.html-15"></a>        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;index.html&quot;</span><span class="p">,</span> <span class="n">greeting</span><span class="o">=</span><span class="n">greeting</span><span class="p">)</span>
+<a name="python--ex51--gothonweb--app.py-idio.html-16"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="python--ex51--gothonweb--app.py-idio.html-17"></a>        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;hello_form.html&quot;</span><span class="p">)</span>
+<a name="python--ex51--gothonweb--app.py-idio.html-18"></a>
+<a name="python--ex51--gothonweb--app.py-idio.html-19"></a>
+<a name="python--ex51--gothonweb--app.py-idio.html-20"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<a name="python--ex51--gothonweb--app.py-idio.html-21"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</td></tr></table><p>Once you've got those written up, simply restart the web application again and hit it with your browser like before.</p>
+<p>This time you'll get a form asking you for &quot;A Greeting&quot; and &quot;Your Name.&quot; When you hit the <tt class="docutils literal">Submit</tt> button on the form, it will give you the same greeting you normally get, but this time look at the URL in your browser.  See how it's <tt class="docutils literal"><span class="pre">http://localhost:5000/hello</span></tt> even though you sent in parameters.</p>
+<p>The part of the <tt class="docutils literal">hello_form.html</tt> file that makes this work is the line with <tt class="docutils literal">&lt;form <span class="pre">action=&quot;/hello&quot;</span> <span class="pre">method=&quot;POST&quot;&gt;</span></tt>.  This tells your browser to:</p>
+<ol class="arabic simple">
+<li>Collect data from the user using the form fields inside the form.</li>
+<li>Send them to the server using a <tt class="docutils literal">POST</tt> type of request, which is just another browser request that &quot;hides&quot; the form fields.</li>
+<li>Send that to the <tt class="docutils literal">/hello</tt> URL (as shown in the <tt class="docutils literal"><span class="pre">action=&quot;/hello&quot;</span></tt> part).</li>
+</ol>
+<p>You can then see how the two <tt class="docutils literal">&lt;input&gt;</tt> tags match the names of the variables in your new code.  Also notice that instead of just a <tt class="docutils literal">GET</tt> method inside <tt class="docutils literal">class index</tt>, I have another method, <tt class="docutils literal">POST</tt>.  How this new application works is as follows:</p>
+<ol class="arabic simple">
+<li>Your request goes to <tt class="docutils literal">index()</tt> like normal, except now there is an <tt class="docutils literal"><span class="pre">if-statement</span></tt> that checks the <tt class="docutils literal">request.method</tt> for either <tt class="docutils literal">&quot;POST&quot;</tt> or <tt class="docutils literal">&quot;GET&quot;</tt> methods.  This is how the browser tells <tt class="docutils literal">app.py</tt> that a request is either a form submission or URL parameters.</li>
+<li>If <tt class="docutils literal">request.method</tt> is <tt class="docutils literal">&quot;POST&quot;</tt>, then you process the form as if it were filled out and submitted, returning the proper greeting.</li>
+<li>If <tt class="docutils literal">request.method</tt> is anything else, then you simply return the <tt class="docutils literal">hello_form.html</tt> for the user to fill out.</li>
+</ol>
+<p>As an exercise, go into the <tt class="docutils literal">templates/index.html</tt> file and add a link <em>back</em> to just <tt class="docutils literal">/hello</tt> so that you can keep filling out the form and seeing the results.  Make sure you can explain how this link works and how it's letting you cycle between <tt class="docutils literal">templates/index.html</tt> and <tt class="docutils literal">templates/hello_form.html</tt> and what's being run inside this latest Python code.</p>
+</div>
+<div class="section" id="creating-a-layout-template">
+<h1>Creating a Layout Template</h1>
+<p>When you work on your game in the next exercise, you'll need to make a bunch of little HTML pages.  Writing a full web page each time will quickly become tedious. Luckily you can create a &quot;layout&quot; template, or a kind of shell that will wrap all your other pages with common headers and footers.  Good programmers try to reduce repetition, so layouts are essential for being a good programmer.</p>
+<p>Change <tt class="docutils literal">templates/index.html</tt> to be like this:</p>
+<div class="highlight"><pre><span></span><a name="python--ex51--gothonweb--templates--index_laid_out.html-pyg.html-1"></a>{% extends &quot;layout.html&quot; %}
+<a name="python--ex51--gothonweb--templates--index_laid_out.html-pyg.html-2"></a>
+<a name="python--ex51--gothonweb--templates--index_laid_out.html-pyg.html-3"></a>{% block content %}
+<a name="python--ex51--gothonweb--templates--index_laid_out.html-pyg.html-4"></a>
+<a name="python--ex51--gothonweb--templates--index_laid_out.html-pyg.html-5"></a>{% if greeting %}
+<a name="python--ex51--gothonweb--templates--index_laid_out.html-pyg.html-6"></a>    I just wanted to say
+<a name="python--ex51--gothonweb--templates--index_laid_out.html-pyg.html-7"></a>    <span class="p">&lt;</span><span class="nt">em</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color: green; font-size: 2em;&quot;</span><span class="p">&gt;</span>{{ greeting }}<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>.
+<a name="python--ex51--gothonweb--templates--index_laid_out.html-pyg.html-8"></a>{% else %}
+<a name="python--ex51--gothonweb--templates--index_laid_out.html-pyg.html-9"></a>    <span class="p">&lt;</span><span class="nt">em</span><span class="p">&gt;</span>Hello<span class="p">&lt;/</span><span class="nt">em</span><span class="p">&gt;</span>, world!
+<a name="python--ex51--gothonweb--templates--index_laid_out.html-pyg.html-10"></a>{% endif %}
+<a name="python--ex51--gothonweb--templates--index_laid_out.html-pyg.html-11"></a>
+<a name="python--ex51--gothonweb--templates--index_laid_out.html-pyg.html-12"></a>{% endblock %}
+</pre></div><p>Then change <tt class="docutils literal">templates/hello_form.html</tt> to be like this:</p>
+<div class="highlight"><pre><span></span><a name="python--ex51--gothonweb--templates--hello_form_laid_out.html-pyg.html-1"></a>{% extends &quot;layout.html&quot; %}
+<a name="python--ex51--gothonweb--templates--hello_form_laid_out.html-pyg.html-2"></a>
+<a name="python--ex51--gothonweb--templates--hello_form_laid_out.html-pyg.html-3"></a>{% block content %}
+<a name="python--ex51--gothonweb--templates--hello_form_laid_out.html-pyg.html-4"></a>
+<a name="python--ex51--gothonweb--templates--hello_form_laid_out.html-pyg.html-5"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Fill Out This Form<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form_laid_out.html-pyg.html-6"></a>
+<a name="python--ex51--gothonweb--templates--hello_form_laid_out.html-pyg.html-7"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;/hello&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form_laid_out.html-pyg.html-8"></a>    A Greeting: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;greet&quot;</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form_laid_out.html-pyg.html-9"></a>    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form_laid_out.html-pyg.html-10"></a>    Your Name: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form_laid_out.html-pyg.html-11"></a>    <span class="p">&lt;</span><span class="nt">br</span><span class="p">/&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form_laid_out.html-pyg.html-12"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form_laid_out.html-pyg.html-13"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--hello_form_laid_out.html-pyg.html-14"></a>
+<a name="python--ex51--gothonweb--templates--hello_form_laid_out.html-pyg.html-15"></a>{% endblock %}
+</pre></div><p>All we're doing is stripping out the &quot;boilerplate&quot; at the top and the bottom, which is always on every page.  We'll put that back into a single <tt class="docutils literal">templates/layout.html</tt> file that handles it for us from now on.</p>
+<p>Once you have those changes, create a <tt class="docutils literal">templates/layout.html</tt> file with this in it:</p>
+<div class="highlight"><pre><span></span><a name="python--ex51--gothonweb--templates--layout.html-pyg.html-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--layout.html-pyg.html-2"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--layout.html-pyg.html-3"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Gothons From Planet Percal #25<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--layout.html-pyg.html-4"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--layout.html-pyg.html-5"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--layout.html-pyg.html-6"></a>
+<a name="python--ex51--gothonweb--templates--layout.html-pyg.html-7"></a>{% block content %}
+<a name="python--ex51--gothonweb--templates--layout.html-pyg.html-8"></a>
+<a name="python--ex51--gothonweb--templates--layout.html-pyg.html-9"></a>{% endblock %}
+<a name="python--ex51--gothonweb--templates--layout.html-pyg.html-10"></a>
+<a name="python--ex51--gothonweb--templates--layout.html-pyg.html-11"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a name="python--ex51--gothonweb--templates--layout.html-pyg.html-12"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div><p>This file looks like a regular template, except that it's going to be passed the <em>contents</em> of the other templates and used to <em>wrap</em> them.  Anything you put in here doesn't need to be in the other templates.  Your other HTML templates will be inserted into the <tt class="docutils literal">{% block content %}</tt> section.  Flask knows to use this <tt class="docutils literal">layout.html</tt> as the layout because you put <tt class="docutils literal">{% extends &quot;layout.html&quot; %}</tt> at the top of your templates.</p>
+</div>
+<div class="section" id="writing-automated-tests-for-forms">
+<h1>Writing Automated Tests for Forms</h1>
+<p>It's easy to test a web application with your browser by just hitting refresh, but come on, we're programmers here.  Why do some repetitive task when we can write some code to test our application?  What you're going to do next is write a little test for your web application form based on what you learned in Exercise 47.  If you don't remember Exercise 47, read it again.</p>
+<p>Create a new file named <tt class="docutils literal">tests/app_tests.py</tt> with this:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-1"></a><span class="kn">from</span> <span class="nn">nose.tools</span> <span class="kn">import</span> <span class="o">*</span>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-2"></a><span class="kn">from</span> <span class="nn">app</span> <span class="kn">import</span> <span class="n">app</span>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-3"></a>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-4"></a><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;TESTING&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-5"></a><span class="n">web</span> <span class="o">=</span> <span class="n">app</span><span class="o">.</span><span class="n">test_client</span><span class="p">()</span>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-6"></a>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-7"></a><span class="k">def</span> <span class="nf">test_index</span><span class="p">():</span>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-8"></a>    <span class="n">rv</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">follow_redirects</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-9"></a>    <span class="n">assert_equal</span><span class="p">(</span><span class="n">rv</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">404</span><span class="p">)</span>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-10"></a>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-11"></a>    <span class="n">rv</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;/hello&#39;</span><span class="p">,</span> <span class="n">follow_redirects</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-12"></a>    <span class="n">assert_equal</span><span class="p">(</span><span class="n">rv</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-13"></a>    <span class="n">assert_in</span><span class="p">(</span><span class="n">b</span><span class="s2">&quot;Fill Out This Form&quot;</span><span class="p">,</span> <span class="n">rv</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-14"></a>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-15"></a>    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Zed&#39;</span><span class="p">,</span> <span class="s1">&#39;greet&#39;</span><span class="p">:</span> <span class="s1">&#39;Hola&#39;</span><span class="p">}</span>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-16"></a>    <span class="n">rv</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;/hello&#39;</span><span class="p">,</span> <span class="n">follow_redirects</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-17"></a>    <span class="n">assert_in</span><span class="p">(</span><span class="n">b</span><span class="s2">&quot;Zed&quot;</span><span class="p">,</span> <span class="n">rv</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<a name="python--ex51--gothonweb--tests--app_tests.py-idio.html-18"></a>    <span class="n">assert_in</span><span class="p">(</span><span class="n">b</span><span class="s2">&quot;Hola&quot;</span><span class="p">,</span> <span class="n">rv</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><p>Finally, use <tt class="docutils literal">nosetests</tt> to run this test setup and test your web application:</p>
+<pre class="code console literal-block">
+<span class="generic prompt">$</span> nosetests
+<span class="generic output">.
+----------------------------------------------------------------------
+Ran 1 test in 0.059s
+
+OK</span>
+</pre>
+<p>What I'm doing here is I'm actually <em>importing</em> the whole application from the <tt class="docutils literal">app.py</tt> module, then running it manually.  The <tt class="docutils literal">flask</tt> framework has a very simple API for processing requests, which looks like this:</p>
+<pre class="code python literal-block">
+<span class="name">data</span> <span class="operator">=</span> <span class="punctuation">{</span><span class="literal string single">'name'</span><span class="punctuation">:</span> <span class="literal string single">'Zed'</span><span class="punctuation">,</span> <span class="literal string single">'greet'</span><span class="punctuation">:</span> <span class="literal string single">'Hola'</span><span class="punctuation">}</span>
+<span class="name">rv</span> <span class="operator">=</span> <span class="name">web</span><span class="operator">.</span><span class="name">post</span><span class="punctuation">(</span><span class="literal string single">'/hello'</span><span class="punctuation">,</span> <span class="name">follow_redirects</span><span class="operator">=</span><span class="name builtin pseudo">True</span><span class="punctuation">,</span> <span class="name">data</span><span class="operator">=</span><span class="name">data</span><span class="punctuation">)</span>
+</pre>
+<p>This means you can send a <tt class="docutils literal">POST</tt> request using the <tt class="docutils literal">post()</tt> method, and then give it the form data as a <tt class="docutils literal">dict</tt>.  Everything else works the same as testing <tt class="docutils literal">web.get()</tt> requests.</p>
+<p>In the <tt class="docutils literal">tests/app_tests.py</tt> automated test I'm first making sure the <tt class="docutils literal">/</tt> URL returns a &quot;404 Not Found&quot; response, since it actually doesn't exist.  Then I'm checking that <tt class="docutils literal">/hello</tt> works with both a <tt class="docutils literal">GET</tt> and a <tt class="docutils literal">POST</tt> form.  Following the test should be fairly simple, even if you might not totally know what's going on.</p>
+<p>Take some time studying this latest application, especially how the automated testing works.  Make sure you understand how I imported the application from <tt class="docutils literal">app.py</tt> and ran it directly for the automated test.  This is an important trick that will lead to more learning.</p>
+</div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<ol class="arabic simple">
+<li>Read even more about HTML, and give the simple form a better layout.  It helps to draw what you want to do on paper and <em>then</em> implement it with HTML.</li>
+<li>This one is hard, but try to figure out how you'd do a file upload form so that you can upload an image and save it to the disk.</li>
+<li>This is even more mind-numbing, but go find the HTTP RFC (which is the document that describes how HTTP works) and read as much of it as you can.  It is really boring but comes in handy once in a while.</li>
+<li>This will also be really difficult, but see if you can find someone to help you set up a web server like Apache, Nginx, or thttpd.  Try to serve a couple of your .html and .css files with it just to see if you can.  Don't worry if you can't. Web servers kind of suck.</li>
+<li>Take a break after this and just try making as many different web applications as you can.</li>
+</ol>
+</div>
+<div class="section" id="breaking-it">
+<h1>Breaking It</h1>
+<p>This is a great place to figure out how to break web applications.  You should experiment with the following:</p>
+<ol class="arabic simple">
+<li>How much damage can you do with the <tt class="docutils literal">FLASK_DEBUG</tt> setting on? Be careful that you don't wipe yourself out doing this.</li>
+<li>Let's say you don't have default parameters for the forms.  What could go wrong?</li>
+<li>You're checking for <tt class="docutils literal">POST</tt> and then &quot;anything else.&quot;  You can use the <tt class="docutils literal">curl</tt> command line tool to generate different request types.  What happens?</li>
+</ol>
+</div>
+                <!-- RST ENDS -->
+            </div>
+        </div>
+
+        <div class="row center-xs" id="buy">
+            <div class="text-center col-xs-10 col-sm-5 col-md-4">
+                <h2 class="section-title__small">Buy The Python 3 Edition!</h2>
+                <p>
+                When you buy  Learn Python 3 The Hard Way, you'll receive the Python 3 Edition PDF, special access to a paid HTML version, and <b>12 hours</b> of 1080p video, one video for each exercise.
+                All files are DRM free and you can download them to your computer for offline viewing. <b>Digital Download Only!  You do not get a physical book.</b>
+                </p>
+
+                <p class="price-block">
+                <span class="currency"><span class="prefix">$</span>29.<span class="suffix">99</span></span>
+                </p>
+
+                <a href="https://shop.learncodethehardway.org/access/buy/9/" class="btn btn-primary btn-full">Buy Digital Download From Zed</a>
+
+                <p class="text-left btn-subtext">
+                <small>Or, you can <a href="index.html">read Learn Python the Hard Way for free</a> right here, video lectures not included.</small>
+                </p>
+
+            </div>
+            <div class="text-center col-xs-10 col-sm-5 col-md-4 col-sm-offset-1">
+
+                <h2 class="section-title__small">Other Buying Options</h2>
+                  <a href="http://amzn.to/2sSzwCY" class="btn btn-secondary btn-full">Buy on Amazon</a>
+                  <a href="http://bit.ly/informitlpy3thw" class="btn btn-secondary btn-full">Paper + Digital from InformIT</a>
+                  <a href="http://bit.ly/bnlpy3thw" class="btn btn-secondary btn-full">Buy from Barnes &amp; Noble</a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row center-xs" id="video_holder" style="display: none">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8">
+            <div data-paydiv_product="9" id='paydiv'>
+                No content available for this exercise.  You can view all available downloads at <a href="https://shop.learncodethehardway.org/customers/">your customer account page</a>.
+            </div>
+        </div>
+    </div>
+
+    </main>
+
+</div>
+
+<div class="row dark bottom-nav">
+    <div class="col-xs text-left">
+        <a href="#" class="prev" id='prev_link'><i class="icon-arrow-67"></i> <i class="icon icon-arrow-left"></i> Previous <span class="hide-xs show-sm-inline">Lesson</span></a>
+    </div>
+    <div class="col-xs text-right"><a href="#" class="next" id='next_link'>Next <span class="hide-xs show-sm-inline">Lesson</span> <i class="icon icon-arrow-right"></i></a>
+    </div>
+</div>
+  </div>
+
+<footer class="footer">
+<div class="row center-xs">
+
+    <div class="col-xs-11 col-sm-6 col-md-5 col-lg-5">
+        <ul class="nav nav-inline">
+            <li><h4><a href="../index.html">Home</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/about/">About</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/contact/">Contact</a></h4></li>
+        </ul>
+        <div class="copyright text-left">
+            <small class="text-muted">&copy; Zed A. Shaw. All rights reserved.</small>
+        </div>
+    </div>
+    <div class="col-xs-11 col-sm-4 col-md-4 col-lg-3">
+        <div class="social-media">
+            <div class="classy-container">
+                <a href="https://twitter.com/lzsthw" class="socicon-twitter"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</footer>
+<script src="../js/scripts.min.js"></script>
+
+<script src="javascripts/jquery.js"></script>
+<script src="index.js"></script>
+<script src="../../shop.learncodethehardway.org/static/jzed.js"></script>
+<script src="../../shop.learncodethehardway.org/static/js/videojs/video.js"></script>
+<link rel="stylesheet" href="../../shop.learncodethehardway.org/static/js/videojs/video-js.css">
+<script src="../../shop.learncodethehardway.org/static/api/v1/paydiv.js"></script>
+<script src="javascripts/app.js"></script>
+<script src="javascripts/littools.js"></script>
+<!-- Start of helpthw Zendesk Widget script -->
+<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("../../assets.zendesk.com/embeddable_framework/main.js","helpthw.zendesk.com");
+/*]]>*/</script>
+<!-- End of helpthw Zendesk Widget script -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-24168052-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+</body>
+
+<!-- Mirrored from learnpythonthehardway.org/python3/ex51.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 01:13:36 GMT -->
+</html>

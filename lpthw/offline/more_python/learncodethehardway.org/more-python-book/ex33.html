@@ -1,0 +1,605 @@
+<!doctype html>
+<html class="no-js">
+
+<!-- Mirrored from learncodethehardway.org/more-python-book/ex33.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 15:17:43 GMT -->
+<head>
+
+
+
+<meta charset="utf-8">
+<title>Learn MORE Python the Hard Way</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="../../www.google-analytics.com/index.html" rel="dns-prefetch">
+<link href="../../ajax.googleapis.com/index.html" rel="dns-prefetch">
+
+<link href='../../fonts.googleapis.com/css33ad.css?family=Source+Code+Pro|Source+Sans+Pro:200,400,700,200italic,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href="../css/style.min.css" rel="stylesheet">
+<!-- http://www.socicon.com -->
+<link href="../css/icons.css" rel="stylesheet">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<title>Exercise 33: Parsers</title>
+
+</head>
+
+<body class="baseline-grid-off book-site" id="top">
+
+
+
+
+<header class="header" role="banner">
+    <nav class="navbar navbar-full nav-brand-family">
+        <div class="row middle-xs">
+            <ul class="brand-links show-md col-xs-3 col-sm-10 bare">
+                <li><a href="http://learncodethehardway.org/" class="waves-effect">Learn:</a></li>
+
+                <li><a href="http://learncodethehardway.org/python/" class="waves-effect">Python</a></li>
+
+                <li><a href="http://learncodethehardway.org/ruby/" class="waves-effect">Ruby</a></li>
+
+                <li><a href="http://learncodethehardway.org/more-python/" class="waves-effect active">More Python</a></li>
+
+                <li><a href="http://learncodethehardway.org/c/" class="waves-effect">C</a></li>
+
+                <li><a href="http://learncodethehardway.org/sql/" class="waves-effect">SQL</a></li>
+
+                <li><a href="http://learncodethehardway.org/javascript/" class="waves-effect">Javascript</a></li>
+
+                <li><a href="http://learncodethehardway.org/unix/" class="waves-effect">Unix</a></li>
+
+                <li><a href="http://learncodethehardway.org/regex/" class="waves-effect">RegEx</a></li>
+
+                <li><a href="http://www.learndesignthehardway.com/" class="waves-effect">Design</a></li>
+
+            </ul>
+            <ul class="brand-links hide-md col-xs-3 col-sm-10 bare">
+                <li><a href="http://learncodethehardway.org/" class="waves-effect">LCTHW</a></li>
+            </ul>
+
+            <ul class="site-meta col-xs-9 col-sm-2 end-xs bare">
+                <li><a href="https://shop.learncodethehardway.org/access/reactivate/" class="waves-effect"><i class="icon icon-user"></i> Account</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-full nav-main" role="navigation">
+        <div class="row between-xs center-xs middle-xs bare">
+            <div class="col-xs-4 start-xs bare">
+                <a href="#" class="no-underline nav-trigger waves-effect" id="toc"><div class="transformer hamburcloser">
+                        <div class="bar bar-t"></div>
+                        <div class="bar bar-m-a"></div>
+                        <div class="bar bar-m-b"></div>
+                        <div class="bar bar-b"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Contents</span></a>
+            </div>
+            <div class="col-xs-4"><strong>&nbsp;</strong></div>
+            <div class="col-xs-4 end-xs bare">
+                <a href="https://helpthw.zendesk.com/hc/en-us" class="no-underline nav-trigger waves-effect" id="help"><div class="transformer questioncloser">
+                        <div class="icon-question-mark"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Help</span></a>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+
+
+
+<div class="wrapper">
+    <div class="masthead more-python-background" style="background-image: url('../images/pattern-more-python.svg')">
+        <img src="../images/logo-more-python.svg" alt="Learn MORE Python The Hard Way" class="logo">
+    </div>
+
+    <aside class="sidebar sidebar-left" role="complementary">
+        <nav class="side-nav-container">
+            <ol class="table-of-contents">
+                <h3>Table of Contents</h3>
+                <li><a class="reference external" href="part0.html">I: Initial Knowledge</a></li>
+                <li><a class="reference external" href="ex0.html">0 The Setup</a></li>
+                <li><a class="reference external" href="ex1.html">1 On Process</a></li>
+                <li><a class="reference external" href="ex2.html">2 On Creativity</a></li>
+                <li><a class="reference external" href="ex3.html">3 On Quality</a></li>
+                <li><a class="reference external" href="part1.html">II: Quick Hacks</a></li>
+                <li><a class="reference external" href="ex4.html">4 Dealing With Command Line Arguments</a></li>
+                <li><a class="reference external" href="ex5.html">5 cat</a></li>
+                <li><a class="reference external" href="ex6.html">6 find</a></li>
+                <li><a class="reference external" href="ex7.html">7 grep</a></li>
+                <li><a class="reference external" href="ex8.html">8 cut</a></li>
+                <li><a class="reference external" href="ex9.html">9 sed</a></li>
+                <li><a class="reference external" href="ex10.html">10 sort</a></li>
+                <li><a class="reference external" href="ex11.html">11 uniq</a></li>
+                <li><a class="reference external" href="ex12.html">12 Review</a></li>
+                <li><a class="reference external" href="part2.html">III: Data Structures</a></li>
+                <li><a class="reference external" href="ex13.html">13 Single Linked Lists</a></li>
+                <li><a class="reference external" href="ex14.html">14 Double Linked Lists</a></li>
+                <li><a class="reference external" href="ex15.html">15 Stacks and Queues</a></li>
+                <li><a class="reference external" href="ex16.html">16 Bubble, Quick, Merge Sort</a></li>
+                <li><a class="reference external" href="ex17.html">17 Dictionary</a></li>
+                <li><a class="reference external" href="ex18.html">18 Measuring Performance</a></li>
+                <li><a class="reference external" href="ex19.html">19 Improving Performance</a></li>
+                <li><a class="reference external" href="ex21.html">21 Binary Search Trees</a></li>
+                <li><a class="reference external" href="ex22.html">22 Binary Search</a></li>
+                <li><a class="reference external" href="en23.html">23 Ternary Search</a></li>
+                <li><a class="reference external" href="ex24.html">24 Suffix Arrays</a></li>
+                <li><a class="reference external" href="part3.html">IV: Intermediate Projects</a></li>
+                <li><a class="reference external" href="ex25.html">25 xargs</a></li>
+                <li><a class="reference external" href="ex26.html">26 hexdump</a></li>
+                <li><a class="reference external" href="ex27.html">27 tr</a></li>
+                <li><a class="reference external" href="ex28.html">28 sh</a></li>
+                <li><a class="reference external" href="ex29.html">29 diff and patch</a></li>
+                <li><a class="reference external" href="part4.html">V: Parsing Text</a></li>
+                <li><a class="reference external" href="ex30.html">30 Finite State Machines</a></li>
+                <li><a class="reference external" href="ex31.html">31 Regular Expressions</a></li>
+                <li><a class="reference external" href="ex32.html">32 Scanners</a></li>
+                <li><a class="reference external" href="ex33.html">33 Parsers</a></li>
+                <li><a class="reference external" href="ex34.html">34 Analyzers</a></li>
+                <li><a class="reference external" href="ex35.html">35 Interpreters</a></li>
+                <li><a class="reference external" href="ex36.html">36 Simple Calculator </a></li>
+                <li><a class="reference external" href="ex37.html">37 Little BASIC</a></li>
+                <li><a class="reference external" href="part5.html">VI: SQL Databases</a></li>
+                <li><a class="reference external" href="ex38.html">38 Introduction to SQL</a></li>
+                <li><a class="reference external" href="ex39.html">39 Creating with SQL</a></li>
+                <li><a class="reference external" href="ex40.html">40 Reading with SQL</a></li>
+                <li><a class="reference external" href="ex41.html">41 Updating with SQL</a></li>
+                <li><a class="reference external" href="ex42.html">42 Deleting with SQL</a></li>
+                <li><a class="reference external" href="ex43.html">43 SQL Administration</a></li>
+                <li><a class="reference external" href="ex44.html">44 Using Python Database API</a></li>
+                <li><a class="reference external" href="ex45.html">45 Creating an ORM</a></li>
+                <li><a class="reference external" href="part6.html">VII: Final Projects</a></li>
+                <li><a class="reference external" href="ex46.html">46 blog</a></li>
+                <li><a class="reference external" href="ex47.html">47 bc</a></li>
+                <li><a class="reference external" href="ex48.html">48 ed</a></li>
+                <li><a class="reference external" href="ex49.html">49 sed</a></li>
+                <li><a class="reference external" href="ex50.html">50 vi</a></li>
+                <li><a class="reference external" href="ex51.html">51 lessweb</a></li>
+                <li><a class="reference external" href="ex52.html">52 moreweb</a></li>
+            </ol>
+            <ul class="site-links">
+                <h3>Learn the Hard Way</h3>
+                <li><a href="#" class="waves-effect"><i class="icon-information"></i> About LPTHW</a></li>
+                <li><a href="#" class="waves-effect"><i class="icon-question-mark"></i> Help &amp; Support</a></li>
+                <li><a href="#" class="waves-effect"><i class="socicon-twitter"></i> Follow us on Twitter</a></li>
+            </ul>
+        </nav>
+        <div class="colophon text-center">
+            <div class="intro">
+                <p class="bare-bottom">
+                The type for this book is set in 18px / 1.5
+                <a href="https://www.google.com/fonts/specimen/Source+Serif+Pro">Adobe Serif</a>,
+                <a href="https://www.google.com/fonts/specimen/Source+Sans+Pro">Sans</a>, and
+                <a href="https://www.google.com/fonts/specimen/Source+Code+Pro">Code</a>.
+                </p>
+            </div>
+            <div class="printers-mark">
+                <div class="inscription">Docendo <i class="icon-repeat"></i> Discimus</div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="main more python" role="main">
+    <div class="main-container row center-xs">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8">
+
+            <div class="content">
+                <div class="warning">
+                    <p class="first admonition-title">Warning</p>
+                    <p class="last">This book is new.  If you'd like to go through it, then join the <a class="reference external" href="https://gitter.im/lcthw/more-python-help">Gitter Chat</a> to get help while you attempt it.  I'm also looking for feedback on the difficulty of the projects.  If you don't like chat, then email <a class="reference external" href="mailto:help&#64;learncodethehardway.org">help&#64;learncodethehardway.org</a> to talk privately.</p>
+                </div>
+                <!--- RST STARTS -->
+                <h1 class="title">Exercise 33: Parsers</h1>
+                <p>Imagine you're given a huge list of numbers and you have to enter them into a spreadsheet.  At first, this huge list is just a raw stream of digits separated by spaces.  Your brain automatically breaks the stream of digits at the spaces and creates numbers.  That's your brain acting like a scanner.  You then take each number, and enter them into rows and columns that have meaning.  Your brain is acting like a parser by taking the flat stream of numbers (tokens), and turning them into a 2-dimensional grid of more meaningful rows and columns.  The rules you follow for what numbers go into what rows and what columns is your &quot;grammar,&quot; and a parser's job is to enforce the grammar just like you would with a spreadsheet.</p>
+<p>Let's look at the example Puny Python code from Exercise 32 one more time and discuss parsers from three different viewing angles:</p>
+<pre class="code python literal-block">
+<span class="keyword">def</span> <span class="name function">hello</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span> <span class="name">y</span><span class="punctuation">):</span>
+    <span class="keyword">print</span><span class="punctuation">(</span><span class="name">x</span> <span class="operator">+</span> <span class="name">y</span><span class="punctuation">)</span>
+
+<span class="name">hello</span><span class="punctuation">(</span><span class="literal number integer">10</span><span class="punctuation">,</span> <span class="literal number integer">20</span><span class="punctuation">)</span>
+</pre>
+<p>When you look at this code what do you see?  I see a tree, similar to the <tt class="docutils literal">BSTree</tt> or <tt class="docutils literal">TSTree</tt> we created earlier.  Do you see the tree?  Let's start at the very beginning of this file and learn how to go from the characters to a tree.</p>
+<p>First, when we load a <tt class="docutils literal">.py</tt> file it is just a stream of &quot;characters&quot;--actually bytes, but Python uses Unicode so...characters will have to do.  These characters are in a line, with zero structure to them, and the job of our scanner is to add the first level of meaning.  The scanner does this by using regular expressions to <em>extract</em> meaning from the stream of characters, creating a list of tokens.  We have gone from a list of characters to a list of tokens, but look at the <tt class="docutils literal">def hell(x,y):</tt> function.  That is a function with a block of code inside it.  This means some form of &quot;containment&quot; or &quot;thing inside a thing&quot; structure.</p>
+<p>A really easy way to represent containment is with a tree.  We <em>could</em> use a table like your spreadsheet, but it's not as easy to work with as a tree.  Look at the <tt class="docutils literal">hello(x, y)</tt> part next.  We have a <tt class="docutils literal">NAME(hello)</tt> token, but we want to grab the contents of the <tt class="docutils literal"><span class="pre">(...)</span></tt> part and know that it is inside the parenthesis.  Again, we can use a tree, and we &quot;nest&quot; the <tt class="docutils literal">x, y</tt> part inside the <tt class="docutils literal"><span class="pre">(...)</span></tt> part as a child or branch of the tree.  Eventually we would have a tree starting at the root of this Python code, and each block, print, function definition, and function call would be branches from root, which would have children, and so on.</p>
+<p>Why would we do this?  We need to know the <em>structure</em> of the Python code based on its grammar so that we can analyze it later.  If we don't convert the linear list of tokens into a tree structure, then we have no idea where the boundaries of functions, blocks, branches, or expressions are.  We'll have to determine the boundaries on the fly in a &quot;straight line&quot; way, which isn't very easy to do reliably.  Plenty of early terrible languages are straight line languages, and we now know they don't have to be.  We can use a parser to build the tree structure.</p>
+<p>The job of a parser is to take the list of tokens from the scanner and translate them into a more meaningful tree of grammar.  You can think of a parser as applying another regular expression to the token stream.  The scanner's regex boxes up chunks of characters into tokens.  The parser's &quot;regex&quot; puts those tokens inside boxes, that have boxes inside them, and so on until the tokens are no longer linear.</p>
+<p>The parser <em>also</em> adds meaning to these boxes.  A parser would simply drop the <tt class="docutils literal">()</tt> parenthesis tokens and just create a special <tt class="docutils literal">parameters</tt> list for a possible <tt class="docutils literal">Function</tt> class.  It would drop colons, useless spaces, commas, any tokens that don't actually add meaning, and translate them into nested structures that are easier to process.  The end result might look like this fake tree for the above sample code:</p>
+<pre class="literal-block">
+* root
+  * Function
+    - name = hello
+    - parameters = x, y
+    - code:
+      * Call
+        - name = print
+        - parameters =
+            * Expression
+              - Add
+                - a = x
+                - b = y
+  * Call
+    - name = hello
+    - parameters = 10, 20
+</pre>
+<p>Study how I went from the above sample Python code to this fictional tree that represents the code before you move on.  It's not difficult to understand, but it's key that you be able to look at the Python code and figure out the tree structure.</p>
+<div class="section" id="recursive-descent-parsing">
+<h1>Recursive Descent Parsing</h1>
+<p>There are a few established ways to create a parser for this kind of grammar, but the simplest to start with is called a Recursive Descent Parser (RDP).  I actually taught you this topic in my <a class="reference external" href="https://learnpythonthehardway.org/python3/ex49.html">Learn Python The Hard Way, Exercise 49</a>.  You created a simple RDP parser to handle your little game language, and you didn't even know it.  In this exercise I'll give a more formal description of how to write an RDP parser, then let you attempt it for our little snippet of Python above.</p>
+<p>An RDP uses mutually recursive function calls that implement the tree structure of a given grammar.  The code for an RDP parser looks like the actual grammar you're processing, and they're simple to write as long as you follow some rules.  The two disadvantages of an RDP parser are: they might not be very efficient and you write them by hand usually, so they'll have more errors than a generated parser.  There are also some theoretical limitations regarding what an RDP parser can parse, but since you write them by hand you can usually work around a lot of those limitations.</p>
+<p>To write an RDP parser you need to process your scanner tokens using three main operations:</p>
+<dl class="docutils">
+<dt>peek</dt>
+<dd>Return if the next token <em>could</em> match, but don't take it off the stream.</dd>
+<dt>match</dt>
+<dd>Match the next token, taking it off the stream.</dd>
+<dt>skip</dt>
+<dd>Skip the next token as it's not needed, taking it off the stream.</dd>
+</dl>
+<p>You'll notice these are the three operations I told you to create for your <tt class="docutils literal">Scanner</tt> in Exercise 33, and this is why.  You need them for doing an RDP parser.</p>
+<p>You use these three functions to write grammar parsing functions that grab tokens from the scanner. A short example from this exercise is parsing this simple function:</p>
+<pre class="code python literal-block">
+<span class="keyword">def</span> <span class="name function">function_definition</span><span class="punctuation">(</span><span class="name">tokens</span><span class="punctuation">):</span>
+    <span class="name">skip</span><span class="punctuation">(</span><span class="name">tokens</span><span class="punctuation">)</span> <span class="comment single"># discard def</span>
+    <span class="name">name</span> <span class="operator">=</span> <span class="name">match</span><span class="punctuation">(</span><span class="name">tokens</span><span class="punctuation">,</span> <span class="literal string single">'NAME'</span><span class="punctuation">)</span>
+    <span class="name">match</span><span class="punctuation">(</span><span class="name">tokens</span><span class="punctuation">,</span> <span class="literal string single">'LPAREN'</span><span class="punctuation">)</span>
+    <span class="name">params</span> <span class="operator">=</span> <span class="name">parameters</span><span class="punctuation">(</span><span class="name">tokens</span><span class="punctuation">)</span>
+    <span class="name">match</span><span class="punctuation">(</span><span class="name">tokens</span><span class="punctuation">,</span> <span class="literal string single">'RPAREN'</span><span class="punctuation">)</span>
+    <span class="name">match</span><span class="punctuation">(</span><span class="name">tokens</span><span class="punctuation">,</span> <span class="literal string single">'COLON'</span><span class="punctuation">)</span>
+    <span class="keyword">return</span> <span class="punctuation">{</span><span class="literal string single">'type'</span><span class="punctuation">:</span> <span class="literal string single">'FUNCDEF'</span><span class="punctuation">,</span> <span class="literal string single">'name'</span><span class="punctuation">:</span> <span class="name">name</span><span class="punctuation">,</span> <span class="literal string single">'params'</span><span class="punctuation">:</span> <span class="name">params</span><span class="punctuation">}</span>
+</pre>
+<p>You can see I'm simply taking the tokens and using <tt class="docutils literal">match</tt> and <tt class="docutils literal">skip</tt> to process them.  You'll also notice I have a <tt class="docutils literal">parameters</tt> function, which is the &quot;Recursive&quot; part of &quot;Recursive Descent Parser&quot;.  The <tt class="docutils literal">function_definition</tt> calls <tt class="docutils literal">parameters</tt> when it needs to parse the parameters to a function.</p>
+</div>
+<div class="section" id="bnf-grammars">
+<h1>BNF Grammars</h1>
+<p>It's a little tricky to attempt to write an RDP parser from scratch without <em>some</em> form of specification of the grammar.  Do you remember when I asked you to convert one regex into a FSM?  It was hard right?  It required a <em>lot</em> more code than just the few characters in the regex.  When you write the RDP parser for this exercise you'll be doing a similar thing, so it'll help to have a language that's &quot;regex for grammars&quot;.</p>
+<p>The most common &quot;regex for grammars&quot; is called a Backus–Naur Form (BNF), named after the creators John Backus and Peter Naur.  A BNF describes the tokens required and how those tokens repeat to form the grammar for a language.  BNF also uses the same symbols as regular expressions, so <tt class="docutils literal">*</tt>, <tt class="docutils literal">+</tt>, and <tt class="docutils literal">?</tt> have similar meanings.</p>
+<p>For this exercise I'm going to use the IETF Augmented BNF syntax at <a class="reference external" href="https://tools.ietf.org/html/rfc5234">https://tools.ietf.org/html/rfc5234</a> to specify the grammar for the Puny Python snippet above.  ABNF operators are mostly the same as regex except, for some odd reason, they put repetition <em>before</em> the thing to repeat not after.  Other than that, read the specification and try to figure out what the following means:</p>
+<pre class="literal-block">
+root = *(funccal / funcdef)
+funcdef = DEF name LPAREN params RPAREN COLON body
+funccall = name LPAREN params RPAREN
+params = expression *(COMMA expression)
+expression = name / plus / integer
+plus = expression PLUS expression
+PLUS = &quot;+&quot;
+LPAREN = &quot;(&quot;
+RPAREN = &quot;)&quot;
+COLON = &quot;:&quot;
+COMMA = &quot;,&quot;
+DEF = &quot;def&quot;
+</pre>
+<p>Let's look at only the <tt class="docutils literal">funcdef</tt> line and compare it to the <tt class="docutils literal">function_definition</tt> Python code we have above, matching each part:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal">funcdef =</tt></dt>
+<dd>This we replicate with the <tt class="docutils literal">def function_definition(tokens)</tt>, and it starts this part of our grammar.</dd>
+<dt><tt class="docutils literal">DEF</tt></dt>
+<dd>This is specified in the grammar as <tt class="docutils literal">DEF = &quot;def&quot;</tt>, and in the Python code I just skip it with <tt class="docutils literal">skip(tokens)</tt>.</dd>
+<dt><tt class="docutils literal">name</tt></dt>
+<dd>I need this, so I match it with <tt class="docutils literal">name = match(tokens, 'NAME')</tt>.  I use the convention of CAPITALS to indicate things in the BNF I most likely will skip.</dd>
+<dt><tt class="docutils literal">LPAREN</tt></dt>
+<dd>I assumed I received a <tt class="docutils literal">def</tt>, but now I want to enforce a <tt class="docutils literal">(</tt> so I match it, but I ignore the result using <tt class="docutils literal">match(tokens, 'LPAREN')</tt>.  It's like &quot;required but skipped&quot;.</dd>
+<dt><tt class="docutils literal">params</tt></dt>
+<dd>In the BNF I define <tt class="docutils literal">params</tt> as a new &quot;grammar production&quot; or &quot;grammar rule&quot;.  That means in my Python code I need a new function.  In this function, I can call that function with <tt class="docutils literal">params = parameters(tokens)</tt>.  Later I define the <tt class="docutils literal">parameters</tt> function to process comma separated parameters for functions.</dd>
+<dt><tt class="docutils literal">RPAREN</tt></dt>
+<dd>I discard this but require it again with <tt class="docutils literal">match(tokens, 'RPAREN')</tt>.</dd>
+<dt><tt class="docutils literal">COLON</tt></dt>
+<dd>And once again, discard the match <tt class="docutils literal">match(tokens, 'COLON')</tt>.</dd>
+<dt><tt class="docutils literal">body</tt></dt>
+<dd>I'm actually skipping the body here because Python's indented syntax is a little too hard for this simple example code.  You will need to handle this problem in the exercise unless you feel like going for it.</dd>
+</dl>
+<p>That is basically how you read an ABNF specification and systematically translate it into code.  You start at the root, implement each grammar production as a function, and leave the scanner to handle the simple tokens (which I denote with CAPITAL letters).</p>
+</div>
+<div class="section" id="quick-demo-hack-parser">
+<h1>Quick Demo Hack Parser</h1>
+<p>Here's my quick hack RDP parser that you can use to base your more formal and clean parser on:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84</pre></div></td><td class="code"><div class="highlight"><pre><span></span><a name="python--ex33.py-idio.html-1"></a><span class="kn">from</span> <span class="nn">scanner</span> <span class="kn">import</span> <span class="o">*</span>
+<a name="python--ex33.py-idio.html-2"></a><span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<a name="python--ex33.py-idio.html-3"></a>
+<a name="python--ex33.py-idio.html-4"></a><span class="k">def</span> <span class="nf">root</span><span class="p">(</span><span class="n">tokens</span><span class="p">):</span>
+<a name="python--ex33.py-idio.html-5"></a>    <span class="sd">&quot;&quot;&quot;root = *(funccal / funcdef)&quot;&quot;&quot;</span>
+<a name="python--ex33.py-idio.html-6"></a>    <span class="n">first</span> <span class="o">=</span> <span class="n">peek</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-7"></a>
+<a name="python--ex33.py-idio.html-8"></a>    <span class="k">if</span> <span class="n">first</span> <span class="o">==</span> <span class="s1">&#39;DEF&#39;</span><span class="p">:</span>
+<a name="python--ex33.py-idio.html-9"></a>        <span class="k">return</span> <span class="n">function_definition</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-10"></a>    <span class="k">elif</span> <span class="n">first</span> <span class="o">==</span> <span class="s1">&#39;NAME&#39;</span><span class="p">:</span>
+<a name="python--ex33.py-idio.html-11"></a>        <span class="n">name</span> <span class="o">=</span> <span class="n">match</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="s1">&#39;NAME&#39;</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-12"></a>        <span class="n">second</span> <span class="o">=</span> <span class="n">peek</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-13"></a>
+<a name="python--ex33.py-idio.html-14"></a>        <span class="k">if</span> <span class="n">second</span> <span class="o">==</span> <span class="s1">&#39;LPAREN&#39;</span><span class="p">:</span>
+<a name="python--ex33.py-idio.html-15"></a>            <span class="k">return</span> <span class="n">function_call</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-16"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="python--ex33.py-idio.html-17"></a>            <span class="k">assert</span> <span class="bp">False</span><span class="p">,</span> <span class="s2">&quot;Not a FUNCDEF or FUNCCALL&quot;</span>
+<a name="python--ex33.py-idio.html-18"></a>
+<a name="python--ex33.py-idio.html-19"></a><span class="k">def</span> <span class="nf">function_definition</span><span class="p">(</span><span class="n">tokens</span><span class="p">):</span>
+<a name="python--ex33.py-idio.html-20"></a>    <span class="sd">&quot;&quot;&quot;</span>
+<a name="python--ex33.py-idio.html-21"></a><span class="sd">    funcdef = DEF name LPAREN params RPAREN COLON body</span>
+<a name="python--ex33.py-idio.html-22"></a><span class="sd">    I ignore body for this example &#39;cause that&#39;s hard.</span>
+<a name="python--ex33.py-idio.html-23"></a><span class="sd">    I mean, so you can learn how to do it.</span>
+<a name="python--ex33.py-idio.html-24"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a name="python--ex33.py-idio.html-25"></a>    <span class="n">skip</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span> <span class="c1"># discard def</span>
+<a name="python--ex33.py-idio.html-26"></a>    <span class="n">name</span> <span class="o">=</span> <span class="n">match</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="s1">&#39;NAME&#39;</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-27"></a>    <span class="n">match</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="s1">&#39;LPAREN&#39;</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-28"></a>    <span class="n">params</span> <span class="o">=</span> <span class="n">parameters</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-29"></a>    <span class="n">match</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="s1">&#39;RPAREN&#39;</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-30"></a>    <span class="n">match</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="s1">&#39;COLON&#39;</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-31"></a>    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;FUNCDEF&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="n">params</span><span class="p">}</span>
+<a name="python--ex33.py-idio.html-32"></a>
+<a name="python--ex33.py-idio.html-33"></a><span class="k">def</span> <span class="nf">parameters</span><span class="p">(</span><span class="n">tokens</span><span class="p">):</span>
+<a name="python--ex33.py-idio.html-34"></a>    <span class="sd">&quot;&quot;&quot;params = expression *(COMMA expression)&quot;&quot;&quot;</span>
+<a name="python--ex33.py-idio.html-35"></a>    <span class="n">params</span> <span class="o">=</span> <span class="p">[]</span>
+<a name="python--ex33.py-idio.html-36"></a>    <span class="n">start</span> <span class="o">=</span> <span class="n">peek</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-37"></a>    <span class="k">while</span> <span class="n">start</span> <span class="o">!=</span> <span class="s1">&#39;RPAREN&#39;</span><span class="p">:</span>
+<a name="python--ex33.py-idio.html-38"></a>        <span class="n">params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">expression</span><span class="p">(</span><span class="n">tokens</span><span class="p">))</span>
+<a name="python--ex33.py-idio.html-39"></a>        <span class="n">start</span> <span class="o">=</span> <span class="n">peek</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-40"></a>        <span class="k">if</span> <span class="n">start</span> <span class="o">!=</span> <span class="s1">&#39;RPAREN&#39;</span><span class="p">:</span>
+<a name="python--ex33.py-idio.html-41"></a>            <span class="k">assert</span> <span class="n">match</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="s1">&#39;COMMA&#39;</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-42"></a>    <span class="k">return</span> <span class="n">params</span>
+<a name="python--ex33.py-idio.html-43"></a>
+<a name="python--ex33.py-idio.html-44"></a><span class="k">def</span> <span class="nf">function_call</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<a name="python--ex33.py-idio.html-45"></a>    <span class="sd">&quot;&quot;&quot;funccall = name LPAREN params RPAREN&quot;&quot;&quot;</span>
+<a name="python--ex33.py-idio.html-46"></a>    <span class="n">match</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="s1">&#39;LPAREN&#39;</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-47"></a>    <span class="n">params</span> <span class="o">=</span> <span class="n">parameters</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-48"></a>    <span class="n">match</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="s1">&#39;RPAREN&#39;</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-49"></a>    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;FUNCCALL&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="n">params</span><span class="p">}</span>
+<a name="python--ex33.py-idio.html-50"></a>
+<a name="python--ex33.py-idio.html-51"></a><span class="k">def</span> <span class="nf">expression</span><span class="p">(</span><span class="n">tokens</span><span class="p">):</span>
+<a name="python--ex33.py-idio.html-52"></a>    <span class="sd">&quot;&quot;&quot;expression = name / plus / integer&quot;&quot;&quot;</span>
+<a name="python--ex33.py-idio.html-53"></a>    <span class="n">start</span> <span class="o">=</span> <span class="n">peek</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-54"></a>
+<a name="python--ex33.py-idio.html-55"></a>    <span class="k">if</span> <span class="n">start</span> <span class="o">==</span> <span class="s1">&#39;NAME&#39;</span><span class="p">:</span>
+<a name="python--ex33.py-idio.html-56"></a>        <span class="n">name</span> <span class="o">=</span> <span class="n">match</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="s1">&#39;NAME&#39;</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-57"></a>        <span class="k">if</span> <span class="n">peek</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;PLUS&#39;</span><span class="p">:</span>
+<a name="python--ex33.py-idio.html-58"></a>            <span class="k">return</span> <span class="n">plus</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-59"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="python--ex33.py-idio.html-60"></a>            <span class="k">return</span> <span class="n">name</span>
+<a name="python--ex33.py-idio.html-61"></a>    <span class="k">elif</span> <span class="n">start</span> <span class="o">==</span> <span class="s1">&#39;INTEGER&#39;</span><span class="p">:</span>
+<a name="python--ex33.py-idio.html-62"></a>        <span class="n">number</span> <span class="o">=</span> <span class="n">match</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="s1">&#39;INTEGER&#39;</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-63"></a>        <span class="k">if</span> <span class="n">peek</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;PLUS&#39;</span><span class="p">:</span>
+<a name="python--ex33.py-idio.html-64"></a>            <span class="k">return</span> <span class="n">plus</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-65"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="python--ex33.py-idio.html-66"></a>            <span class="k">return</span> <span class="n">number</span>
+<a name="python--ex33.py-idio.html-67"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="python--ex33.py-idio.html-68"></a>        <span class="k">assert</span> <span class="bp">False</span><span class="p">,</span> <span class="s2">&quot;Syntax error </span><span class="si">%r</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">start</span>
+<a name="python--ex33.py-idio.html-69"></a>
+<a name="python--ex33.py-idio.html-70"></a><span class="k">def</span> <span class="nf">plus</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="n">left</span><span class="p">):</span>
+<a name="python--ex33.py-idio.html-71"></a>    <span class="sd">&quot;&quot;&quot;plus = expression PLUS expression&quot;&quot;&quot;</span>
+<a name="python--ex33.py-idio.html-72"></a>    <span class="n">match</span><span class="p">(</span><span class="n">tokens</span><span class="p">,</span> <span class="s1">&#39;PLUS&#39;</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-73"></a>    <span class="n">right</span> <span class="o">=</span> <span class="n">expression</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+<a name="python--ex33.py-idio.html-74"></a>    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;PLUS&#39;</span><span class="p">,</span> <span class="s1">&#39;left&#39;</span><span class="p">:</span> <span class="n">left</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">:</span> <span class="n">right</span><span class="p">}</span>
+<a name="python--ex33.py-idio.html-75"></a>
+<a name="python--ex33.py-idio.html-76"></a>
+<a name="python--ex33.py-idio.html-77"></a><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">tokens</span><span class="p">):</span>
+<a name="python--ex33.py-idio.html-78"></a>    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<a name="python--ex33.py-idio.html-79"></a>    <span class="k">while</span> <span class="n">tokens</span><span class="p">:</span>
+<a name="python--ex33.py-idio.html-80"></a>        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="p">(</span><span class="n">tokens</span><span class="p">))</span>
+<a name="python--ex33.py-idio.html-81"></a>    <span class="k">return</span> <span class="n">results</span>
+<a name="python--ex33.py-idio.html-82"></a>
+<a name="python--ex33.py-idio.html-83"></a><span class="n">parsed</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="n">scan</span><span class="p">(</span><span class="n">code</span><span class="p">))</span>
+<a name="python--ex33.py-idio.html-84"></a><span class="n">pprint</span><span class="p">(</span><span class="n">parsed</span><span class="p">)</span>
+</pre></div>
+</td></tr></table><p>You'll notice I'm using a <tt class="docutils literal">scanner</tt> module I wrote that has my <tt class="docutils literal">match</tt>, <tt class="docutils literal">peek</tt>, <tt class="docutils literal">skip</tt>, and <tt class="docutils literal">scan</tt> functions.  I use a <tt class="docutils literal">from scanner import *</tt> only to make this example more understandable.  You should use your <tt class="docutils literal">Scanner</tt> class.</p>
+<p>You'll notice that I put my ABNF for this little parser in the documentation comments to each function.  This helped me write each parser code and could be used for error reporting later.  You should study this parser, possibly even as a master copy, before you attempt the Exercise Challenge.</p>
+</div>
+<div class="section" id="exercise-challenge">
+<h1>Exercise Challenge</h1>
+<p>Your next challenge is to combine <em>your</em> <tt class="docutils literal">Scanner</tt> class with a freshly written <tt class="docutils literal">Parser</tt> class that you can subclass and re-implement with my simple parser here.  Your base <tt class="docutils literal">Parser</tt> class should be able to:</p>
+<ol class="arabic simple">
+<li>Take a <tt class="docutils literal">Scanner</tt> object and execute itself.  You can assume any default function is the start of a grammar.</li>
+<li>Have error handling code that is better than my simple <tt class="docutils literal">assert</tt> usage here.</li>
+</ol>
+<p>You should then implement <tt class="docutils literal">PunyPythonPython</tt>, which can parse just this tiny little Python language and do the following:</p>
+<ol class="arabic simple">
+<li>Instead of just producing a list of <tt class="docutils literal">dicts</tt>, you should create classes for each grammar production result.  These classes then become objects inside a list.</li>
+<li>The classes only need to store the tokens that are parsed, but be prepared to do more later.</li>
+<li>You only have to parse this little language, but you should attempt to solve the &quot;Python indent&quot; problem.  You <em>might</em> have to change the Scanner to be smart about only matching <tt class="docutils literal">INDENT</tt> whitespace at the beginning of a line, and ignoring it everywhere else.  You will also need to keep track of how <em>much</em> you've indented, and also record a 0 indent so you can &quot;dedent&quot; the blocks.</li>
+</ol>
+<p>An extensive test suite would involve handing more samples of this tiny little python to the parser, but for now just get this one little file to parse.  Try to have good coverage in the test and exploit as many errors as you can.</p>
+</div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<p>This exercise is <em>huge</em>, so just get it done.  Take your time, and chip away at this a little at a time.  I highly recommend studying my tiny little sample here until you've fully figured it out and also printing out the tokens being processed at key points.</p>
+</div>
+<div class="section" id="further-study">
+<h1>Further Study</h1>
+<p>Check out the <a class="reference external" href="http://sly.readthedocs.io/en/latest/">SLY Parser Generator</a> by David Beazley for a way to have a computer figure out your parser and scanner (aka lexer) for you.  Feel free to attempt to replicate this exercise with <tt class="docutils literal">SLY</tt> for comparison.</p>
+</div>
+                <!-- RST ENDS -->
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row center-xs" id="buy">
+        <div class="text-center col-xs-10 col-sm-5 col-md-4">
+            <h2 class="section-title__small">Pre-order Learn More Python The Hard Way</h2>
+            <p>
+            When you pre-order Learn <b>More</b> Python The Hard Way, you'll receive the Python 3 Edition as it's being created.
+            All files are DRM free and you can download them to your computer for offline viewing. <b>Digital Download Only!  You do not get a physical book.</b>
+            </p>
+
+            <p class="price-block">
+            <span class="currency"><span class="prefix">$</span>29.<span class="suffix">99</span></span>
+            </p>
+
+            <a href="https://shop.learncodethehardway.org/access/buy/10/" class="btn btn-primary btn-full">Pre-Order From Zed</a>
+
+            <p class="text-left btn-subtext">
+            <small>Or, you can <a href="index.html">read Learn More Python the Hard Way for free</a> right here, video lectures not included.</small>
+            </p>
+
+        </div>
+        <div class="text-center col-xs-10 col-sm-5 col-md-4 col-sm-offset-1">
+
+            <h2 class="section-title__small">Other Buying Options</h2>
+            <p>Other buying options coming soon.</p>
+            <!--
+ <a href="http://bit.ly/amznlpthw" class="btn btn-secondary btn-full">Buy Kindle or Paper on Amazon</a>
+ <a href="http://bit.ly/informitlpthw" class="btn btn-secondary btn-full">Buy a hard copy from the Publisher</a>
+ <a href="http://bit.ly/bnlpthw" class="btn btn-secondary btn-full">Buy a hard copy from Barnes &amp; Noble</a>
+ -->
+        </div>
+    </div>
+
+
+    <div class="row center-xs">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8" id="video_holder">
+            <div data-paydiv_product="10" id='paydiv'>
+                No content available for this exercise.  You can view all available downloads at <a href="https://shop.learncodethehardway.org/customers/">your customer account page</a>.
+            </div>
+        </div>
+    </div>
+    </main>
+
+</div>
+
+<div class="row dark bottom-nav">
+    <div class="col-xs text-left">
+        <a href="#" class="prev" id='prev_link'><i class="icon-arrow-67"></i> <i class="icon icon-arrow-left"></i> Previous <span class="hide-xs show-sm-inline">Lesson</span></a>
+    </div>
+    <div class="col-xs text-right"><a href="#" class="next" id='next_link'>Next <span class="hide-xs show-sm-inline">Lesson</span> <i class="icon icon-arrow-right"></i></a>
+    </div>
+</div>
+    </div>
+
+    <footer class="footer">
+<div class="row center-xs">
+
+    <div class="col-xs-11 col-sm-6 col-md-5 col-lg-5">
+        <ul class="nav nav-inline">
+            <li><h4><a href="https://learncodethehardway.org/">Home</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/about/">About</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/contact/">Contact</a></h4></li>
+        </ul>
+        <div class="copyright text-left">
+            <small class="text-muted">&copy; 2016 Zed A. Shaw. All Rights Reserved.</small>
+        </div>
+    </div>
+    <div class="col-xs-11 col-sm-4 col-md-4 col-lg-3">
+        <div class="social-media">
+            <div class="classy-container">
+                <a href="https://twitter.com/lzsthw" class="socicon-twitter"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </footer>
+    <script src="../js/scripts.min.js"></script>
+
+    <script src="javascripts/jquery.js"></script>
+    <script src="index.js"></script>
+    <script src="../../shop.learncodethehardway.org/static/jzed.js"></script>
+    <script src="../../shop.learncodethehardway.org/static/js/videojs/video.js"></script>
+    <link rel="stylesheet" href="../../shop.learncodethehardway.org/static/js/videojs/video-js.css">
+    <script src="../../shop.learncodethehardway.org/static/api/v1/paydiv.js"></script>
+    <script src="javascripts/app.js"></script>
+    <script src="javascripts/littools.js"></script>
+    <!-- Start of helpthw Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("../../assets.zendesk.com/embeddable_framework/main.js","helpthw.zendesk.com");
+/*]]>*/</script>
+    <!-- End of helpthw Zendesk Widget script -->
+
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-24168052-5', 'auto');
+ga('send', 'pageview');
+
+    </script>
+
+    </body>
+    
+<!-- Mirrored from learncodethehardway.org/more-python-book/ex33.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 15:17:43 GMT -->
+</html>

@@ -1,0 +1,497 @@
+<!doctype html>
+<html class="no-js">
+
+<!-- Mirrored from learnpythonthehardway.org/python3/ex0.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 01:13:29 GMT -->
+<head>
+
+
+
+<meta charset="utf-8">
+<title>Learn Python the Hard Way</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href='../../fonts.googleapis.com/css33ad.css?family=Source+Code+Pro|Source+Sans+Pro:200,400,700,200italic,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href="../css/style.min.css" rel="stylesheet">
+<!-- http://www.socicon.com -->
+<link href="../css/icons.css" rel="stylesheet">
+
+
+</head>
+
+<body class="baseline-grid-off book-site" id="top">
+
+
+
+
+<header class="header" role="banner">
+    <nav class="navbar navbar-full nav-brand-family">
+        <div class="row middle-xs">
+            <ul class="brand-links show-md col-xs-3 col-sm-10 bare">
+                <li><a href="https://learncodethehardway.org/" class="waves-effect">Learn:</a></li>
+
+                <li><a href="https://learncodethehardway.org/python/" class="waves-effect active">Python</a></li>
+
+                <li><a href="https://learncodethehardway.org/ruby/" class="waves-effect">Ruby</a></li>
+
+                <li><a href="https://learncodethehardway.org/more-python/" class="waves-effect">More Python</a></li>
+
+                <li><a href="https://learncodethehardway.org/c/" class="waves-effect">C</a></li>
+
+                <li><a href="https://learncodethehardway.org/sql/" class="waves-effect">SQL</a></li>
+
+                <li><a href="https://learncodethehardway.org/javascript/" class="waves-effect">Javascript</a></li>
+
+                <li><a href="https://learncodethehardway.org/unix/" class="waves-effect">Unix</a></li>
+
+                <li><a href="https://learncodethehardway.org/regex/" class="waves-effect">RegEx</a></li>
+
+                <li><a href="https://www.learndesignthehardway.com/" class="waves-effect">Design</a></li>
+
+            </ul>
+            <ul class="brand-links hide-md col-xs-3 col-sm-10 bare">
+                <li><a href="https://learncodethehardway.org/" class="waves-effect">LCTHW</a></li>
+            </ul>
+
+            <ul class="site-meta col-xs-9 col-sm-2 end-xs bare">
+                <li><a href="https://shop.learncodethehardway.org/access/reactivate/" class="waves-effect"><i class="icon icon-user"></i> Login</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-full nav-main" role="navigation">
+        <div class="row between-xs center-xs middle-xs bare">
+            <div class="col-xs-4 start-xs bare">
+                <a href="#" class="no-underline nav-trigger waves-effect" id="toc"><div class="transformer hamburcloser">
+                        <div class="bar bar-t"></div>
+                        <div class="bar bar-m-a"></div>
+                        <div class="bar bar-m-b"></div>
+                        <div class="bar bar-b"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Contents</span></a>
+            </div>
+            <div class="col-xs-4"><strong>&nbsp;</strong></div>
+            <div class="col-xs-4 end-xs bare">
+                <a href="https://helpthw.zendesk.com/hc/en-us" class="no-underline nav-trigger waves-effect" id="help"><div class="transformer questioncloser">
+                        <div class="icon-question-mark"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Help</span></a>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+
+
+
+<div class="wrapper">
+    <div class="masthead python-background" style="background-image: url('../images/pattern-python.svg')">
+        <img src="../images/logo-python.svg" alt="Learn Python The Hard Way" class="logo">
+    </div>
+
+    <aside class="sidebar sidebar-left" role="complementary">
+        <nav class="side-nav-container">
+            <ol class="table-of-contents">
+                <h3>Table of Contents</h3>
+                <li><a href="preface.html">Preface</a></li>
+                <li><a href="intro.html">The Hard Way Is Easier</a></li>
+                <li><a href="ex0.html">Ex0: The Setup</a></li>
+                <li><a href="ex1.html">Ex1: A Good First Program</a></li>
+                <li><a href="ex2.html">Ex2: Comments And Pound Characters</a></li>
+                <li><a href="ex3.html">Ex3: Numbers And Math</a></li>
+                <li><a href="ex4.html">Ex4: Variables And Names</a></li>
+                <li><a href="ex5.html">Ex5: More Variables And Printing</a></li>
+                <li><a href="ex6.html">Ex6: Strings And Text</a></li>
+                <li><a href="ex7.html">Ex7: More Printing</a></li>
+                <li><a href="ex8.html">Ex8: Printing, Printing</a></li>
+                <li><a href="ex9.html">Ex9: Printing, Printing, Printing</a></li>
+                <li><a href="ex10.html">Ex10: What Was That?</a></li>
+                <li><a href="ex11.html">Ex11: Asking Questions</a></li>
+                <li><a href="ex12.html">Ex12: Prompting People</a></li>
+                <li><a href="ex13.html">Ex13: Parameters, Unpacking, Variables</a></li>
+                <li><a href="ex14.html">Ex14: Prompting And Passing</a></li>
+                <li><a href="ex15.html">Ex15: Reading Files</a></li>
+                <li><a href="ex16.html">Ex16: Reading And Writing Files</a></li>
+                <li><a href="ex17.html">Ex17: More Files</a></li>
+                <li><a href="ex18.html">Ex18: Names, Variables, Code, Functions</a></li>
+                <li><a href="ex19.html">Ex19: Functions And Variables</a></li>
+                <li><a href="ex20.html">Ex20: Functions And Files</a></li>
+                <li><a href="ex21.html">Ex21: Functions Can Return Something</a></li>
+                <li><a href="ex22.html">Ex22: What Do You Know So Far?</a></li>
+                <li><a href="ex23.html">Ex23: Read Some Code</a></li>
+                <li><a href="ex24.html">Ex24: More Practice</a></li>
+                <li><a href="ex25.html">Ex25: Even More Practice</a></li>
+                <li><a href="ex26.html">Ex26: Congratulations, Take A Test!</a></li>
+                <li><a href="ex27.html">Ex27: Memorizing Logic</a></li>
+                <li><a href="ex28.html">Ex28: Boolean Practice</a></li>
+                <li><a href="ex29.html">Ex29: What If</a></li>
+                <li><a href="ex30.html">Ex30: Else And If</a></li>
+                <li><a href="ex31.html">Ex31: Making Decisions</a></li>
+                <li><a href="ex32.html">Ex32: Loops And Lists</a></li>
+                <li><a href="ex33.html">Ex33: While Loops</a></li>
+                <li><a href="ex34.html">Ex34: Accessing Elements Of Lists</a></li>
+                <li><a href="ex35.html">Ex35: Branches and Functions</a></li>
+                <li><a href="ex36.html">Ex36: Designing and Debugging</a></li>
+                <li><a href="ex37.html">Ex37: Symbol Review</a></li>
+                <li><a href="ex38.html">Ex38: Doing Things To Lists</a></li>
+                <li><a href="ex39.html">Ex39: Dictionaries, Oh Lovely Dictionaries</a></li>
+                <li><a href="ex40.html">Ex40: Modules, Classes, And Objects</a></li>
+                <li><a href="ex41.html">Ex41: Learning To Speak Object Oriented</a></li>
+                <li><a href="ex42.html">Ex42: Is-A, Has-A, Objects, and Classes</a></li>
+                <li><a href="ex43.html">Ex43: Gothons From Planet Percal #25</a></li>
+                <li><a href="ex44.html">Ex44: Inheritance Vs. Composition</a></li>
+                <li><a href="ex45.html">Ex45: You Make A Game</a></li>
+                <li><a href="ex46.html">Ex46: A Project Skeleton</a></li>
+                <li><a href="ex47.html">Ex47: Automated Testing</a></li>
+                <li><a href="ex48.html">Ex48: Advanced User Input</a></li>
+                <li><a href="ex49.html">Ex49: Making Sentences</a></li>
+                <li><a href="ex50.html">Ex50: Your First Website</a></li>
+                <li><a href="ex51.html">Ex51: Getting Input From A Browser</a></li>
+                <li><a href="ex52.html">Ex52: The Start Of Your Web Game</a></li>
+                <li><a href="advice.html">Advice From An Old Programmer</a></li>
+                <li><a href="next.html">Next Steps</a></li>
+                <li><a href="appendixa.html">Appendix A: Command Line Crash Course</a></li>
+            </ol>
+            <ul class="site-links">
+                <h3>Learn the Hard Way</h3>
+                <li><a href="#" class="waves-effect"><i class="icon-information"></i> About LPTHW</a></li>
+                <li><a href="#" class="waves-effect"><i class="icon-question-mark"></i> Help &amp; Support</a></li>
+                <li><a href="#" class="waves-effect"><i class="socicon-twitter"></i> Follow us on Twitter</a></li>
+            </ul>
+        </nav>
+        <div class="colophon text-center">
+            <div class="intro">
+                <p class="bare-bottom">
+                The type for this book is set in 18px / 1.5
+                <a href="https://www.google.com/fonts/specimen/Source+Serif+Pro">Adobe Serif</a>,
+                <a href="https://www.google.com/fonts/specimen/Source+Sans+Pro">Sans</a>, and
+                <a href="https://www.google.com/fonts/specimen/Source+Code+Pro">Code</a>.
+                </p>
+            </div>
+            <div class="printers-mark">
+                <div class="inscription">Docendo <i class="icon-repeat"></i> Discimus</div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="main python" role="main">
+    <div class="main-container row center-xs">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8">
+
+            <div class="content">
+
+                <!--- RST STARTS -->
+                <h1 class="title">Exercise 0: The Setup</h1>
+                <p>This exercise has no code.  It is simply the exercise you complete to get your computer to run Python.   You should follow these instructions as exactly as possible.  If you have problems following the written instructions, then watch the included videos for your platform.</p>
+<div class="warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If you do not know how to use <tt class="docutils literal">PowerShell</tt> on Windows, <tt class="docutils literal">Terminal</tt> on
+macOS or <tt class="docutils literal">bash</tt> on Linux then you need to go learn that first.  You should
+do the exercises in Appendix A first before continuing with these exercises.</p>
+</div>
+<div class="section" id="macos">
+<h1>macOS</h1>
+<p>Do the following tasks to complete this exercise:</p>
+<ol class="arabic simple">
+<li>Go to <a class="reference external" href="https://www.python.org/downloads/release/python-360/">https://www.python.org/downloads/release/python-360/</a> and download the &quot;macOS 64-bit/32-bit installer&quot;.  Install it like you would any other software.</li>
+<li>Go to <a class="reference external" href="https://atom.io/">https://atom.io/</a> with your browser, get the <tt class="docutils literal">Atom</tt> text editor, and install it.  If <tt class="docutils literal">Atom</tt> does not suite you, then see <cite>Alternative Text Editors</cite> at the end of this exercise.</li>
+<li>Put <tt class="docutils literal">Atom</tt> (your text editor) in your dock, so you can reach it easily.</li>
+<li>Find your Terminal program.  Search for it.  You will find it.</li>
+<li>Put your Terminal in your dock as well.</li>
+<li>Run your Terminal program.  It won't look like much.</li>
+<li>In your Terminal program, run <tt class="docutils literal">python3.6</tt>.  You run things in Terminal by just typing the name and hitting RETURN.</li>
+<li>Type <tt class="docutils literal">quit()</tt>, <tt class="docutils literal">Enter</tt>, and get out of <tt class="docutils literal">python3.6</tt>.</li>
+<li>You should be back at a prompt similar to what you had before you typed <tt class="docutils literal">python</tt>.  If not, find out why.</li>
+<li>Learn how to make a directory in the Terminal.</li>
+<li>Learn how to change into a directory in the Terminal.</li>
+<li>Use your editor to create a file in this directory.  You will make the file, &quot;Save&quot; or &quot;Save As...,&quot; and pick this directory.</li>
+<li>Go back to Terminal using just the keyboard to switch windows.</li>
+<li>Back in Terminal, list the directory with <tt class="docutils literal">ls</tt> to see your newly created file.</li>
+</ol>
+<div class="section" id="macos-what-you-should-see">
+<h2>macOS: What You Should See</h2>
+<p>Here's me doing this on my macOS computer in Terminal.  Your computer might be different but should be similar to this.</p>
+<pre class="code console literal-block">
+<span class="generic prompt">$</span> python3.6
+<span class="generic output">Python 3.6.0 (default, Feb  2 2017, 12:48:29)
+[GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+</span><span class="generic prompt">&gt;</span>&gt;&gt;
+<span class="generic output">~ $ mkdir lpthw
+~ $ cd lpthw
+lpthw $ ls
+</span><span class="generic prompt">#</span> ... Use your text editor here to edit test.txt....
+<span class="generic output">lpthw $ ls
+test.txt
+lpthw $</span>
+</pre>
+</div>
+</div>
+<div class="section" id="windows">
+<h1>Windows</h1>
+<ol class="arabic simple">
+<li>Go to <a class="reference external" href="https://atom.io/">https://atom.io</a> with your browser, get the <tt class="docutils literal">Atom</tt> text editor, and install it. You do not need to be the administrator to do this.</li>
+<li>Make sure you can get to <tt class="docutils literal">Atom</tt> easily by putting it on your desktop and/or in <tt class="docutils literal">Quick Launch</tt>. Both options are available during setup.<ol class="loweralpha">
+<li>If you cannot run <tt class="docutils literal">Atom</tt> because your computer is not fast enough, then see <cite>Alternative Text Editors</cite> at the end of this exercise.</li>
+</ol>
+</li>
+<li>Run <tt class="docutils literal">PowerShell</tt> from the Start menu.  Search for it, and you can just press <tt class="docutils literal">Enter</tt> to run it.</li>
+<li>Make a shortcut to it on your desktop and/or <tt class="docutils literal">Quick Launch</tt> for your convenience.</li>
+<li>Run your <tt class="docutils literal">PowerShell</tt> program (which I will call Terminal later).  It won't look like much.</li>
+<li>Download Python 3.6 from <a class="reference external" href="https://www.python.org/downloads/release/python-360/">https://www.python.org/downloads/release/python-360/</a> and install it.  <em>Be sure to check the box that says to add Python 3.6 to your path.</em></li>
+<li>In your <tt class="docutils literal">PowerShell</tt> (Terminal) program, run <tt class="docutils literal">python</tt>.  You run things in Terminal by just typing the name and pressing <tt class="docutils literal">Enter</tt>.<ol class="loweralpha">
+<li>If you type <tt class="docutils literal">python</tt> and it does not run, then you have to reinstall Python and make sure you check the box for &quot;Add python to the PATH.&quot;  It's very small so look carefully.</li>
+</ol>
+</li>
+<li>Type <tt class="docutils literal">quit()</tt>, and press <tt class="docutils literal">Enter</tt> to exit python.</li>
+<li>You should be back at a prompt similar to what you had before you typed <tt class="docutils literal">python</tt>.  If not, find out why.</li>
+<li>Learn how to make a directory in the <tt class="docutils literal">PowerShell</tt> (Terminal).</li>
+<li>Learn how to change into a directory in the <tt class="docutils literal">PowerShell</tt> (Terminal).</li>
+<li>Use your editor to create a file in this directory.  Make the file, <tt class="docutils literal">Save</tt> or <tt class="docutils literal">Save <span class="pre">As...</span></tt>, and pick this directory.</li>
+<li>Go back to <tt class="docutils literal">PowerShell</tt> (Terminal) using just the keyboard to switch windows.  Look it up if you can't figure it out.</li>
+<li>Back in <tt class="docutils literal">PowerShell</tt> (Terminal), list the directory to see your newly created file.</li>
+</ol>
+<p>From now on, when I say &quot;Terminal&quot; or &quot;shell&quot; I mean <tt class="docutils literal">PowerShell</tt>, and that's what you should use.  When I run <tt class="docutils literal">python3.6</tt> you can just type <tt class="docutils literal">python</tt>.</p>
+<div class="section" id="windows-what-you-should-see">
+<h2>Windows: What You Should See</h2>
+<pre class="code console literal-block">
+<span class="generic prompt">&gt;</span> python
+<span class="generic prompt">&gt;</span>&gt;&gt; quit<span class="operator">()</span>
+<span class="generic prompt">&gt;</span> mkdir lpthw
+<span class="generic prompt">&gt;</span> <span class="name builtin">cd</span> lpthw
+<span class="generic output">... Here you would use your text editor to make test.txt in lpthw ...
+</span><span class="generic prompt">&gt;</span>
+<span class="generic prompt">&gt;</span> dir
+<span class="generic output"> Volume in drive C is
+ Volume Serial Number is 085C-7E02
+
+ Directory of C:\Documents and Settings\you\lpthw
+
+04.05.2010  23:32    &lt;DIR&gt;          .
+04.05.2010  23:32    &lt;DIR&gt;          ..
+04.05.2010  23:32                 6 test.txt
+               1 File(s)              6 bytes
+               2 Dir(s)  14 804 623 360 bytes free
+
+</span><span class="generic prompt">&gt;</span>
+</pre>
+<p>It is still correct if you see different information than mine, but yours should be similar.</p>
+</div>
+</div>
+<div class="section" id="linux">
+<h1>Linux</h1>
+<p>Linux is a varied operating system with many different ways to install software.  I'm assuming if you are running Linux then you know how to install packages, so here are your instructions:</p>
+<ol class="arabic simple">
+<li>Use your package manager to install Python 3.6, and if you can't, then download source from <a class="reference external" href="https://www.python.org/downloads/release/python-360/">https://www.python.org/downloads/release/python-360/</a> and build from source.</li>
+<li>Use your Linux package manager, and install the <a class="reference external" href="https://atom.io/">Atom</a> text editor. If <tt class="docutils literal">Atom</tt> does not suite you, then see <cite>Alternative Text Editors</cite> at the end of this exercise.</li>
+<li>Make sure you can get to <tt class="docutils literal">Atom</tt> easily by putting it in your window manager's menu.</li>
+<li>Find your <tt class="docutils literal">Terminal</tt> program.  It could be called <tt class="docutils literal">GNOME Terminal</tt>, <tt class="docutils literal">Konsole</tt>, or <tt class="docutils literal">xterm</tt>.</li>
+<li>Put your <tt class="docutils literal">Terminal</tt> in your dock as well.</li>
+<li>Run your <tt class="docutils literal">Terminal</tt> program.  It won't look like much.</li>
+<li>In your <tt class="docutils literal">Terminal</tt> program, run <tt class="docutils literal">python3.6</tt>.  You run things in <tt class="docutils literal">Terminal</tt> by just typing the command name and pressing <tt class="docutils literal">Enter</tt>.  If you can't run <tt class="docutils literal">python3.6</tt>, try running just <tt class="docutils literal">python</tt>.</li>
+<li>Type <tt class="docutils literal">quit()</tt> and press <tt class="docutils literal">Enter</tt> to exit python.</li>
+<li>You should be back at a prompt similar to what you had before you typed <tt class="docutils literal">python</tt>.  If not, find out why.</li>
+<li>Learn how to make a directory in <tt class="docutils literal">Terminal</tt>.</li>
+<li>Learn how to change into a directory in <tt class="docutils literal">Terminal</tt>.</li>
+<li>Use your editor to create a file in this directory.  Typically, you will make the file, <tt class="docutils literal">Save</tt> or <tt class="docutils literal">Save <span class="pre">As...</span></tt>, and pick this directory.</li>
+<li>Go back to Terminal using just the keyboard to switch windows.  Look it up if you can't figure it out.</li>
+<li>Back in <tt class="docutils literal">Terminal</tt>, list the directory to see your newly created file.</li>
+</ol>
+<div class="section" id="linux-what-you-should-see">
+<h2>Linux: What You Should See</h2>
+<pre class="code console literal-block">
+<span class="generic prompt">$</span> python
+<span class="generic prompt">&gt;</span>&gt;&gt; quit<span class="operator">()</span>
+<span class="generic prompt">$</span> mkdir lpthw
+<span class="generic prompt">$</span> <span class="name builtin">cd</span> lpthw
+<span class="generic prompt">#</span> ... Use your text editor here to edit test.txt ...
+<span class="generic prompt">$</span> ls
+<span class="generic output">test.txt
+</span><span class="generic prompt">$</span>
+</pre>
+<p>It is still correct if you see different information than mine, but yours should be similar.</p>
+</div>
+</div>
+<div class="section" id="finding-things-on-the-internet">
+<h1>Finding Things on the Internet</h1>
+<p>A major part of this book is learning to research programming topics online.  I'll tell you to &quot;search for this on the internet,&quot; and your job is to use a search engine to find the answer.  The reason I have you search instead of just giving you the answer is because I want you to be an independent learner who does not need my book when you're done with it.  If you can find the answers to your questions online, then you are one step closer to not needing me, and that is my goal.</p>
+<p>Thanks to search engines such as Google you can easily find anything I tell you to find.  If I say, &quot;search online for the python list functions,&quot; then you simply do this:</p>
+<ol class="arabic simple">
+<li>Go to <a class="reference external" href="http://google.com/">http://google.com/</a>.</li>
+<li>Type: <tt class="docutils literal">python3 list functions</tt>.</li>
+<li>Read the websites listed to find the best answer.</li>
+</ol>
+</div>
+<div class="section" id="warnings-for-beginners">
+<h1>Warnings for Beginners</h1>
+<p>You are done with this exercise.  This exercise might be hard for you depending on your familiarity with your computer.  If it is difficult, take the time to read and study and get through it, because until you can do these very basic things you will find it difficult to get much programming done.</p>
+<p>If someone tells you to stop at a specific exercise in this book or to skip certain ones, you should ignore that person.  Anyone trying to hide knowledge from you, or worse, make you get it from them instead of through your own efforts, is trying to make you depend on them for your skills.  Don't listen to them, and do the exercises anyway so that you learn how to educate yourself.</p>
+<p>A programmer will eventually tell you to use macOS or Linux.  If the programmer likes fonts and typography, they'll tell you to get a macOS computer.  If he likes control and has a huge beard, he will (or ze will if you prefer non-gendered pronouns of humans with beards) tell you to install Linux.  Again, use whatever computer you have right now that works.  All you need is an editor, a terminal, and Python.</p>
+<p>Finally, the purpose of this setup helps you do three things very reliably while you work on the exercises:</p>
+<ol class="arabic simple">
+<li><em>Write</em> exercises using the text editor.</li>
+<li><em>Run</em> the exercises you wrote.</li>
+<li><em>Fix</em> them when they are broken.</li>
+<li>Repeat.</li>
+</ol>
+<p>Anything else will only confuse you, so stick to the plan.</p>
+</div>
+<div class="section" id="alternative-text-editors">
+<h1>Alternative Text Editors</h1>
+<p>Text editors are very important to a programmer, but as a beginner you only need a simple <em>programmer's text editor</em>.  These are different from software for writing stories and books because they work with the unique needs of computer code.  I recommend <tt class="docutils literal">Atom</tt> in this book because it is free and works nearly everywhere.  However, <tt class="docutils literal">Atom</tt> may not run well on your computer, so here are some alternatives to try:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="28%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Editor Name</th>
+<th class="head">Works On</th>
+<th class="head">Where To Get It</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>Visual Studio Code</td>
+<td>Windows, macOS, Linux</td>
+<td><a class="reference external" href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></td>
+</tr>
+<tr><td>Notepad++</td>
+<td>Windows</td>
+<td><a class="reference external" href="https://notepad-plus-plus.org/">https://notepad-plus-plus.org/</a></td>
+</tr>
+<tr><td>gEdit</td>
+<td>Linux, macOS, Windows</td>
+<td><a class="reference external" href="https://github.com/GNOME/gedit">https://github.com/GNOME/gedit</a></td>
+</tr>
+<tr><td>Textmate</td>
+<td>macOS</td>
+<td><a class="reference external" href="https://github.com/textmate/textmate">https://github.com/textmate/textmate</a></td>
+</tr>
+<tr><td>SciTE</td>
+<td>Windows, Linux</td>
+<td><a class="reference external" href="http://www.scintilla.org/SciTE.html">http://www.scintilla.org/SciTE.html</a></td>
+</tr>
+<tr><td>jEdit</td>
+<td>Linux, macOS, Windows</td>
+<td><a class="reference external" href="http://www.jedit.org/">http://www.jedit.org/</a></td>
+</tr>
+</tbody>
+</table>
+<p>These are ranked in order of most likely to work.  Keep in mind that these projects may be abandoned, dead, or not work anymore on your computer.  If you try one and it doesn't work, try another one.  I've also listed the &quot;Works On&quot; in order of most likely to work, so if you're on Windows then look at the editors where Windows is listed first in the &quot;Works On&quot; column.</p>
+<p>If you already know how to use <a class="reference external" href="http://www.vim.org/download.php">Vim</a> or <a class="reference external" href="https://www.gnu.org/software/emacs/">Emacs</a> then feel free to use them.  If you have never used Vim or Emacs then avoid them.  Programmers may try to convince you to use Vim or Emacs, but this will only derail you.  Your focus is learning Python, not learning Vim or Emacs.  If you try to use Vim and don't know how to quit, then type <tt class="docutils literal">:q!</tt> or <tt class="docutils literal">ZZ</tt>.  If someone told you to use Vim, and they didn't even tell you this, then now you know why you shouldn't listen to them.</p>
+<p>Do not use an Integrated Development Environment (IDE) while you go through this book.  Relying on an IDE means that you can't work with new programming languages until some company decides to sell you an IDE for that language.  This means you can't use that new language until the language is large enough to justify a lucrative customer base.  If you are confident you can work with only a programmer's text editor (like Vim, Emacs, Atom, etc.) then you don't have to wait for a third party.  IDEs are nice in some situations (such as working with a giant existing code base) but being addicted to them will limit your future.</p>
+<p>You should also not use IDLE.  It has serious limitations in how it works and isn't a very good piece of software.  All you need is a simple text editor, a shell, and Python.</p>
+</div>
+                <!-- RST ENDS -->
+            </div>
+        </div>
+
+        <div class="row center-xs" id="buy">
+            <div class="text-center col-xs-10 col-sm-5 col-md-4">
+                <h2 class="section-title__small">Buy The Python 3 Edition!</h2>
+                <p>
+                When you buy  Learn Python 3 The Hard Way, you'll receive the Python 3 Edition PDF, special access to a paid HTML version, and <b>12 hours</b> of 1080p video, one video for each exercise.
+                All files are DRM free and you can download them to your computer for offline viewing. <b>Digital Download Only!  You do not get a physical book.</b>
+                </p>
+
+                <p class="price-block">
+                <span class="currency"><span class="prefix">$</span>29.<span class="suffix">99</span></span>
+                </p>
+
+                <a href="https://shop.learncodethehardway.org/access/buy/9/" class="btn btn-primary btn-full">Buy Digital Download From Zed</a>
+
+                <p class="text-left btn-subtext">
+                <small>Or, you can <a href="index.html">read Learn Python the Hard Way for free</a> right here, video lectures not included.</small>
+                </p>
+
+            </div>
+            <div class="text-center col-xs-10 col-sm-5 col-md-4 col-sm-offset-1">
+
+                <h2 class="section-title__small">Other Buying Options</h2>
+                  <a href="http://amzn.to/2sSzwCY" class="btn btn-secondary btn-full">Buy on Amazon</a>
+                  <a href="http://bit.ly/informitlpy3thw" class="btn btn-secondary btn-full">Paper + Digital from InformIT</a>
+                  <a href="http://bit.ly/bnlpy3thw" class="btn btn-secondary btn-full">Buy from Barnes &amp; Noble</a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row center-xs" id="video_holder" style="display: none">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8">
+            <div data-paydiv_product="9" id='paydiv'>
+                No content available for this exercise.  You can view all available downloads at <a href="https://shop.learncodethehardway.org/customers/">your customer account page</a>.
+            </div>
+        </div>
+    </div>
+
+    </main>
+
+</div>
+
+<div class="row dark bottom-nav">
+    <div class="col-xs text-left">
+        <a href="#" class="prev" id='prev_link'><i class="icon-arrow-67"></i> <i class="icon icon-arrow-left"></i> Previous <span class="hide-xs show-sm-inline">Lesson</span></a>
+    </div>
+    <div class="col-xs text-right"><a href="#" class="next" id='next_link'>Next <span class="hide-xs show-sm-inline">Lesson</span> <i class="icon icon-arrow-right"></i></a>
+    </div>
+</div>
+  </div>
+
+<footer class="footer">
+<div class="row center-xs">
+
+    <div class="col-xs-11 col-sm-6 col-md-5 col-lg-5">
+        <ul class="nav nav-inline">
+            <li><h4><a href="../index.html">Home</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/about/">About</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/contact/">Contact</a></h4></li>
+        </ul>
+        <div class="copyright text-left">
+            <small class="text-muted">&copy; Zed A. Shaw. All rights reserved.</small>
+        </div>
+    </div>
+    <div class="col-xs-11 col-sm-4 col-md-4 col-lg-3">
+        <div class="social-media">
+            <div class="classy-container">
+                <a href="https://twitter.com/lzsthw" class="socicon-twitter"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</footer>
+<script src="../js/scripts.min.js"></script>
+
+<script src="javascripts/jquery.js"></script>
+<script src="index.js"></script>
+<script src="../../shop.learncodethehardway.org/static/jzed.js"></script>
+<script src="../../shop.learncodethehardway.org/static/js/videojs/video.js"></script>
+<link rel="stylesheet" href="../../shop.learncodethehardway.org/static/js/videojs/video-js.css">
+<script src="../../shop.learncodethehardway.org/static/api/v1/paydiv.js"></script>
+<script src="javascripts/app.js"></script>
+<script src="javascripts/littools.js"></script>
+<!-- Start of helpthw Zendesk Widget script -->
+<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("../../assets.zendesk.com/embeddable_framework/main.js","helpthw.zendesk.com");
+/*]]>*/</script>
+<!-- End of helpthw Zendesk Widget script -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-24168052-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+</body>
+
+<!-- Mirrored from learnpythonthehardway.org/python3/ex0.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 01:13:29 GMT -->
+</html>

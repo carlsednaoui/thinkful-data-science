@@ -1,0 +1,796 @@
+<!doctype html>
+<html class="no-js">
+
+<!-- Mirrored from learnpythonthehardway.org/python3/ex37.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 01:13:35 GMT -->
+<head>
+
+
+
+<meta charset="utf-8">
+<title>Learn Python the Hard Way</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href='../../fonts.googleapis.com/css33ad.css?family=Source+Code+Pro|Source+Sans+Pro:200,400,700,200italic,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href="../css/style.min.css" rel="stylesheet">
+<!-- http://www.socicon.com -->
+<link href="../css/icons.css" rel="stylesheet">
+
+
+</head>
+
+<body class="baseline-grid-off book-site" id="top">
+
+
+
+
+<header class="header" role="banner">
+    <nav class="navbar navbar-full nav-brand-family">
+        <div class="row middle-xs">
+            <ul class="brand-links show-md col-xs-3 col-sm-10 bare">
+                <li><a href="https://learncodethehardway.org/" class="waves-effect">Learn:</a></li>
+
+                <li><a href="https://learncodethehardway.org/python/" class="waves-effect active">Python</a></li>
+
+                <li><a href="https://learncodethehardway.org/ruby/" class="waves-effect">Ruby</a></li>
+
+                <li><a href="https://learncodethehardway.org/more-python/" class="waves-effect">More Python</a></li>
+
+                <li><a href="https://learncodethehardway.org/c/" class="waves-effect">C</a></li>
+
+                <li><a href="https://learncodethehardway.org/sql/" class="waves-effect">SQL</a></li>
+
+                <li><a href="https://learncodethehardway.org/javascript/" class="waves-effect">Javascript</a></li>
+
+                <li><a href="https://learncodethehardway.org/unix/" class="waves-effect">Unix</a></li>
+
+                <li><a href="https://learncodethehardway.org/regex/" class="waves-effect">RegEx</a></li>
+
+                <li><a href="https://www.learndesignthehardway.com/" class="waves-effect">Design</a></li>
+
+            </ul>
+            <ul class="brand-links hide-md col-xs-3 col-sm-10 bare">
+                <li><a href="https://learncodethehardway.org/" class="waves-effect">LCTHW</a></li>
+            </ul>
+
+            <ul class="site-meta col-xs-9 col-sm-2 end-xs bare">
+                <li><a href="https://shop.learncodethehardway.org/access/reactivate/" class="waves-effect"><i class="icon icon-user"></i> Login</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-full nav-main" role="navigation">
+        <div class="row between-xs center-xs middle-xs bare">
+            <div class="col-xs-4 start-xs bare">
+                <a href="#" class="no-underline nav-trigger waves-effect" id="toc"><div class="transformer hamburcloser">
+                        <div class="bar bar-t"></div>
+                        <div class="bar bar-m-a"></div>
+                        <div class="bar bar-m-b"></div>
+                        <div class="bar bar-b"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Contents</span></a>
+            </div>
+            <div class="col-xs-4"><strong>&nbsp;</strong></div>
+            <div class="col-xs-4 end-xs bare">
+                <a href="https://helpthw.zendesk.com/hc/en-us" class="no-underline nav-trigger waves-effect" id="help"><div class="transformer questioncloser">
+                        <div class="icon-question-mark"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Help</span></a>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+
+
+
+<div class="wrapper">
+    <div class="masthead python-background" style="background-image: url('../images/pattern-python.svg')">
+        <img src="../images/logo-python.svg" alt="Learn Python The Hard Way" class="logo">
+    </div>
+
+    <aside class="sidebar sidebar-left" role="complementary">
+        <nav class="side-nav-container">
+            <ol class="table-of-contents">
+                <h3>Table of Contents</h3>
+                <li><a href="preface.html">Preface</a></li>
+                <li><a href="intro.html">The Hard Way Is Easier</a></li>
+                <li><a href="ex0.html">Ex0: The Setup</a></li>
+                <li><a href="ex1.html">Ex1: A Good First Program</a></li>
+                <li><a href="ex2.html">Ex2: Comments And Pound Characters</a></li>
+                <li><a href="ex3.html">Ex3: Numbers And Math</a></li>
+                <li><a href="ex4.html">Ex4: Variables And Names</a></li>
+                <li><a href="ex5.html">Ex5: More Variables And Printing</a></li>
+                <li><a href="ex6.html">Ex6: Strings And Text</a></li>
+                <li><a href="ex7.html">Ex7: More Printing</a></li>
+                <li><a href="ex8.html">Ex8: Printing, Printing</a></li>
+                <li><a href="ex9.html">Ex9: Printing, Printing, Printing</a></li>
+                <li><a href="ex10.html">Ex10: What Was That?</a></li>
+                <li><a href="ex11.html">Ex11: Asking Questions</a></li>
+                <li><a href="ex12.html">Ex12: Prompting People</a></li>
+                <li><a href="ex13.html">Ex13: Parameters, Unpacking, Variables</a></li>
+                <li><a href="ex14.html">Ex14: Prompting And Passing</a></li>
+                <li><a href="ex15.html">Ex15: Reading Files</a></li>
+                <li><a href="ex16.html">Ex16: Reading And Writing Files</a></li>
+                <li><a href="ex17.html">Ex17: More Files</a></li>
+                <li><a href="ex18.html">Ex18: Names, Variables, Code, Functions</a></li>
+                <li><a href="ex19.html">Ex19: Functions And Variables</a></li>
+                <li><a href="ex20.html">Ex20: Functions And Files</a></li>
+                <li><a href="ex21.html">Ex21: Functions Can Return Something</a></li>
+                <li><a href="ex22.html">Ex22: What Do You Know So Far?</a></li>
+                <li><a href="ex23.html">Ex23: Read Some Code</a></li>
+                <li><a href="ex24.html">Ex24: More Practice</a></li>
+                <li><a href="ex25.html">Ex25: Even More Practice</a></li>
+                <li><a href="ex26.html">Ex26: Congratulations, Take A Test!</a></li>
+                <li><a href="ex27.html">Ex27: Memorizing Logic</a></li>
+                <li><a href="ex28.html">Ex28: Boolean Practice</a></li>
+                <li><a href="ex29.html">Ex29: What If</a></li>
+                <li><a href="ex30.html">Ex30: Else And If</a></li>
+                <li><a href="ex31.html">Ex31: Making Decisions</a></li>
+                <li><a href="ex32.html">Ex32: Loops And Lists</a></li>
+                <li><a href="ex33.html">Ex33: While Loops</a></li>
+                <li><a href="ex34.html">Ex34: Accessing Elements Of Lists</a></li>
+                <li><a href="ex35.html">Ex35: Branches and Functions</a></li>
+                <li><a href="ex36.html">Ex36: Designing and Debugging</a></li>
+                <li><a href="ex37.html">Ex37: Symbol Review</a></li>
+                <li><a href="ex38.html">Ex38: Doing Things To Lists</a></li>
+                <li><a href="ex39.html">Ex39: Dictionaries, Oh Lovely Dictionaries</a></li>
+                <li><a href="ex40.html">Ex40: Modules, Classes, And Objects</a></li>
+                <li><a href="ex41.html">Ex41: Learning To Speak Object Oriented</a></li>
+                <li><a href="ex42.html">Ex42: Is-A, Has-A, Objects, and Classes</a></li>
+                <li><a href="ex43.html">Ex43: Gothons From Planet Percal #25</a></li>
+                <li><a href="ex44.html">Ex44: Inheritance Vs. Composition</a></li>
+                <li><a href="ex45.html">Ex45: You Make A Game</a></li>
+                <li><a href="ex46.html">Ex46: A Project Skeleton</a></li>
+                <li><a href="ex47.html">Ex47: Automated Testing</a></li>
+                <li><a href="ex48.html">Ex48: Advanced User Input</a></li>
+                <li><a href="ex49.html">Ex49: Making Sentences</a></li>
+                <li><a href="ex50.html">Ex50: Your First Website</a></li>
+                <li><a href="ex51.html">Ex51: Getting Input From A Browser</a></li>
+                <li><a href="ex52.html">Ex52: The Start Of Your Web Game</a></li>
+                <li><a href="advice.html">Advice From An Old Programmer</a></li>
+                <li><a href="next.html">Next Steps</a></li>
+                <li><a href="appendixa.html">Appendix A: Command Line Crash Course</a></li>
+            </ol>
+            <ul class="site-links">
+                <h3>Learn the Hard Way</h3>
+                <li><a href="#" class="waves-effect"><i class="icon-information"></i> About LPTHW</a></li>
+                <li><a href="#" class="waves-effect"><i class="icon-question-mark"></i> Help &amp; Support</a></li>
+                <li><a href="#" class="waves-effect"><i class="socicon-twitter"></i> Follow us on Twitter</a></li>
+            </ul>
+        </nav>
+        <div class="colophon text-center">
+            <div class="intro">
+                <p class="bare-bottom">
+                The type for this book is set in 18px / 1.5
+                <a href="https://www.google.com/fonts/specimen/Source+Serif+Pro">Adobe Serif</a>,
+                <a href="https://www.google.com/fonts/specimen/Source+Sans+Pro">Sans</a>, and
+                <a href="https://www.google.com/fonts/specimen/Source+Code+Pro">Code</a>.
+                </p>
+            </div>
+            <div class="printers-mark">
+                <div class="inscription">Docendo <i class="icon-repeat"></i> Discimus</div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="main python" role="main">
+    <div class="main-container row center-xs">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8">
+
+            <div class="content">
+
+                <!--- RST STARTS -->
+                <h1 class="title">Exercise 37: Symbol Review</h1>
+                <p>It's time to review the symbols and Python words you know and to try to pick up a few more for the next few lessons.  I have written out all the Python symbols and keywords that are important to know.</p>
+<p>In this lesson take each keyword and first try to write out what it does from memory.  Next, search online for it and see what it really does.  This may be difficult because some of these are difficult to search for, but try anyway.</p>
+<p>If you get one of these wrong from memory, make an index card with the correct definition and try to &quot;correct&quot; your memory.</p>
+<p>Finally, use each of these in a small Python program, or as many as you can get done.  The goal is to find out what the symbol does, make sure you got it right, correct it if you did not, then use it to lock it in.</p>
+<div class="section" id="keywords">
+<h1>Keywords</h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="47%" />
+<col width="42%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Keyword</th>
+<th class="head">Description</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><tt class="docutils literal">and</tt></td>
+<td>Logical and.</td>
+<td><tt class="docutils literal">True and False == False</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">as</tt></td>
+<td>Part of the <cite>with-as</cite> statement.</td>
+<td><tt class="docutils literal">with X as Y: pass</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">assert</tt></td>
+<td>Assert (ensure) that something is true.</td>
+<td><tt class="docutils literal">assert False, &quot;Error!&quot;</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">break</tt></td>
+<td>Stop this loop right now.</td>
+<td><tt class="docutils literal">while True: break</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">class</tt></td>
+<td>Define a class.</td>
+<td><tt class="docutils literal">class Person(object)</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">continue</tt></td>
+<td>Don't process more of the loop, do it again.</td>
+<td><tt class="docutils literal">while True: continue</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">def</tt></td>
+<td>Define a function.</td>
+<td><tt class="docutils literal">def <span class="pre">X():</span> pass</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">del</tt></td>
+<td>Delete from dictionary.</td>
+<td><tt class="docutils literal">del X[Y]</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">elif</tt></td>
+<td>Else if condition.</td>
+<td><tt class="docutils literal">if: X; elif: Y; else: J</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">else</tt></td>
+<td>Else condition.</td>
+<td><tt class="docutils literal">if: X; elif: Y; else: J</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">except</tt></td>
+<td>If an exception happens, do this.</td>
+<td><tt class="docutils literal">except ValueError, e: print(e)</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">exec</tt></td>
+<td>Run a string as Python.</td>
+<td><tt class="docutils literal">exec <span class="pre">'print(&quot;hello&quot;)'</span></tt></td>
+</tr>
+<tr><td><tt class="docutils literal">finally</tt></td>
+<td>Exceptions or not, finally do this no matter what.</td>
+<td><tt class="docutils literal">finally: pass</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">for</tt></td>
+<td>Loop over a collection of things.</td>
+<td><tt class="docutils literal">for X in Y: pass</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">from</tt></td>
+<td>Importing specific parts of a module.</td>
+<td><tt class="docutils literal">from x import Y</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">global</tt></td>
+<td>Declare that you want a global variable.</td>
+<td><tt class="docutils literal">global X</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">if</tt></td>
+<td>If condition.</td>
+<td><tt class="docutils literal">if: X; elif: Y; else: J</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">import</tt></td>
+<td>Import a module into this one to use.</td>
+<td><tt class="docutils literal">import os</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">in</tt></td>
+<td>Part of <tt class="docutils literal"><span class="pre">for-loops</span></tt>. Also a test of X in Y.</td>
+<td><tt class="docutils literal">for X in Y: pass</tt> also <tt class="docutils literal">1 in [1] == True</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">is</tt></td>
+<td>Like == to test equality.</td>
+<td><tt class="docutils literal">1 is 1 == True</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">lambda</tt></td>
+<td>Create a short anonymous function.</td>
+<td><tt class="docutils literal">s = lambda y: y ** y; s(3)</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">not</tt></td>
+<td>Logical not.</td>
+<td><tt class="docutils literal">not True == False</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">or</tt></td>
+<td>Logical or.</td>
+<td><tt class="docutils literal">True or False == True</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">pass</tt></td>
+<td>This block is empty.</td>
+<td><tt class="docutils literal">def <span class="pre">empty():</span> pass</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">print</tt></td>
+<td>Print this string.</td>
+<td><tt class="docutils literal"><span class="pre">print('this</span> string')</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">raise</tt></td>
+<td>Raise an exception when things go wrong.</td>
+<td><tt class="docutils literal">raise <span class="pre">ValueError(&quot;No&quot;)</span></tt></td>
+</tr>
+<tr><td><tt class="docutils literal">return</tt></td>
+<td>Exit the function with a return value.</td>
+<td><tt class="docutils literal">def <span class="pre">X():</span> return Y</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">try</tt></td>
+<td>Try this block, and if exception, go to <tt class="docutils literal">except</tt>.</td>
+<td><tt class="docutils literal">try: pass</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">while</tt></td>
+<td>While loop.</td>
+<td><tt class="docutils literal">while X: pass</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">with</tt></td>
+<td>With an expression as a variable do.</td>
+<td><tt class="docutils literal">with X as Y: pass</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">yield</tt></td>
+<td>Pause here and return to caller.</td>
+<td><tt class="docutils literal">def <span class="pre">X():</span> yield Y; <span class="pre">X().next()</span></tt></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="data-types">
+<h1>Data Types</h1>
+<p>For data types, write out what makes up each one.  For example, with strings, write out how you create a string.  For numbers, write out a few numbers.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="54%" />
+<col width="34%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Type</th>
+<th class="head">Description</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><tt class="docutils literal">True</tt></td>
+<td>True boolean value.</td>
+<td><tt class="docutils literal">True or False == True</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">False</tt></td>
+<td>False boolean value.</td>
+<td><tt class="docutils literal">False and True == False</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">None</tt></td>
+<td>Represents &quot;nothing&quot; or &quot;no value&quot;.</td>
+<td><tt class="docutils literal">x = None</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">bytes</tt></td>
+<td>Stores bytes, maybe of text, PNG, file, etc.</td>
+<td><tt class="docutils literal">x = b&quot;hello&quot;</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">strings</tt></td>
+<td>Stores textual information.</td>
+<td><tt class="docutils literal">x = &quot;hello&quot;</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">numbers</tt></td>
+<td>Stores integers.</td>
+<td><tt class="docutils literal">i = 100</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">floats</tt></td>
+<td>Stores decimals.</td>
+<td><tt class="docutils literal">i = 10.389</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">lists</tt></td>
+<td>Stores a list of things.</td>
+<td><tt class="docutils literal">j = [1,2,3,4]</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">dicts</tt></td>
+<td>Stores a key=value mapping of things.</td>
+<td><tt class="docutils literal">e = {'x': 1, 'y': 2}</tt></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="string-escape-sequences">
+<h1>String Escape Sequences</h1>
+<p>For string escape sequences, use them in strings to make sure they do what you think they do.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Escape</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><tt class="docutils literal">\\</tt></td>
+<td>Backslash</td>
+</tr>
+<tr><td><tt class="docutils literal">\'</tt></td>
+<td>Single-quote</td>
+</tr>
+<tr><td><tt class="docutils literal">\&quot;</tt></td>
+<td>Double-quote</td>
+</tr>
+<tr><td><tt class="docutils literal">\a</tt></td>
+<td>Bell</td>
+</tr>
+<tr><td><tt class="docutils literal">\b</tt></td>
+<td>Backspace</td>
+</tr>
+<tr><td><tt class="docutils literal">\f</tt></td>
+<td>Formfeed</td>
+</tr>
+<tr><td><tt class="docutils literal">\n</tt></td>
+<td>Newline</td>
+</tr>
+<tr><td><tt class="docutils literal">\r</tt></td>
+<td>Carriage</td>
+</tr>
+<tr><td><tt class="docutils literal">\t</tt></td>
+<td>Tab</td>
+</tr>
+<tr><td><tt class="docutils literal">\v</tt></td>
+<td>Vertical tab</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="old-style-string-formats">
+<h1>Old Style String Formats</h1>
+<p>Same thing for string formats: use them in some strings to know what they do.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="55%" />
+<col width="37%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Escape</th>
+<th class="head">Description</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><tt class="docutils literal">%d</tt></td>
+<td>Decimal integers (not floating point).</td>
+<td><tt class="docutils literal">&quot;%d&quot; % 45 == '45'</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%i</tt></td>
+<td>Same as %d.</td>
+<td><tt class="docutils literal">&quot;%i&quot; % 45 == '45'</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%o</tt></td>
+<td>Octal number.</td>
+<td><tt class="docutils literal">&quot;%o&quot; % 1000 == '1750'</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%u</tt></td>
+<td>Unsigned decimal.</td>
+<td><tt class="docutils literal">&quot;%u&quot; % <span class="pre">-1000</span> == <span class="pre">'-1000'</span></tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%x</tt></td>
+<td>Hexadecimal lowercase.</td>
+<td><tt class="docutils literal">&quot;%x&quot; % 1000 == '3e8'</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%X</tt></td>
+<td>Hexadecimal uppercase.</td>
+<td><tt class="docutils literal">&quot;%X&quot; % 1000 == '3E8'</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%e</tt></td>
+<td>Exponential notation, lowercase 'e'.</td>
+<td><tt class="docutils literal">&quot;%e&quot; % 1000 == '1.000000e+03'</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%E</tt></td>
+<td>Exponential notation, uppercase 'E'.</td>
+<td><tt class="docutils literal">&quot;%E&quot; % 1000 == '1.000000E+03'</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%f</tt></td>
+<td>Floating point real number.</td>
+<td><tt class="docutils literal">&quot;%f&quot; % 10.34 == '10.340000'</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%F</tt></td>
+<td>Same as %f.</td>
+<td><tt class="docutils literal">&quot;%F&quot; % 10.34 == '10.340000'</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%g</tt></td>
+<td>Either %f or %e, whichever is shorter.</td>
+<td><tt class="docutils literal">&quot;%g&quot; % 10.34 == '10.34'</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%G</tt></td>
+<td>Same as %g but uppercase.</td>
+<td><tt class="docutils literal">&quot;%G&quot; % 10.34 == '10.34'</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%c</tt></td>
+<td>Character format.</td>
+<td><tt class="docutils literal">&quot;%c&quot; % 34 == '&quot;'</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%r</tt></td>
+<td>Repr format (debugging format).</td>
+<td><tt class="docutils literal">&quot;%r&quot; % int == &quot;&lt;type <span class="pre">'int'&gt;&quot;</span></tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%s</tt></td>
+<td>String format.</td>
+<td><tt class="docutils literal">&quot;%s there&quot; % 'hi' == 'hi there'</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%%</tt></td>
+<td>A percent sign.</td>
+<td><tt class="docutils literal"><span class="pre">&quot;%g%%&quot;</span> % 10.34 == '10.34%'</tt></td>
+</tr>
+</tbody>
+</table>
+<p>Older Python 2 code uses these formatting characters to do what f-strings do.  Try them out as an alternative.</p>
+</div>
+<div class="section" id="operators">
+<h1>Operators</h1>
+<p>Some of these may be unfamiliar to you, but look them up anyway.  Find out what they do, and if you still can't figure it out, save it for later.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="56%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Operator</th>
+<th class="head">Description</th>
+<th class="head">Example</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><tt class="docutils literal">+</tt></td>
+<td>Addition</td>
+<td><tt class="docutils literal">2 + 4 == 6</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">-</tt></td>
+<td>Subtraction</td>
+<td><tt class="docutils literal">2 - 4 == <span class="pre">-2</span></tt></td>
+</tr>
+<tr><td><tt class="docutils literal">*</tt></td>
+<td>Multiplication</td>
+<td><tt class="docutils literal">2 * 4 == 8</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">**</tt></td>
+<td>Power of</td>
+<td><tt class="docutils literal">2 ** 4 == 16</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">/</tt></td>
+<td>Division</td>
+<td><tt class="docutils literal">2 / 4 == 0.5</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">//</tt></td>
+<td>Floor division</td>
+<td><tt class="docutils literal">2 // 4 == 0</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%</tt></td>
+<td>String interpolate or modulus</td>
+<td><tt class="docutils literal">2 % 4 == 2</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">&lt;</tt></td>
+<td>Less than</td>
+<td><tt class="docutils literal">4 &lt; 4 == False</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">&gt;</tt></td>
+<td>Greater than</td>
+<td><tt class="docutils literal">4 &gt; 4 == False</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">&lt;=</tt></td>
+<td>Less than equal</td>
+<td><tt class="docutils literal">4 &lt;= 4 == True</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">&gt;=</tt></td>
+<td>Greater than equal</td>
+<td><tt class="docutils literal">4 &gt;= 4 == True</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">==</tt></td>
+<td>Equal</td>
+<td><tt class="docutils literal">4 == 5 == False</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">!=</tt></td>
+<td>Not equal</td>
+<td><tt class="docutils literal">4 != 5 == True</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">( )</tt></td>
+<td>Parenthesis</td>
+<td><tt class="docutils literal"><span class="pre">len('hi')</span> == 2</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">[ ]</tt></td>
+<td>List brackets</td>
+<td><tt class="docutils literal">[1,3,4]</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">{ }</tt></td>
+<td>Dict curly braces</td>
+<td><tt class="docutils literal">{'x': 5, 'y': 10}</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">&#64;</tt></td>
+<td>At (decorators)</td>
+<td><tt class="docutils literal">&#64;classmethod</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">,</tt></td>
+<td>Comma</td>
+<td><tt class="docutils literal">range(0, 10)</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">:</tt></td>
+<td>Colon</td>
+<td><tt class="docutils literal">def <span class="pre">X():</span></tt></td>
+</tr>
+<tr><td><tt class="docutils literal">.</tt></td>
+<td>Dot</td>
+<td><tt class="docutils literal">self.x = 10</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">=</tt></td>
+<td>Assign equal</td>
+<td><tt class="docutils literal">x = 10</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">;</tt></td>
+<td>semi-colon</td>
+<td><tt class="docutils literal"><span class="pre">print(&quot;hi&quot;);</span> <span class="pre">print(&quot;there&quot;)</span></tt></td>
+</tr>
+<tr><td><tt class="docutils literal">+=</tt></td>
+<td>Add and assign</td>
+<td><tt class="docutils literal">x = 1; x += 2</tt></td>
+</tr>
+<tr><td><tt class="docutils literal"><span class="pre">-=</span></tt></td>
+<td>Subtract and assign</td>
+<td><tt class="docutils literal">x = 1; x <span class="pre">-=</span> 2</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">*=</tt></td>
+<td>Multiply and assign</td>
+<td><tt class="docutils literal">x = 1; x *= 2</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">/=</tt></td>
+<td>Divide and assign</td>
+<td><tt class="docutils literal">x = 1; x /= 2</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">//=</tt></td>
+<td>Floor divide and assign</td>
+<td><tt class="docutils literal">x = 1; x //= 2</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">%=</tt></td>
+<td>Modulus assign</td>
+<td><tt class="docutils literal">x = 1; x %= 2</tt></td>
+</tr>
+<tr><td><tt class="docutils literal">**=</tt></td>
+<td>Power assign</td>
+<td><tt class="docutils literal">x = 1; x **= 2</tt></td>
+</tr>
+</tbody>
+</table>
+<p>Spend about a week on this, but if you finish faster that's great.  The point is to try to get coverage on all these symbols and make sure they are locked in your head.  What's also important is to find out what you <em>do not</em> know so you can fix it later.</p>
+</div>
+<div class="section" id="reading-code">
+<h1>Reading Code</h1>
+<p>Now find some Python code to read.  You should be reading any Python code you can and trying to steal ideas that you find.  You actually should have enough knowledge to be able to read but maybe not understand what the code does.  What this lesson teaches is how to apply things you have learned to understand other people's code.</p>
+<p>First, print out the code you want to understand.  Yes, print it out, because your eyes and brain are more used to reading paper than computer screens.  Make sure you print a few pages at a time.</p>
+<p>Second, go through your printout and take notes on the following:</p>
+<ol class="arabic simple">
+<li>Functions and what they do.</li>
+<li>Where each variable is first given a value.</li>
+<li>Any variables with the same names in different parts of the program.  These may be trouble later.</li>
+<li>Any <tt class="docutils literal"><span class="pre">if-statements</span></tt> without else clauses.  Are they right?</li>
+<li>Any <tt class="docutils literal"><span class="pre">while-loops</span></tt> that might not end.</li>
+<li>Any parts of code that you can't understand for whatever reason.</li>
+</ol>
+<p>Third, once you have all of this marked up, try to explain it to yourself by writing comments as you go.  Explain the functions, how they are used, what variables are involved and anything you can to figure this code out.</p>
+<p>Lastly, on all of the difficult parts, trace the values of each variable line by line, function by function.  In fact, do another printout, and write in the margin the value of each variable that you need to &quot;trace.&quot;</p>
+<p>Once you have a good idea of what the code does, go back to the computer and read it again to see if you find new things.  Keep finding more code and doing this until you do not need the printouts anymore.</p>
+</div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<ol class="arabic simple">
+<li>Find out what a &quot;flow chart&quot; is and draw a few.</li>
+<li>If you find errors in code you are reading, try to fix them, and send the author your changes.</li>
+<li>Another technique for when you are not using paper is to put <tt class="docutils literal">#</tt> comments with your notes in the code.  Sometimes, these could become the actual comments to help the next person.</li>
+</ol>
+</div>
+<div class="section" id="common-student-questions">
+<h1>Common Student Questions</h1>
+<dl class="docutils">
+<dt>How would I search for these things online?</dt>
+<dd>Simply put &quot;python3.6&quot; before anything you want to find.  For example, to find <tt class="docutils literal">yield</tt> search for  <tt class="docutils literal">python3.6 yield</tt>.</dd>
+</dl>
+</div>
+                <!-- RST ENDS -->
+            </div>
+        </div>
+
+        <div class="row center-xs" id="buy">
+            <div class="text-center col-xs-10 col-sm-5 col-md-4">
+                <h2 class="section-title__small">Buy The Python 3 Edition!</h2>
+                <p>
+                When you buy  Learn Python 3 The Hard Way, you'll receive the Python 3 Edition PDF, special access to a paid HTML version, and <b>12 hours</b> of 1080p video, one video for each exercise.
+                All files are DRM free and you can download them to your computer for offline viewing. <b>Digital Download Only!  You do not get a physical book.</b>
+                </p>
+
+                <p class="price-block">
+                <span class="currency"><span class="prefix">$</span>29.<span class="suffix">99</span></span>
+                </p>
+
+                <a href="https://shop.learncodethehardway.org/access/buy/9/" class="btn btn-primary btn-full">Buy Digital Download From Zed</a>
+
+                <p class="text-left btn-subtext">
+                <small>Or, you can <a href="index.html">read Learn Python the Hard Way for free</a> right here, video lectures not included.</small>
+                </p>
+
+            </div>
+            <div class="text-center col-xs-10 col-sm-5 col-md-4 col-sm-offset-1">
+
+                <h2 class="section-title__small">Other Buying Options</h2>
+                  <a href="http://amzn.to/2sSzwCY" class="btn btn-secondary btn-full">Buy on Amazon</a>
+                  <a href="http://bit.ly/informitlpy3thw" class="btn btn-secondary btn-full">Paper + Digital from InformIT</a>
+                  <a href="http://bit.ly/bnlpy3thw" class="btn btn-secondary btn-full">Buy from Barnes &amp; Noble</a>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row center-xs" id="video_holder" style="display: none">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8">
+            <div data-paydiv_product="9" id='paydiv'>
+                No content available for this exercise.  You can view all available downloads at <a href="https://shop.learncodethehardway.org/customers/">your customer account page</a>.
+            </div>
+        </div>
+    </div>
+
+    </main>
+
+</div>
+
+<div class="row dark bottom-nav">
+    <div class="col-xs text-left">
+        <a href="#" class="prev" id='prev_link'><i class="icon-arrow-67"></i> <i class="icon icon-arrow-left"></i> Previous <span class="hide-xs show-sm-inline">Lesson</span></a>
+    </div>
+    <div class="col-xs text-right"><a href="#" class="next" id='next_link'>Next <span class="hide-xs show-sm-inline">Lesson</span> <i class="icon icon-arrow-right"></i></a>
+    </div>
+</div>
+  </div>
+
+<footer class="footer">
+<div class="row center-xs">
+
+    <div class="col-xs-11 col-sm-6 col-md-5 col-lg-5">
+        <ul class="nav nav-inline">
+            <li><h4><a href="../index.html">Home</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/about/">About</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/contact/">Contact</a></h4></li>
+        </ul>
+        <div class="copyright text-left">
+            <small class="text-muted">&copy; Zed A. Shaw. All rights reserved.</small>
+        </div>
+    </div>
+    <div class="col-xs-11 col-sm-4 col-md-4 col-lg-3">
+        <div class="social-media">
+            <div class="classy-container">
+                <a href="https://twitter.com/lzsthw" class="socicon-twitter"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</footer>
+<script src="../js/scripts.min.js"></script>
+
+<script src="javascripts/jquery.js"></script>
+<script src="index.js"></script>
+<script src="../../shop.learncodethehardway.org/static/jzed.js"></script>
+<script src="../../shop.learncodethehardway.org/static/js/videojs/video.js"></script>
+<link rel="stylesheet" href="../../shop.learncodethehardway.org/static/js/videojs/video-js.css">
+<script src="../../shop.learncodethehardway.org/static/api/v1/paydiv.js"></script>
+<script src="javascripts/app.js"></script>
+<script src="javascripts/littools.js"></script>
+<!-- Start of helpthw Zendesk Widget script -->
+<script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("../../assets.zendesk.com/embeddable_framework/main.js","helpthw.zendesk.com");
+/*]]>*/</script>
+<!-- End of helpthw Zendesk Widget script -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-24168052-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+</body>
+
+<!-- Mirrored from learnpythonthehardway.org/python3/ex37.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 01:13:35 GMT -->
+</html>

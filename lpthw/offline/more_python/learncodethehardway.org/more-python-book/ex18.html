@@ -1,0 +1,435 @@
+<!doctype html>
+<html class="no-js">
+
+<!-- Mirrored from learncodethehardway.org/more-python-book/ex18.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 15:17:43 GMT -->
+<head>
+
+
+
+<meta charset="utf-8">
+<title>Learn MORE Python the Hard Way</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link href="../../www.google-analytics.com/index.html" rel="dns-prefetch">
+<link href="../../ajax.googleapis.com/index.html" rel="dns-prefetch">
+
+<link href='../../fonts.googleapis.com/css33ad.css?family=Source+Code+Pro|Source+Sans+Pro:200,400,700,200italic,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href="../css/style.min.css" rel="stylesheet">
+<!-- http://www.socicon.com -->
+<link href="../css/icons.css" rel="stylesheet">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
+<title>Exercise 18: Measuring Performance</title>
+
+</head>
+
+<body class="baseline-grid-off book-site" id="top">
+
+
+
+
+<header class="header" role="banner">
+    <nav class="navbar navbar-full nav-brand-family">
+        <div class="row middle-xs">
+            <ul class="brand-links show-md col-xs-3 col-sm-10 bare">
+                <li><a href="http://learncodethehardway.org/" class="waves-effect">Learn:</a></li>
+
+                <li><a href="http://learncodethehardway.org/python/" class="waves-effect">Python</a></li>
+
+                <li><a href="http://learncodethehardway.org/ruby/" class="waves-effect">Ruby</a></li>
+
+                <li><a href="http://learncodethehardway.org/more-python/" class="waves-effect active">More Python</a></li>
+
+                <li><a href="http://learncodethehardway.org/c/" class="waves-effect">C</a></li>
+
+                <li><a href="http://learncodethehardway.org/sql/" class="waves-effect">SQL</a></li>
+
+                <li><a href="http://learncodethehardway.org/javascript/" class="waves-effect">Javascript</a></li>
+
+                <li><a href="http://learncodethehardway.org/unix/" class="waves-effect">Unix</a></li>
+
+                <li><a href="http://learncodethehardway.org/regex/" class="waves-effect">RegEx</a></li>
+
+                <li><a href="http://www.learndesignthehardway.com/" class="waves-effect">Design</a></li>
+
+            </ul>
+            <ul class="brand-links hide-md col-xs-3 col-sm-10 bare">
+                <li><a href="http://learncodethehardway.org/" class="waves-effect">LCTHW</a></li>
+            </ul>
+
+            <ul class="site-meta col-xs-9 col-sm-2 end-xs bare">
+                <li><a href="https://shop.learncodethehardway.org/access/reactivate/" class="waves-effect"><i class="icon icon-user"></i> Account</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-full nav-main" role="navigation">
+        <div class="row between-xs center-xs middle-xs bare">
+            <div class="col-xs-4 start-xs bare">
+                <a href="#" class="no-underline nav-trigger waves-effect" id="toc"><div class="transformer hamburcloser">
+                        <div class="bar bar-t"></div>
+                        <div class="bar bar-m-a"></div>
+                        <div class="bar bar-m-b"></div>
+                        <div class="bar bar-b"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Contents</span></a>
+            </div>
+            <div class="col-xs-4"><strong>&nbsp;</strong></div>
+            <div class="col-xs-4 end-xs bare">
+                <a href="https://helpthw.zendesk.com/hc/en-us" class="no-underline nav-trigger waves-effect" id="help"><div class="transformer questioncloser">
+                        <div class="icon-question-mark"></div>
+                </div><span class="nav-trigger_text show-sm-inline">Help</span></a>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+
+
+
+<div class="wrapper">
+    <div class="masthead more-python-background" style="background-image: url('../images/pattern-more-python.svg')">
+        <img src="../images/logo-more-python.svg" alt="Learn MORE Python The Hard Way" class="logo">
+    </div>
+
+    <aside class="sidebar sidebar-left" role="complementary">
+        <nav class="side-nav-container">
+            <ol class="table-of-contents">
+                <h3>Table of Contents</h3>
+                <li><a class="reference external" href="part0.html">I: Initial Knowledge</a></li>
+                <li><a class="reference external" href="ex0.html">0 The Setup</a></li>
+                <li><a class="reference external" href="ex1.html">1 On Process</a></li>
+                <li><a class="reference external" href="ex2.html">2 On Creativity</a></li>
+                <li><a class="reference external" href="ex3.html">3 On Quality</a></li>
+                <li><a class="reference external" href="part1.html">II: Quick Hacks</a></li>
+                <li><a class="reference external" href="ex4.html">4 Dealing With Command Line Arguments</a></li>
+                <li><a class="reference external" href="ex5.html">5 cat</a></li>
+                <li><a class="reference external" href="ex6.html">6 find</a></li>
+                <li><a class="reference external" href="ex7.html">7 grep</a></li>
+                <li><a class="reference external" href="ex8.html">8 cut</a></li>
+                <li><a class="reference external" href="ex9.html">9 sed</a></li>
+                <li><a class="reference external" href="ex10.html">10 sort</a></li>
+                <li><a class="reference external" href="ex11.html">11 uniq</a></li>
+                <li><a class="reference external" href="ex12.html">12 Review</a></li>
+                <li><a class="reference external" href="part2.html">III: Data Structures</a></li>
+                <li><a class="reference external" href="ex13.html">13 Single Linked Lists</a></li>
+                <li><a class="reference external" href="ex14.html">14 Double Linked Lists</a></li>
+                <li><a class="reference external" href="ex15.html">15 Stacks and Queues</a></li>
+                <li><a class="reference external" href="ex16.html">16 Bubble, Quick, Merge Sort</a></li>
+                <li><a class="reference external" href="ex17.html">17 Dictionary</a></li>
+                <li><a class="reference external" href="ex18.html">18 Measuring Performance</a></li>
+                <li><a class="reference external" href="ex19.html">19 Improving Performance</a></li>
+                <li><a class="reference external" href="ex21.html">21 Binary Search Trees</a></li>
+                <li><a class="reference external" href="ex22.html">22 Binary Search</a></li>
+                <li><a class="reference external" href="en23.html">23 Ternary Search</a></li>
+                <li><a class="reference external" href="ex24.html">24 Suffix Arrays</a></li>
+                <li><a class="reference external" href="part3.html">IV: Intermediate Projects</a></li>
+                <li><a class="reference external" href="ex25.html">25 xargs</a></li>
+                <li><a class="reference external" href="ex26.html">26 hexdump</a></li>
+                <li><a class="reference external" href="ex27.html">27 tr</a></li>
+                <li><a class="reference external" href="ex28.html">28 sh</a></li>
+                <li><a class="reference external" href="ex29.html">29 diff and patch</a></li>
+                <li><a class="reference external" href="part4.html">V: Parsing Text</a></li>
+                <li><a class="reference external" href="ex30.html">30 Finite State Machines</a></li>
+                <li><a class="reference external" href="ex31.html">31 Regular Expressions</a></li>
+                <li><a class="reference external" href="ex32.html">32 Scanners</a></li>
+                <li><a class="reference external" href="ex33.html">33 Parsers</a></li>
+                <li><a class="reference external" href="ex34.html">34 Analyzers</a></li>
+                <li><a class="reference external" href="ex35.html">35 Interpreters</a></li>
+                <li><a class="reference external" href="ex36.html">36 Simple Calculator </a></li>
+                <li><a class="reference external" href="ex37.html">37 Little BASIC</a></li>
+                <li><a class="reference external" href="part5.html">VI: SQL Databases</a></li>
+                <li><a class="reference external" href="ex38.html">38 Introduction to SQL</a></li>
+                <li><a class="reference external" href="ex39.html">39 Creating with SQL</a></li>
+                <li><a class="reference external" href="ex40.html">40 Reading with SQL</a></li>
+                <li><a class="reference external" href="ex41.html">41 Updating with SQL</a></li>
+                <li><a class="reference external" href="ex42.html">42 Deleting with SQL</a></li>
+                <li><a class="reference external" href="ex43.html">43 SQL Administration</a></li>
+                <li><a class="reference external" href="ex44.html">44 Using Python Database API</a></li>
+                <li><a class="reference external" href="ex45.html">45 Creating an ORM</a></li>
+                <li><a class="reference external" href="part6.html">VII: Final Projects</a></li>
+                <li><a class="reference external" href="ex46.html">46 blog</a></li>
+                <li><a class="reference external" href="ex47.html">47 bc</a></li>
+                <li><a class="reference external" href="ex48.html">48 ed</a></li>
+                <li><a class="reference external" href="ex49.html">49 sed</a></li>
+                <li><a class="reference external" href="ex50.html">50 vi</a></li>
+                <li><a class="reference external" href="ex51.html">51 lessweb</a></li>
+                <li><a class="reference external" href="ex52.html">52 moreweb</a></li>
+            </ol>
+            <ul class="site-links">
+                <h3>Learn the Hard Way</h3>
+                <li><a href="#" class="waves-effect"><i class="icon-information"></i> About LPTHW</a></li>
+                <li><a href="#" class="waves-effect"><i class="icon-question-mark"></i> Help &amp; Support</a></li>
+                <li><a href="#" class="waves-effect"><i class="socicon-twitter"></i> Follow us on Twitter</a></li>
+            </ul>
+        </nav>
+        <div class="colophon text-center">
+            <div class="intro">
+                <p class="bare-bottom">
+                The type for this book is set in 18px / 1.5
+                <a href="https://www.google.com/fonts/specimen/Source+Serif+Pro">Adobe Serif</a>,
+                <a href="https://www.google.com/fonts/specimen/Source+Sans+Pro">Sans</a>, and
+                <a href="https://www.google.com/fonts/specimen/Source+Code+Pro">Code</a>.
+                </p>
+            </div>
+            <div class="printers-mark">
+                <div class="inscription">Docendo <i class="icon-repeat"></i> Discimus</div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="overlay"></div>
+
+    <main class="main more python" role="main">
+    <div class="main-container row center-xs">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8">
+
+            <div class="content">
+                <div class="warning">
+                    <p class="first admonition-title">Warning</p>
+                    <p class="last">This book is new.  If you'd like to go through it, then join the <a class="reference external" href="https://gitter.im/lcthw/more-python-help">Gitter Chat</a> to get help while you attempt it.  I'm also looking for feedback on the difficulty of the projects.  If you don't like chat, then email <a class="reference external" href="mailto:help&#64;learncodethehardway.org">help&#64;learncodethehardway.org</a> to talk privately.</p>
+                </div>
+                <!--- RST STARTS -->
+                <h1 class="title">Exercise 18: Measuring Performance</h1>
+                <p>In this exercise you're going to learn to use several tools to analyze the performance of the data structures and algorithms you've created.  To keep this introduction focused and small we'll look at the performance of the <tt class="docutils literal">sorting.py</tt> algorithms from Exercise 16, and then in the video I'll analyze the performance of all the data structures we've done so far.</p>
+<p>Performance analysis and tuning is one of my favorite activities in computer programming.  I'm that guy who will sit with a ball of tangled yarn while I watch TV and just pick it apart until it's all nice and orderly.  I love teasing apart complicated mysteries, and code performance is one of the best complicated mysteries.  There's also nice, useful tools for analyzing the performance of code, which makes it much nicer than debugging by comparison.</p>
+<p>When you're coding don't try to implement performance improvements unless they're obvious.  I much prefer to keep the initial version of my code very simple and naive so that I can ensure it works correctly.  Then once it's working well, but maybe slow, I break out my profiling tools and start to look for ways to make it faster <em>without reducing the stability</em>.  This last part is key because many programmers feel it's alright to reduce the stability and safety of their code if that makes the code faster.</p>
+<div class="section" id="the-tools">
+<h1>The Tools</h1>
+<p>In this exercise we'll be covering many different tools that are useful for Python and some general strategies for improving the performance of any code.  The tools we'll use are:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://docs.python.org/3/library/timeit.html">timeit</a></li>
+<li><a class="reference external" href="https://docs.python.org/2/library/profile.html">cProfile and profile</a></li>
+</ul>
+<p>Make sure you install any that need to be installed before you continue.  Then get your copy of the <tt class="docutils literal">sorting.py</tt> and <tt class="docutils literal">test_sorting.py</tt> files so we can apply each of these tools to those algorithms.</p>
+<div class="section" id="timeit">
+<h2>timeit</h2>
+<p>The <tt class="docutils literal">timeit</tt> module isn't very useful.  All it does is take a <em>string</em> of Python code and run it with some timing.  You can't pass it function references, <tt class="docutils literal">.py</tt> files, or anything other than a string.  We can test how long the <tt class="docutils literal">test_bubble_sort</tt> function takes by writing this at the end of <tt class="docutils literal">test_sorting.py</tt>:</p>
+<pre class="code python literal-block">
+<span class="keyword">if</span> <span class="name">__name__</span> <span class="operator">==</span> <span class="literal string single">'__main__'</span><span class="punctuation">:</span>
+    <span class="keyword namespace">import</span> <span class="name namespace">timeit</span>
+    <span class="keyword">print</span><span class="punctuation">(</span><span class="name">timeit</span><span class="operator">.</span><span class="name">timeit</span><span class="punctuation">(</span><span class="literal string double">&quot;test_bubble_sort()&quot;</span><span class="punctuation">,</span> <span class="name">setup</span><span class="operator">=</span><span class="literal string double">&quot;from __main__ import test_bubble_sort&quot;</span><span class="punctuation">))</span>
+</pre>
+<p>It also doesn't produce useful measurements or any information on <em>why</em> something might be slow.  We need a way to measure how long pieces of code take to run, and this is simply too clunky to be useful.</p>
+</div>
+<div class="section" id="cprofile-and-profile">
+<h2>cProfile and profile</h2>
+<p>The next two tools are <em>much</em> more useful for measuring the performance of your code.  I recommend using <tt class="docutils literal">cProfile</tt> to analyze your code's running time, and save <tt class="docutils literal">profile</tt> for when you need more flexibility in your analysis.  To run <tt class="docutils literal">cProfile</tt> against your test, change the bottom of the <tt class="docutils literal">test_sorting.py</tt> file to simply run the test functions:</p>
+<pre class="code python literal-block">
+<span class="keyword">if</span> <span class="name">__name__</span> <span class="operator">==</span> <span class="literal string single">'__main__'</span><span class="punctuation">:</span>
+    <span class="name">test_bubble_sort</span><span class="punctuation">()</span>
+    <span class="name">test_merge_sort</span><span class="punctuation">()</span>
+</pre>
+<p>And change the <tt class="docutils literal">max_numbers</tt> to around <tt class="docutils literal">800</tt> or a big enough number that you can measure an effect.  Once you do that then run <tt class="docutils literal">cProfile</tt> on your code:</p>
+<pre class="code shell literal-block">
+$ python -m cProfile -s cumtime test_sorting.py <span class="punctuation">|</span> grep sorting.py
+</pre>
+<p>I'm using <tt class="docutils literal">| grep sorting.py</tt> just to narrow the output to the files I care about, but drop that part of the command to see the full output.  The results I get on my fairly fast computer for 800 numbers is:</p>
+<pre class="literal-block">
+  ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       1    0.000    0.000    0.145    0.145 test_sorting.py:1(&lt;module&gt;)
+       1    0.000    0.000    0.128    0.128 test_sorting.py:25(test_bubble_sort)
+       1    0.125    0.125    0.125    0.125 sorting.py:6(bubble_sort)
+       1    0.000    0.000    0.009    0.009 sorting.py:1(&lt;module&gt;)
+       1    0.000    0.000    0.008    0.008 test_sorting.py:33(test_merge_sort)
+       2    0.001    0.000    0.006    0.003 test_sorting.py:7(random_list)
+       1    0.000    0.000    0.005    0.005 sorting.py:37(merge_sort)
+  1599/1    0.001    0.000    0.005    0.005 sorting.py:47(merge_node)
+7500/799    0.004    0.000    0.004    0.000 sorting.py:72(merge)
+     799    0.001    0.000    0.001    0.000 sorting.py:27(count)
+       2    0.000    0.000    0.000    0.000 test_sorting.py:14(is_sorted)
+</pre>
+<p>I've added the headers back to the top so you can see what this output means.  Each header means the following</p>
+<dl class="docutils">
+<dt>ncalls</dt>
+<dd>Number of calls to this function.</dd>
+<dt>tottime</dt>
+<dd>Total execution time.</dd>
+<dt>percall</dt>
+<dd>Total Time per call to the function.</dd>
+<dt>cumtime</dt>
+<dd>Cumulative time for this function.</dd>
+<dt>percall</dt>
+<dd>Cumulative time per call.</dd>
+<dt>filename:lineno(function)</dt>
+<dd>The filename, line number, and function involved.</dd>
+</dl>
+<p>Those header names are also the options available for the <tt class="docutils literal"><span class="pre">-s</span></tt> parameter.  We can then do a quick analysis of this output:</p>
+<ul class="simple">
+<li><tt class="docutils literal">bubble_sort</tt> is called once, but <tt class="docutils literal">merge_node</tt> is called a 1599 times, and <tt class="docutils literal">merge</tt> even more at 7500 calls. This is because <tt class="docutils literal">merge_node</tt> and <tt class="docutils literal">merge</tt> are recursive, so they'll produce a large number of calls sorting a random list of 800 elements.</li>
+<li>Even though bubble_sort isn't called nearly as much as <tt class="docutils literal">merge</tt> or <tt class="docutils literal">merge_node</tt> it is a <em>lot</em> slower.  This fits with the performance expectations of the two algorithms.  The worst case for merge sort is <tt class="docutils literal">O(n log n)</tt>, but for bubble sort it's O(n^2).  If you have 800 elements then <tt class="docutils literal">800 log 800</tt> is about 5347, while <tt class="docutils literal">800^2</tt> is 640000!  These numbers don't necessarily translate into exact seconds these algorithms run, but they do translate into a relative comparison.</li>
+<li>The <tt class="docutils literal">count</tt> function is called 799 times, which is most likely a huge waste.  Our implementation of the <tt class="docutils literal">DoubleLinkedList</tt> doesn't track the count of elements and instead has to run through the list every single time you want to know a count.  We use that same method in the <tt class="docutils literal">count</tt> function here, and that leads to 799 runs through the whole list for 800 elements.  Change the <tt class="docutils literal">max_numbers</tt> to 600 or 500 to see a pattern here.  Notice how <tt class="docutils literal">count</tt> is run <tt class="docutils literal"><span class="pre">n-1</span></tt> times in our implementation?  That means we go through almost all 800 elements.</li>
+</ul>
+<p>Next let's look at how the <tt class="docutils literal">dllist.py</tt> numbers impact this performance too:</p>
+<pre class="literal-block">
+$ python -m cProfile -s cumtime test_sorting.py | grep dllist.py
+  ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+  1200    0.000    0.000    0.001    0.000 dllist.py:66(shift)
+  1200    0.001    0.000    0.001    0.000 dllist.py:19(push)
+  1200    0.000    0.000    0.000    0.000 dllist.py:3(__init__)
+     1    0.000    0.000    0.000    0.000 dllist.py:1(&lt;module&gt;)
+     1    0.000    0.000    0.000    0.000 dllist.py:1(DoubleLinkedListNode)
+     2    0.000    0.000    0.000    0.000 dllist.py:15(__init__)
+     1    0.000    0.000    0.000    0.000 dllist.py:13(DoubleLinkedList)
+</pre>
+<p>Again I've added the headers back so you can see what's going on.  In this you can see that the <tt class="docutils literal">dllist.py</tt> functions don't impact performance that much compared to the <tt class="docutils literal">merge</tt>, <tt class="docutils literal">merge_node</tt>, and <tt class="docutils literal">count</tt> functions.  This is important because most programmers would run to optimize the <tt class="docutils literal">DoubleLinkedList</tt> data structure where there's bigger gains to be made with the <tt class="docutils literal">merge_sort</tt> implementation and completely ditch the <tt class="docutils literal">bubble_sort</tt>.  Always start with where you can get the most improvement for the least effort.</p>
+</div>
+</div>
+<div class="section" id="analyzing-performance">
+<h1>Analyzing Performance</h1>
+<p>Analyzing performance is simply a matter of finding out what is slow and then trying to determine why it's slow.  It's similar to debugging, except you are trying your best not to change the behavior of the code.  When you're done, the code should work exactly the same but just do it faster.  There are times when fixing the performance also finds bugs, but it's best to not attempt complete redesigns when you're trying to speed it up.  One thing at a time.</p>
+<p>Another important thing to have before you start analyzing performance is some metric of what is <em>needed</em> of the software.  Fast is generally always good, but without a target you'll end up proposing possible solutions that are completely unnecessary.  If your system is performing at 50 requests/second and you really only need 100 requests/second, then there's no point proposing a complete rewrite in Haskell to get 200.  This process is all about &quot;most money saved for the least effort possible&quot;, and you need some kind of measurement to target.</p>
+<p>You can get most of these measurements from your operations staff, and they should have good graphs showing CPU usage, requests/second being served, frame rates, whatever they feel is important or that customers say is important.  You can then work with them to devise tests that demonstrate the slowness that needs to be targeted so you can improve the code to reach the goals they need.  You may be able to squeeze more performance out of the system, saving money.  You may attempt it and come to the conclusion that it's just a hard problem requiring more CPU resources.  With a metric to target, you'll have an idea of when to give up or that you've done enough.</p>
+<p>The simplest process you can use to analyze performance is the following:</p>
+<ol class="arabic simple">
+<li>Run a performance analyzer on the code as I've done here using your tests.  The more information you can get, the better.  See the Further Study section for additional tools that are free.  Ask around for other tools people may be using to analyze the speed of the system.</li>
+<li>Identify the <em>slowest</em> and <em>smallest</em> pieces of code.  Don't go to a giant function and try to analyze it.  Many times these functions are slow because they are using a bunch of other slow functions.  In finding the slowest and smallest first you're more likely to get the most gains for the least effort.</li>
+<li>Do a code review of these slow pieces of code and anything they touch, looking for possible reasons the code is slow.  Do you have loops inside loops? Calling a function too often?  Look for simple things that are possible to change <em>before</em> investigating complex techniques like caching.</li>
+<li>Once you have a list of all the slowest smallest functions and simple changes to make them faster, look for patterns.  Are you doing this anywhere else you can't see?</li>
+<li>Finally, look for possible big improvements you can make if there's no simple changes to small functions you can make.  Maybe it truly is time for a complete rewrite?  Don't do this until you've at least <em>attempted</em> the simple fixes first.</li>
+<li>Keep a list of all the things you tried and all the performance gains you made.  If you don't, then you'll constantly come back to functions you already worked on and waste effort.</li>
+</ol>
+<p>As you work this process the idea of &quot;slowest and smallest&quot; will change.  You'll fix a dozen 10 line functions and make them faster, which means now you can look at that 100 line function that's now the slowest.  Once you have that 100 line function running quicker, you can look at the larger groups of functions being run and come up with strategies to speed them up.</p>
+<p>Finally, the best way to speed anything up is to not do it at all.  If you're doing multiple checks of the same condition, find a way to avoid doing it more than once.  If you're calculating the same column in a database repeatedly, do it once.  If you call a function in a tight loop, but the data rarely changes, check out memoization or pre-calculate a table.  In many cases you can trade storage for computation by simply calculating things ahead of time and storing them once.</p>
+<p>In the next exercise we'll actually go through improving the performance of these algorithms using this process.</p>
+</div>
+<div class="section" id="exercise-challenge">
+<h1>Exercise Challenge</h1>
+<p>Your challenge for this exercise is to apply what I did with the <tt class="docutils literal">bubble_sort</tt> and <tt class="docutils literal">merge_sort</tt> to all the data structures and algorithms you've created so far.  You aren't expected to improve them yet but to just take notes and analyze the performance while developing tests that demonstrate performance problems.  Resist the temptation to fix anything right now because we'll be <em>improving</em> the performance in Exercise 19.</p>
+</div>
+<div class="section" id="study-drills">
+<h1>Study Drills</h1>
+<ul class="simple">
+<li>Run these profiling tools on all of your code so far and analyze the performance.</li>
+<li>Compare your results to the theoretical results for the algorithms and data structures.</li>
+</ul>
+</div>
+<div class="section" id="breaking-it">
+<h1>Breaking It</h1>
+<ul class="simple">
+<li>Try to write pathological tests that cause the data structures to break down.  You may need to feed them large amounts of data, but use the profiling information to make sure you're doing it right.</li>
+</ul>
+</div>
+<div class="section" id="further-study">
+<h1>Further Study</h1>
+<ul class="simple">
+<li>Look at <a class="reference external" href="https://github.com/rkern/line_profiler">line_profiler</a> as another performance measurement tool.  Its advantage is you can measure only the functions you care about, but the disadvantage is you have to change your source to do it.</li>
+<li><a class="reference external" href="https://pypi.python.org/pypi/pyprof2calltree">pyprof2calltree</a> and <a class="reference external" href="https://kcachegrind.github.io/html/Home.html">KCacheGrind</a> are more advanced tools but honestly only work on Linux.  In the video I demonstrate using them under Linux.</li>
+</ul>
+</div>
+                <!-- RST ENDS -->
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row center-xs" id="buy">
+        <div class="text-center col-xs-10 col-sm-5 col-md-4">
+            <h2 class="section-title__small">Pre-order Learn More Python The Hard Way</h2>
+            <p>
+            When you pre-order Learn <b>More</b> Python The Hard Way, you'll receive the Python 3 Edition as it's being created.
+            All files are DRM free and you can download them to your computer for offline viewing. <b>Digital Download Only!  You do not get a physical book.</b>
+            </p>
+
+            <p class="price-block">
+            <span class="currency"><span class="prefix">$</span>29.<span class="suffix">99</span></span>
+            </p>
+
+            <a href="https://shop.learncodethehardway.org/access/buy/10/" class="btn btn-primary btn-full">Pre-Order From Zed</a>
+
+            <p class="text-left btn-subtext">
+            <small>Or, you can <a href="index.html">read Learn More Python the Hard Way for free</a> right here, video lectures not included.</small>
+            </p>
+
+        </div>
+        <div class="text-center col-xs-10 col-sm-5 col-md-4 col-sm-offset-1">
+
+            <h2 class="section-title__small">Other Buying Options</h2>
+            <p>Other buying options coming soon.</p>
+            <!--
+ <a href="http://bit.ly/amznlpthw" class="btn btn-secondary btn-full">Buy Kindle or Paper on Amazon</a>
+ <a href="http://bit.ly/informitlpthw" class="btn btn-secondary btn-full">Buy a hard copy from the Publisher</a>
+ <a href="http://bit.ly/bnlpthw" class="btn btn-secondary btn-full">Buy a hard copy from Barnes &amp; Noble</a>
+ -->
+        </div>
+    </div>
+
+
+    <div class="row center-xs">
+        <div class="col-xs-11 col-sm-10 col-md-9 col-lg-8" id="video_holder">
+            <div data-paydiv_product="10" id='paydiv'>
+                No content available for this exercise.  You can view all available downloads at <a href="https://shop.learncodethehardway.org/customers/">your customer account page</a>.
+            </div>
+        </div>
+    </div>
+    </main>
+
+</div>
+
+<div class="row dark bottom-nav">
+    <div class="col-xs text-left">
+        <a href="#" class="prev" id='prev_link'><i class="icon-arrow-67"></i> <i class="icon icon-arrow-left"></i> Previous <span class="hide-xs show-sm-inline">Lesson</span></a>
+    </div>
+    <div class="col-xs text-right"><a href="#" class="next" id='next_link'>Next <span class="hide-xs show-sm-inline">Lesson</span> <i class="icon icon-arrow-right"></i></a>
+    </div>
+</div>
+    </div>
+
+    <footer class="footer">
+<div class="row center-xs">
+
+    <div class="col-xs-11 col-sm-6 col-md-5 col-lg-5">
+        <ul class="nav nav-inline">
+            <li><h4><a href="https://learncodethehardway.org/">Home</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/about/">About</a></h4></li>
+            <li><h4><a href="https://learncodethehardway.org/contact/">Contact</a></h4></li>
+        </ul>
+        <div class="copyright text-left">
+            <small class="text-muted">&copy; 2016 Zed A. Shaw. All Rights Reserved.</small>
+        </div>
+    </div>
+    <div class="col-xs-11 col-sm-4 col-md-4 col-lg-3">
+        <div class="social-media">
+            <div class="classy-container">
+                <a href="https://twitter.com/lzsthw" class="socicon-twitter"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </footer>
+    <script src="../js/scripts.min.js"></script>
+
+    <script src="javascripts/jquery.js"></script>
+    <script src="index.js"></script>
+    <script src="../../shop.learncodethehardway.org/static/jzed.js"></script>
+    <script src="../../shop.learncodethehardway.org/static/js/videojs/video.js"></script>
+    <link rel="stylesheet" href="../../shop.learncodethehardway.org/static/js/videojs/video-js.css">
+    <script src="../../shop.learncodethehardway.org/static/api/v1/paydiv.js"></script>
+    <script src="javascripts/app.js"></script>
+    <script src="javascripts/littools.js"></script>
+    <!-- Start of helpthw Zendesk Widget script -->
+    <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var o=this.createElement("script");n&&(this.domain=n),o.id="js-iframe-async",o.src=e,this.t=+new Date,this.zendeskHost=t,this.zEQueue=a,this.body.appendChild(o)},o.write('<body onload="document._l();">'),o.close()}("../../assets.zendesk.com/embeddable_framework/main.js","helpthw.zendesk.com");
+/*]]>*/</script>
+    <!-- End of helpthw Zendesk Widget script -->
+
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-24168052-5', 'auto');
+ga('send', 'pageview');
+
+    </script>
+
+    </body>
+    
+<!-- Mirrored from learncodethehardway.org/more-python-book/ex18.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 08 Jul 2017 15:17:43 GMT -->
+</html>
