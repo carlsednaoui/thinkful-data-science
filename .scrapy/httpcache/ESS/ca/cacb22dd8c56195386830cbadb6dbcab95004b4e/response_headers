@@ -1,0 +1,16 @@
+Server: Sucuri/Cloudproxy
+Date: Thu, 29 Mar 2018 00:42:21 GMT
+Content-Type: text/html; charset=UTF-8
+Link: <http://everydaysexism.com/wp-json/>; rel="https://api.w.org/"
+Cache-Control: max-age=7200
+Expires: Thu, 29 Mar 2018 02:42:20 GMT
+Vary: Accept-Encoding
+Content-Encoding: gzip
+X-Endurance-Cache-Level: 2
+X-Acc-Exp: 43200
+X-Proxy-Cache: MISS everydaysexism.com
+X-Sucuri-Cache: MISS
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+X-Sucuri-Id: 14010

@@ -1,0 +1,6 @@
+Referer: https://en.wikipedia.org/w/api.php?action=query&format=xml&prop=linkshere&titles=Monty_Python&lhprop=title%7Credirect&lhcontinue=29012
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en
+User-Agent: ThinkfulDataScienceBootcampCrawler (thinkful.com)
+Accept-Encoding: gzip,deflate
+Cookie: WMF-Last-Access=29-Mar-2018; WMF-Last-Access-Global=29-Mar-2018; GeoIP=US:NY:New_York:40.72:-74.01:v4

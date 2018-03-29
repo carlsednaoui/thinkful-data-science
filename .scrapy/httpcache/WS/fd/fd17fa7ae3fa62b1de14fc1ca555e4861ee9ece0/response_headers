@@ -1,0 +1,10 @@
+Cache-Control: max-age=900, public
+Last-Modified: Thu, 29 Mar 2018 01:43:14 GMT
+Date: Thu, 29 Mar 2018 01:43:14 GMT
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=utf-8
+X-Frame-Options: SAMEORIGIN
+Server: Apache
+Expires: Thu, 29 Mar 2018 01:58:14 GMT
+Strict-Transport-Security: max-age=86400

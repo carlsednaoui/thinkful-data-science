@@ -1,0 +1,16 @@
+Server: Sucuri/Cloudproxy
+Date: Thu, 29 Mar 2018 00:41:59 GMT
+Content-Type: text/plain
+Last-Modified: Mon, 03 Oct 2016 14:08:22 GMT
+Cache-Control: max-age=315360000
+Expires: Thu, 31 Dec 2037 23:55:55 GMT
+Vary: Accept-Encoding
+X-Endurance-Cache-Level: 2
+X-Acc-Exp: 43200
+X-Proxy-Cache: HIT www.everydaysexism.com
+X-Sucuri-Cache: HIT
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+X-Sucuri-Id: 14010
+Accept-Ranges: bytes

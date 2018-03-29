@@ -1,0 +1,16 @@
+Server: Sucuri/Cloudproxy
+Date: Thu, 29 Mar 2018 00:42:05 GMT
+Content-Type: text/html; charset=UTF-8
+Expires: Wed, 11 Jan 1984 05:00:00 GMT
+Cache-Control: no-cache, must-revalidate, max-age=0
+Location: http://everydaysexism.com/
+Vary: Accept-Encoding
+Content-Encoding: gzip
+X-Endurance-Cache-Level: 2
+X-Acc-Exp: 43200
+X-Proxy-Cache: MISS www.everydaysexism.com
+X-Sucuri-Cache: HIT
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+X-Content-Type-Options: nosniff
+X-Sucuri-Id: 14010

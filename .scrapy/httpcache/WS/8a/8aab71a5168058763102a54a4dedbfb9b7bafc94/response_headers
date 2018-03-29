@@ -1,0 +1,21 @@
+Date: Thu, 29 Mar 2018 00:57:56 GMT
+Content-Type: text/xml; charset=utf-8
+Server: mw1286.eqiad.wmnet
+X-Powered-By: HHVM/3.18.6-dev
+X-Content-Type-Options: nosniff
+Cache-Control: private, must-revalidate, max-age=0
+P3P: CP="This is not a P3P policy! See https://en.wikipedia.org/wiki/Special:CentralAutoLogin/P3P for more info."
+X-Frame-Options: SAMEORIGIN
+Content-Disposition: inline; filename=api-result.xml
+Vary: Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+Backend-Timing: D=45765 t=1522285075973826
+Content-Encoding: gzip
+X-Varnish: 1031428039, 99725443
+Via: 1.1 varnish (Varnish/5.1), 1.1 varnish (Varnish/5.1)
+Accept-Ranges: bytes
+Age: 0
+X-Cache: cp1065 pass, cp1068 pass
+X-Cache-Status: pass
+Strict-Transport-Security: max-age=106384710; includeSubDomains; preload
+X-Analytics: ns=-1;special=Badtitle;WMF-Last-Access=29-Mar-2018;WMF-Last-Access-Global=29-Mar-2018;https=1
+X-Client-Ip: 69.203.155.91
