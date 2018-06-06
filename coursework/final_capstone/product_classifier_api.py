@@ -15,6 +15,8 @@ import requests
 import string
 
 # Google vision
+import google.api_core.retry as g_retry
+import google.api_core.timeout as g_timeout
 from google.cloud import vision
 from google.cloud.vision import types
 import os
@@ -70,6 +72,7 @@ def clean_email_text(content):
         return ""
     content = " ".join(content.split("_")) # prevents blowup if subjects are concatenated with "_"
     content = " ".join(content.split("\n"))
+    content = content.encode('ascii',errors='ignore') # ignore non ascii characters
     lowered = str(content).lower()
     no_punct = re.sub(punctuation, "", lowered)
     alpha = " ".join([word for word in no_punct.split(" ") if word.isalpha()])
@@ -126,11 +129,18 @@ def get_images_to_analyze(guid, url):
 def get_images_data(images):
     text_results = ""
     image_results = ""
+
+    print("-->", len(images))
     
     for image in images:
         client = vision.ImageAnnotatorClient()
         request = {'image': {'source': {'image_uri': image},},}
-        response = client.annotate_image(request)
+        # TODO: figure out how to use google options
+        # https://google-cloud-python.readthedocs.io/en/latest/core/timeout.html
+        # https://google-cloud-python.readthedocs.io/en/latest/core/retry.html
+        my_retry = g_retry.Retry(deadline=60)
+        response = client.annotate_image(request, my_retry)
+        # response = client.annotate_image(request)
         text = " ".join([l.description for l in response.text_annotations])
         label = " ".join([l.description for l in response.label_annotations])
         web = " ".join([l.description for l in response.web_detection.web_entities])

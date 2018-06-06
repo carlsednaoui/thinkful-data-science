@@ -1,0 +1,105 @@
+{'results': [['shoe', 1.8], ['clothing', 0.45], ['clothing > outerwear', 0.45], ['clothing > shirt', 0.45], ['shoe > sneaker', 0.45], ['accessory > hat > beanie', 0.45]]}
+{'results': [['clothing > outerwear > hoodie', 1.55], ['clothing > outerwear', 1.35], ['clothing > outerwear > sweatshirt', 1.2], ['clothing', 0.9], ['clothing > shirt', 0.9], ['clothing > shirt > blouse', 0.9], ['shoe', 0.45]]}
+{'results': [['shoe', 2.55], ['accessory > belt', 0.95], ['accessory', 0.45]]}
+{'results': [['clothing > outerwear', 1.35], ['clothing > shirt', 0.9], ['clothing > outerwear > hoodie', 0.6], ['shoe', 0.45], ['clothing > outerwear > jacket', 0.45], ['clothing > pants > jean', 0.45]]}
+{'results': [['clothing > outerwear > sweater', 0.5], ['accessory > bag', 0.45]]}
+{'results': [['shoe', 4.35], ['accessory > bag', 1.2], ['clothing', 1.15], ['accessory > bag > handbag', 0.6], ['shoe > sneaker', 0.5], ['clothing > outerwear', 0.45]]}
+{'results': [['clothing > outerwear', 0.9], ['clothing > shirt', 0.9], ['clothing', 0.45]]}
+{'results': [['accessory', 0.5], ['clothing > outerwear', 0.45], ['clothing > outerwear > blazer', 0.45], ['clothing > outerwear > coat', 0.45], ['clothing > suit', 0.45]]}
+{'results': [['shoe', 5.5], ['shoe > sneaker', 0.9], ['accessory', 0.45], ['clothing > outerwear', 0.45], ['clothing > outerwear > coat', 0.45], ['clothing > outerwear > jacket', 0.45], ['clothing > pants > jean', 0.45]]}
+{'results': [['shoe', 2.85], ['clothing', 0.7], ['accessory > bag > handbag', 0.6]]}
+{'results': []}
+{'results': []}
+{'results': [['clothing > shirt', 4.1], ['clothing > outerwear', 2.75], ['clothing > outerwear > jacket', 2.55], ['clothing', 2.25], ['clothing > underwear > tights', 1.4], ['clothing > outerwear > coat', 1.35], ['shoe', 1.35], ['clothing > pants > legging', 1.15], ['clothing > outerwear > blazer', 0.9], ['clothing > dress', 0.45]]}
+{'results': []}
+{'results': [['clothing > outerwear > jacket', 1.8], ['clothing > outerwear', 1.35], ['clothing', 0.45], ['accessory > hat > beanie', 0.45], ['clothing > outerwear > coat', 0.45], ['clothing > shirt', 0.45], ['clothing > dress', 0.45], ['clothing > shirt > dress shirt', 0.45]]}
+{'results': [['clothing > pants > jean', 4.65], ['shoe', 1.35], ['clothing > pants > short', 0.95], ['clothing > pants > denim', 0.9], ['clothing', 0.45]]}
+{'results': [['clothing > outerwear', 0.9], ['clothing > outerwear > jacket', 0.9], ['clothing > pants > jean', 0.9], ['clothing > pants > denim', 0.9], ['clothing > outerwear > sweater', 0.7], ['clothing', 0.45], ['clothing > outerwear > blazer', 0.45], ['clothing > suit', 0.45], ['clothing > shirt', 0.45], ['clothing > dress', 0.45]]}
+{'results': []}
+{'results': [['clothing > shirt', 5.5], ['clothing > outerwear', 3.7], ['clothing', 1.8], ['clothing > dress', 1.8], ['clothing > shirt > dress shirt', 1.8], ['clothing > shirt > top', 0.95], ['clothing > suit', 0.55]]}
+{'results': [['clothing > shirt', 1.55], ['clothing', 1.35], ['clothing > outerwear', 1.35], ['shoe > oxford', 0.6], ['clothing > outerwear > blazer', 0.45], ['clothing > underwear > tights', 0.45], ['clothing > outerwear > jacket', 0.45], ['clothing > pants > jean', 0.45], ['clothing > pants > denim', 0.45], ['clothing > pants > legging', 0.45], ['clothing > shirt > top', 0.45]]}
+{'results': [['shoe', 3.35], ['accessory > jewelry', 1.9000000000000001], ['accessory', 1.8], ['accessory > jewelry > bracelet', 1.4], ['clothing > pants > jean', 1.35], ['clothing > pants > legging', 1.35], ['clothing > shirt', 1.35], ['accessory > jewelry > ring', 1.35], ['clothing > underwear > tights', 1.35], ['shoe > flat', 1.0], ['accessory > jewelry > earring', 0.95], ['accessory > jewelry > necklace', 0.95], ['clothing', 0.9], ['clothing > outerwear', 0.55], ['shoe > sneaker', 0.5]]}
+{'results': []}
+{'results': [['clothing > outerwear > coat', 0.7], ['clothing > suit', 0.45], ['clothing > outerwear', 0.45], ['clothing > outerwear > blazer', 0.45], ['clothing > outerwear > jacket', 0.45], ['clothing > pants > jean', 0.45], ['clothing > pants > denim', 0.45]]}
+{'results': []}
+{'results': [['accessory > bag', 1.9500000000000002], ['accessory > bag > tote', 0.6], ['accessory > bag > handbag', 0.45]]}
+{'results': [['shoe', 2.85], ['clothing', 0.7], ['accessory > bag > handbag', 0.6]]}
+{'results': [['clothing > dress', 3.05], ['clothing > shirt', 2.45], ['clothing > pants > chino', 1.6], ['clothing', 1.35], ['clothing > shirt > blouse', 1.05], ['clothing > suit', 0.9], ['accessory > tie', 0.5], ['clothing > outerwear', 0.45], ['clothing > outerwear > blazer', 0.45], ['clothing > outerwear > jacket', 0.45], ['clothing > pants > jean', 0.45]]}
+{'results': [['shoe', 5.800000000000001], ['shoe > sneaker', 1.8], ['clothing > suit', 1.0], ['clothing > outerwear', 0.9]]}
+{'results': [['clothing > suit', 4.95], ['clothing > outerwear', 2.7], ['clothing > outerwear > blazer', 2.25], ['clothing', 1.8], ['clothing > dress', 1.35], ['clothing > outerwear > jacket', 1.2]]}
+{'results': [['clothing > shirt > polo', 0.5], ['clothing > shirt', 0.2]]}
+{'results': [['accessory > jewelry', 0.9], ['accessory > jewelry > ring', 0.5]]}
+{'results': [['clothing > outerwear > jacket', 1.35], ['clothing > outerwear', 0.9], ['clothing > outerwear > coat', 0.6], ['clothing > outerwear > sweater', 0.6], ['clothing > outerwear > sweatshirt', 0.5], ['accessory > hat > beanie', 0.45], ['accessory > scarf', 0.45], ['clothing > outerwear > hoodie', 0.45]]}
+{'results': [['clothing > pants > jean', 0.6]]}
+{'results': [['accessory > bag', 7.5], ['accessory > bag > handbag', 1.8], ['accessory', 1.35], ['accessory > bag > luggage', 0.9]]}
+{'results': [['accessory > bag', 7.5], ['accessory > bag > handbag', 1.8], ['accessory', 1.35], ['accessory > bag > luggage', 0.9]]}
+{'results': [['clothing > pants > short > swimwear', 2.15], ['clothing > suit', 1.0], ['clothing', 0.45], ['clothing > underwear > lingerie', 0.45], ['clothing > shirt', 0.45], ['clothing > outerwear', 0.45]]}
+{'results': [['clothing > shirt', 0.9], ['clothing', 0.45]]}
+{'results': [['accessory > bag', 7.5], ['accessory > bag > handbag', 1.8], ['accessory', 1.35], ['accessory > bag > luggage', 0.9]]}
+{'results': [['clothing > shirt', 2.6], ['clothing > outerwear > sweater', 1.55], ['accessory > jewelry > ring', 1.0], ['clothing > dress', 1.0], ['accessory > jewelry', 0.9], ['clothing > shirt > dress shirt', 0.8], ['shoe > oxford', 0.6]]}
+{'results': []}
+{'results': [['clothing > shirt', 2.25], ['clothing > outerwear > jacket', 1.9500000000000002], ['clothing > outerwear', 1.8], ['clothing > pants > short', 1.2], ['clothing', 0.9], ['clothing > outerwear > blazer', 0.9], ['clothing > outerwear > coat', 0.9], ['clothing > suit', 0.9], ['clothing > pants > sweatpants', 0.6], ['clothing > underwear > lingerie', 0.45], ['clothing > pants > jean', 0.45], ['clothing > pants > denim', 0.45]]}
+{'results': [['clothing > underwear > bra', 4.5], ['clothing > pants > legging', 0.45], ['clothing > underwear > lingerie', 0.45], ['clothing > underwear > tights', 0.45], ['clothing > pants > short > swimwear', 0.45]]}
+{'results': [['clothing > shirt', 1.35], ['clothing > pants > denim', 1.05], ['clothing > outerwear', 0.9], ['shoe', 0.9], ['clothing > pants > jean', 0.45], ['shoe > sandal', 0.45], ['clothing > dress', 0.45], ['clothing > shirt > dress shirt', 0.45]]}
+{'results': []}
+{'results': [['accessory > bag', 4.800000000000001], ['accessory', 1.35], ['accessory > bag > handbag', 1.35]]}
+{'results': [['accessory > bag', 4.800000000000001], ['accessory', 1.35], ['accessory > bag > handbag', 1.35]]}
+{'results': [['accessory > sunglass', 0.5]]}
+{'results': [['shoe', 8.05], ['shoe > sneaker', 0.9]]}
+{'results': [['clothing > outerwear > coat', 1.8], ['accessory > jewelry > ring', 1.5], ['clothing > pants > chino', 1.0], ['accessory > jewelry', 0.9], ['clothing', 0.45], ['clothing > outerwear', 0.45], ['clothing > suit', 0.45]]}
+{'results': []}
+{'results': []}
+{'results': [['clothing > outerwear > jacket', 0.1]]}
+{'results': [['accessory', 0.2]]}
+{'results': [['shoe', 2.85], ['accessory > bag', 2.25], ['accessory > bag > tote', 1.15], ['accessory > bag > handbag', 1.05], ['clothing', 0.7], ['accessory', 0.45]]}
+{'results': [['clothing > pants > sweatpants', 0.5], ['clothing > outerwear', 0.5], ['clothing > outerwear > coat', 0.5], ['clothing > outerwear > sweater', 0.5], ['clothing > outerwear > jacket', 0.5], ['clothing > outerwear > parka', 0.5]]}
+{'results': [['clothing > shirt', 3.3], ['clothing > dress', 1.8499999999999999], ['clothing > shirt > dress shirt', 1.65], ['accessory > jewelry > ring', 1.0], ['accessory > jewelry', 0.9]]}
+{'results': []}
+{'results': [['clothing > outerwear', 2.3], ['clothing > outerwear > jacket', 2.3], ['clothing > outerwear > coat', 2.15], ['clothing > shirt', 1.9], ['clothing > outerwear > parka', 1.7], ['clothing > outerwear > hoodie', 1.35], ['shoe', 0.9], ['clothing > pants > jean', 0.9]]}
+{'results': [['clothing > outerwear', 0.75], ['clothing > outerwear > jacket', 0.45], ['accessory', 0.2]]}
+{'results': [['other > animal > dog', 0.9], ['clothing > outerwear > coat', 0.75], ['clothing > outerwear', 0.65]]}
+{'results': [['accessory > jewelry > ring', 1.0], ['accessory > jewelry', 0.9]]}
+{'results': [['accessory > watch', 0.6], ['accessory > sunglass', 0.6], ['accessory > jewelry', 0.6]]}
+{'results': [['clothing > pants > jean', 1.05], ['clothing > shirt', 0.9], ['clothing', 0.45], ['clothing > outerwear', 0.45], ['clothing > outerwear > sweater', 0.45], ['clothing > outerwear > hoodie', 0.45]]}
+{'results': []}
+{'results': [['clothing > outerwear > jacket', 0.45], ['clothing > outerwear', 0.45], ['shoe', 0.45], ['clothing > pants > jean', 0.45]]}
+{'results': [['shoe', 2.85], ['clothing', 0.7], ['accessory > bag > handbag', 0.6]]}
+{'results': [['clothing > outerwear', 1.8], ['clothing > pants > denim', 1.4], ['shoe > boot', 1.4], ['shoe', 1.35], ['clothing > shirt', 1.0], ['clothing > pants > jean', 0.9], ['clothing > outerwear > coat', 0.5], ['clothing > outerwear > sweater', 0.5], ['clothing > pants > chino', 0.5], ['clothing', 0.45], ['clothing > outerwear > jacket', 0.45]]}
+{'results': [['clothing > outerwear', 2.25], ['clothing > outerwear > sweater', 1.9], ['clothing > outerwear > sweatshirt', 0.95], ['shoe', 0.9], ['accessory > scarf', 0.9], ['clothing > shirt', 0.9], ['clothing', 0.45], ['clothing > outerwear > jacket', 0.45], ['accessory', 0.45]]}
+{'results': []}
+{'results': [['clothing > suit', 0.5], ['clothing > pants > short > swimwear', 0.5], ['shoe', 0.45], ['clothing > shirt', 0.45], ['clothing > pants > jean', 0.45], ['clothing > pants > denim', 0.45], ['clothing > pants > short', 0.45]]}
+{'results': []}
+{'results': [['clothing > shirt', 3.7], ['clothing > outerwear', 1.4500000000000002], ['clothing > suit', 0.55], ['clothing > outerwear > sweater', 0.5], ['clothing > pants > chino', 0.5], ['clothing > outerwear > jacket', 0.45], ['clothing > dress', 0.45], ['clothing > shirt > dress shirt', 0.45], ['clothing > shirt > top', 0.45]]}
+{'results': [['clothing > outerwear', 3.25], ['clothing > outerwear > sweater', 2.35], ['clothing > shirt', 1.85], ['clothing', 1.8], ['clothing > outerwear > jacket', 1.35], ['clothing > shirt > top', 0.95], ['clothing > pants > jean', 0.45], ['clothing > pants > denim', 0.45]]}
+{'results': [['clothing > outerwear > coat', 0.5], ['clothing > outerwear > sweater', 0.5], ['clothing > outerwear > sweatshirt', 0.5], ['clothing > outerwear', 0.45], ['clothing > shirt', 0.45], ['clothing > outerwear > jacket', 0.45], ['accessory > bag', 0.45]]}
+{'results': [['clothing > shirt', 3.25], ['clothing > dress', 1.7000000000000002], ['clothing > shirt > dress shirt', 1.5], ['accessory', 0.45]]}
+{'results': []}
+{'results': [['clothing > shirt', 4.25], ['clothing > pants > jean', 4.2], ['clothing > outerwear > jacket', 4.15], ['clothing', 3.6], ['clothing > outerwear', 3.6], ['clothing > shirt > top', 2.35], ['shoe', 2.25], ['clothing > shirt > blouse', 1.9], ['clothing > outerwear > hoodie', 1.85], ['clothing > outerwear > coat', 1.4], ['clothing > pants > denim', 1.35], ['clothing > outerwear > parka', 1.0], ['clothing > pants > chino', 1.0], ['clothing > outerwear > sweater', 0.9]]}
+{'results': [['shoe', 0.9], ['clothing > underwear > tights', 0.45]]}
+{'results': [['shoe', 3.25], ['shoe > sneaker', 0.9], ['clothing > pants > jean', 0.45]]}
+{'results': [['shoe', 11.45], ['shoe > sneaker', 3.6]]}
+{'results': [['clothing > outerwear', 2.75], ['clothing > outerwear > jacket', 2.3], ['clothing > outerwear > coat', 1.9], ['clothing > shirt', 1.85], ['shoe', 1.8], ['shoe > boot', 1.4], ['clothing > underwear > sock', 0.95], ['clothing', 0.9], ['clothing > outerwear > sweater', 0.5], ['clothing > outerwear > parka', 0.5], ['clothing > suit', 0.5], ['clothing > pants > chino', 0.5], ['clothing > shirt > top', 0.5], ['accessory > hat', 0.45], ['clothing > outerwear > sweatshirt', 0.45], ['clothing > pants > jean', 0.45]]}
+{'results': [['accessory > bag', 2.35], ['clothing > outerwear', 1.35], ['clothing', 0.45], ['clothing > pants > legging', 0.45], ['accessory > bag > handbag', 0.45], ['clothing > outerwear > jacket', 0.45], ['clothing > dress', 0.45], ['clothing > pants > denim', 0.45]]}
+{'results': [['clothing > shirt', 2.9], ['clothing > dress', 1.25], ['clothing > shirt > dress shirt', 1.05], ['clothing > outerwear > jacket', 0.5]]}
+{'results': []}
+{'results': [['clothing > outerwear > blazer', 0.2], ['shoe', 0.2], ['clothing > suit', 0.1], ['clothing > outerwear', 0.1], ['clothing > outerwear > coat', 0.1], ['accessory > scarf', 0.1], ['accessory > bag', 0.1], ['accessory > jewelry', 0.1]]}
+{'results': [['clothing > shirt', 1.9], ['clothing > outerwear > parka', 1.9], ['clothing', 1.35], ['clothing > outerwear > jacket', 0.95], ['clothing > outerwear', 0.9], ['clothing > outerwear > coat', 0.45], ['clothing > outerwear > hoodie', 0.45]]}
+{'results': [['other > animal > dog', 1.8], ['accessory', 0.2]]}
+{'results': [['clothing > pants > jean', 1.05], ['clothing > outerwear > coat', 0.6], ['clothing > outerwear > sweatshirt', 0.5], ['clothing > outerwear', 0.45], ['clothing > shirt', 0.45], ['clothing > pants > denim', 0.45]]}
+{'results': [['shoe', 14.65], ['clothing > shirt > top', 2.8], ['shoe > sneaker', 2.7], ['clothing', 0.9], ['clothing > pants > legging', 0.9], ['clothing > underwear > tights', 0.9], ['clothing > pants > jean', 0.9]]}
+{'results': [['clothing', 0.45], ['clothing > outerwear', 0.45], ['shoe', 0.45], ['clothing > suit', 0.45], ['clothing > pants > jean', 0.45], ['clothing > pants > denim', 0.45]]}
+{'results': [['clothing > outerwear', 1.25], ['shoe > boot', 1.2], ['shoe', 0.9], ['accessory > hat', 0.45], ['accessory > scarf', 0.45]]}
+{'results': [['accessory > sunglass', 4.2], ['other > animal > dog', 3.6], ['accessory', 1.35]]}
+{'results': [['clothing > pants > short > swimwear', 0.9]]}
+{'results': [['accessory > watch', 0.6], ['accessory > sunglass', 0.6], ['accessory > jewelry', 0.6], ['accessory > perfume', 0.45]]}
+{'results': [['clothing > pants > denim', 1.55], ['shoe', 1.35], ['clothing > pants > jean', 1.35], ['clothing > outerwear', 0.45]]}
+{'results': [['clothing > pants > jean', 0.6]]}
+{'results': [['clothing > shirt > top', 0.1]]}
+{'results': [['clothing > pants > jean', 2.0], ['clothing > pants > denim', 1.1], ['shoe', 0.9], ['clothing > pants > short', 0.45]]}
+{'results': [['clothing', 0.45], ['clothing > outerwear', 0.45], ['clothing > outerwear > blazer', 0.45], ['clothing > outerwear > coat', 0.45], ['clothing > suit', 0.45], ['clothing > outerwear > jacket', 0.45], ['clothing > dress', 0.45]]}
+{'results': [['clothing > outerwear', 1.8], ['clothing > shirt', 1.35], ['clothing > outerwear > coat', 0.9], ['clothing > outerwear > jacket', 0.9], ['clothing', 0.45], ['clothing > outerwear > hoodie', 0.45], ['clothing > dress', 0.45]]}
+{'results': [['clothing > outerwear', 1.35], ['shoe', 1.35], ['clothing > shirt', 1.35], ['clothing > pants > jean', 0.9], ['clothing > underwear > tights', 0.9], ['clothing > pants > legging', 0.45], ['clothing > shirt > top', 0.45]]}
+{'results': [['shoe', 2.85], ['clothing', 0.7], ['accessory > bag > handbag', 0.6]]}
+{'results': [['clothing > pants > jean', 0.9], ['clothing > pants > denim', 0.9], ['clothing', 0.45], ['clothing > outerwear', 0.45], ['clothing > pants > legging', 0.45]]}
+{'results': []}
+{'results': [['shoe > boot', 2.0], ['accessory > hat', 1.1], ['accessory > glove', 1.05], ['shoe', 0.9], ['accessory > scarf', 0.6], ['clothing > shirt > top', 0.5]]}
