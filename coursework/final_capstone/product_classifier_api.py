@@ -131,11 +131,10 @@ def get_images_data(images):
     image_results = ""
 
     print("-->", len(images))
-    
-    for image in images:
-        client = vision.ImageAnnotatorClient()
+    client = vision.ImageAnnotatorClient()
+
+    for image in images:    
         request = {'image': {'source': {'image_uri': image},},}
-        # TODO: figure out how to use google options
         # https://google-cloud-python.readthedocs.io/en/latest/core/timeout.html
         # https://google-cloud-python.readthedocs.io/en/latest/core/retry.html
         my_retry = g_retry.Retry(deadline=60)
