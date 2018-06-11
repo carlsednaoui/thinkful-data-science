@@ -134,15 +134,15 @@ def get_images_data(images):
     client = vision.ImageAnnotatorClient()
 
     for image in images:    
-        request = {'image': {'source': {'image_uri': image},},}
+        request = {'image': {'source': {'image_uri': image},}, 'features': [{'type': vision.enums.Feature.Type.LABEL_DETECTION}, {'type': vision.enums.Feature.Type.TEXT_DETECTION}]}
         # https://google-cloud-python.readthedocs.io/en/latest/core/timeout.html
         # https://google-cloud-python.readthedocs.io/en/latest/core/retry.html
         my_retry = g_retry.Retry(deadline=60)
         response = client.annotate_image(request, my_retry)
-        # response = client.annotate_image(request)
+
+        # extract the values
         text = " ".join([l.description for l in response.text_annotations])
         label = " ".join([l.description for l in response.label_annotations])
-        web = " ".join([l.description for l in response.web_detection.web_entities])
 
         text_results = text_results + text + " "
         image_results = image_results + label + " "
