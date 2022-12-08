@@ -10,7 +10,7 @@ boto==2.48.0
 bs4==0.0.1
 bz2file==0.98
 cachetools==2.1.0
-certifi==2018.4.16
+certifi==2022.12.7
 cffi==1.11.2
 chardet==3.0.4
 clearbit==0.1.6
